@@ -1,11 +1,10 @@
-import Image from "next/image";
 import React from "react";
 
 const AboutHeroSection = () => {
     return (
         <div>
-            <section className="relative w-full min-h-[504px] z-[3] bg-[#e4dbd0] flex items-center justify-center py-8 md:py-0">
-                <div className="relative w-full md:w-[616px] px-4 md:px-0">
+            <section className="relative w-full min-h-[504px] z-[3] bg-[#e4dbd0] flex items-center justify-center pt-[70px] px-4 lg:px-0">
+                <div className="relative w-full md:w-[616px] px-4 md:px-0 py-20">
                     <div className="flex flex-col w-full md:w-[616px] items-center gap-8">
                         <div className="flex flex-col items-center gap-10 w-full">
                             <h1 className="font-semibold text-[#363338] text-3xl md:text-[40px] text-center leading-tight md:leading-[48px] font-['Geist',Helvetica]">
@@ -21,13 +20,13 @@ const AboutHeroSection = () => {
                         </div>
                     </div>
                 </div>
-                <Image
+                {/* <Image
                     className="hidden lg:block absolute w-[117px] h-28 top-[66px] right-[236px]"
                     alt="Misc"
                     src="/misc-13.svg"
                     width={117}
                     height={28}
-                />
+                /> */}
             </section>
         </div>
     );

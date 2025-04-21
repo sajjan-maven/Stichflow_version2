@@ -163,88 +163,6 @@ const labelElements = [
 const HomeHeroSection = () => {
     return (
         <div>
-            {/* <section className="relative w-full py-12 md:py-16 lg:py-24 bg-[#f8f5f3] overflow-hidden">
-                <div className="relative max-w-[1595px] mx-auto px-4 md:px-8 lg:px-16">
-                    <div className="relative mx-auto max-w-[1502px] z-10">
-                        <div className="flex flex-col items-center gap-6 md:gap-8 mx-auto max-w-[828px]">
-                            <div className="flex flex-col items-start gap-6 w-full">
-                                <h1 className="w-full font-['Geist',Helvetica] font-bold text-[#222222] text-4xl md:text-5xl lg:text-[64px] text-center leading-tight md:leading-[72px]">
-                                    Instant SaaS Account
-                                    <br />
-                                    Reconciliation
-                                </h1>
-                                <p className="w-full font-['Geist',Helvetica] font-normal text-[#363338] text-base md:text-lg text-center leading-7 md:leading-8">
-                                    Stitchflow helps you keep pace with business sprawl by automatically reconciling
-                                    your SaaS user data for effortless audits, license renewals, and access reviews.
-                                </p>
-                            </div>
-
-                            <button className="flex items-center gap-2 px-3 py-2 rounded-full border border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] bg-gradient-to-b from-white to-[#f9f8fa] hover:scale-105 transition-transform">
-                                <div className="relative">
-                                    <div className="w-8 h-8 rounded-full border border-[#54505833] overflow-hidden">
-                                        <img
-                                            src="../avatar-5.png"
-                                            alt="Avatar"
-                                            className="object-cover w-full h-full"
-                                        />
-                                    </div>
-                                    <div className="absolute w-2.5 h-2.5 -top-px left-[23px] bg-[#30ba70] rounded-[5px] border border-white" />
-                                </div>
-                                <span className="font-['Geist',Helvetica] font-medium text-[#363338] text-base leading-4">
-                                    Book a 15 min demo
-                                </span>
-                            </button>
-                        </div>
-
-                        <div className="relative w-full min-h-[400px] md:min-h-[600px] lg:min-h-[888px] mt-32 md:mt-40 lg:mt-[280px]">
-                            {appIcons.map((icon, index) => (
-                                <div
-                                    key={`app-icon-${index}`}
-                                    className={`absolute ${icon.size} ${
-                                        icon.position
-                                    } bg-[#f0ede6] rounded-full overflow-hidden ${
-                                        icon.blur ? "blur-[3px]" : ""
-                                    } hidden lg:block`}
-                                >
-                                    <div
-                                        className={`relative ${icon.iconSize || "w-6 h-6"} top-5 left-5 ${
-                                            icon.bgStyle || ""
-                                        }`}
-                                    >
-                                        {!icon.bgStyle && (
-                                            <img className="absolute w-full h-full" alt="App icon" src={icon.icon} />
-                                        )}
-                                    </div>
-                                </div>
-                            ))}
-
-                            {labelElements.map((label, index) => (
-                                <div
-                                    key={`label-${index}`}
-                                    className={`absolute ${label.width} h-8 ${label.position} hidden lg:block`}
-                                >
-                                    <div className="absolute top-0 left-[26px] text-[#7b7481] text-sm tracking-wide leading-5 whitespace-nowrap">
-                                        {label.text}
-                                    </div>
-                                    <img
-                                        className={`absolute ${label.width} h-[13px] ${label.imagePosition} left-0`}
-                                        alt="Label decoration"
-                                        src={label.image}
-                                    />
-                                </div>
-                            ))}
-
-                            <div className="relative lg:absolute w-full lg:w-[1203px] lg:h-[834px] lg:top-10 lg:left-[117px] overflow-hidden rounded-[32px]">
-                                <img
-                                    className="w-full h-full object-cover"
-                                    alt="Users employees dashboard"
-                                    src="/users---employees-1.png"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
             <section className="relative w-full py-24 bg-[#f8f5f3] overflow-hidden">
                 <div className="relative w-full max-w-[1595px] mx-auto">
                     <div className="relative w-full max-w-[1502px] mx-auto">
@@ -273,7 +191,7 @@ const HomeHeroSection = () => {
 
                                 <button className="flex items-center gap-2 px-3 py-2 rounded-xl border border-solid border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(249,248,250,1)_100%)] h-auto">
                                     <div className="relative flex items-center gap-2">
-                                        <div className="relative w-8 h-8 rounded-[100px] [background:url(/images/Frame 73.svg)_50%_50%_/_cover] border border-solid border-[#54505833]" />
+                                        <div className="relative w-8 h-8 rounded-[100px] [background:url(/images/Avatar.svg)_50%_50%_/_cover] border border-solid border-[#54505833]" />
                                         <div className="absolute w-2.5 h-2.5 -top-px left-[23px] bg-[#30ba70] rounded-[5px] border border-solid border-white" />
                                     </div>
                                     <span className="font-['Geist',Helvetica] font-medium text-[#363338] text-base leading-4 whitespace-nowrap">

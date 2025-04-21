@@ -1,228 +1,213 @@
-// import React from "react";
-// const testimonials = [
-//     {
-//         id: 1,
-//         quote: "\"Imagine trying to keep up with everything using complex Google Sheets and Excel spreadsheets – it was a nightmare. We were constantly cross-referencing user counts against available licenses, which was incredibly time-consuming. Investigating license usage was a huge hassle, and audits became increasingly difficult as our company grew. The data we were exporting wasn't always reliable, either. Since implementing Stitchflow, things have drastically improved. It's given me real peace of mind.\"",
-//         name: "Carlos Jimenez",
-//         title: "CIO and CISO",
-//         bgColor: "bg-[#729fab]",
-//         textColor: "text-[#a2a2a2]",
-//         logoSrc: null,
-//         logoWidth: null,
-//     },
-//     {
-//         id: 2,
-//         quote: "\"Imagine trying to keep up with everything using complex Google Sheets and Excel spreadsheets – it was a nightmare. We were constantly cross-referencing user counts against available licenses, which was incredibly time-consuming. Investigating license usage was a huge hassle, and audits became increasingly difficult as our company grew. The data we were exporting wasn't always reliable, either. Since implementing Stitchflow, things have drastically improved. It's given me real peace of mind.\"",
-//         name: "Carlos Jimenez",
-//         title: "CIO and CISO",
-//         bgColor: "bg-[#1d1733]",
-//         textColor: "text-white",
-//         logoSrc: "/logo-3.svg",
-//         logoWidth: "w-[115px]",
-//     },
-//     {
-//         id: 3,
-//         quote: "\"One of the hardest things in IT is figuring out access control—who's in what groups, what those groups do, who manages them, and where all that information lives. Before Stitchflow, it was a nightmare trying to piece together this data across tools like Google, Zoom, and other systems where names didn't match or info was missing. Stitchflow makes all of that so much easier. Instead of juggling spreadsheets, exporting CSVs, and manually matching users, I can instantly see patterns, irregularities, and access issues in one place.\"",
-//         name: "Peter Hadjisavas",
-//         title: "CIO and CISO",
-//         bgColor: "bg-[#5a4adf]",
-//         textColor: "text-white",
-//         logoSrc: "/logo-2.svg",
-//         logoWidth: "w-[99px]",
-//     },
-// ];
-// const HomeTestimonialSection = () => {
-//     return <div>  <section className="py-20 bg-white w-full z-[2]">
-//     <div className="container max-w-[1256px] mx-auto">
-//       <div className="flex items-center justify-between mb-[72px]">
-//         <div className="flex flex-col gap-2 max-w-[616px]">
-//           <h2 className="font-semibold text-[40px] leading-[48px] text-[#222222] font-['Geist',Helvetica]">
-//             Learn from the Best
-//           </h2>
-//           <p className="text-base text-[#363338] font-['Geist',Helvetica] leading-6">
-//             Hear from IT teams who have tamed business sprawl with Stitchflow.
-//           </p>
-//         </div>
-
-//         <button
-//         //   variant="outline"
-//           className="rounded-xl border border-[#54505833] p-4"
-//         >
-//           <span className="font-label-medium text-[#363338] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)]">
-//             Download Case Study
-//           </span>
-//         </button>
-//       </div>
-
-//       <Carousel className="w-full">
-//         <CarouselContent className="flex items-center justify-center gap-6">
-//           {testimonials.map((testimonial) => (
-//             <CarouselItem
-//               key={testimonial.id}
-//               className={`${testimonial.id === 1 ? "ml-[-405px]" : testimonial.id === 3 ? "mr-[-405px]" : ""}`}
-//             >
-//               <Card
-//                 className={`w-[830px] h-[414px] ${testimonial.bgColor} rounded-[32px] overflow-hidden border-none`}
-//               >
-//                 <CardContent className="p-0">
-//                   <div className="flex flex-col w-[718px] h-[216px] gap-6 p-14">
-//                     <p className="font-['Geist',Helvetica] font-normal text-white text-base leading-6">
-//                       {testimonial.quote}
-//                     </p>
-
-//                     <div className="flex items-center gap-4">
-//                       <Avatar className="w-12 h-12 rounded-[100px] border border-solid border-[#54505833]">
-//                         <AvatarImage
-//                           src="/images/Avatar.png"
-//                           alt={testimonial.name}
-//                         />
-//                         <AvatarFallback>
-//                           {testimonial.name.charAt(0)}
-//                         </AvatarFallback>
-//                       </Avatar>
-
-//                       <div className="flex flex-col gap-1">
-//                         <div
-//                           className={`font-['Geist',Helvetica] font-medium text-base leading-6 ${testimonial.textColor}`}
-//                         >
-//                           {testimonial.name}
-//                         </div>
-//                         <div
-//                           className={`font-['Geist',Helvetica] font-normal text-xs leading-4 ${testimonial.textColor}`}
-//                         >
-//                           {testimonial.title}
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
-
-//                   {testimonial.logoSrc && (
-//                     <img
-//                       className={`absolute h-8 bottom-14 left-14 ${testimonial.logoWidth}`}
-//                       alt="Logo"
-//                       src={testimonial.logoSrc}
-//                     />
-//                   )}
-//                 </CardContent>
-//               </Card>
-//             </CarouselItem>
-//           ))}
-//         </CarouselContent>
-//       </Carousel>
-//     </div>
-//   </section></div>;
-// };
-
-// export default HomeTestimonialSection;
 "use client";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import Image from "next/image";
 
-const testimonials = [
-    {
-        id: 1,
-        quote: "Imagine trying to keep up with everything using complex Google Sheets...",
-        name: "Carlos Jimenez",
-        title: "CIO and CISO",
-        bgColor: "bg-[#729fab]",
-        textColor: "text-[#a2a2a2]",
-        logoSrc: null,
-        logoWidth: null,
-    },
-    {
-        id: 2,
-        quote: "Since implementing Stitchflow, things have drastically improved...",
-        name: "Carlos Jimenez",
-        title: "CIO and CISO",
-        bgColor: "bg-[#1d1733]",
-        textColor: "text-white",
-        logoSrc: "/logo-3.svg",
-        logoWidth: "w-[115px]",
-    },
-    {
-        id: 3,
-        quote: "Stitchflow makes all of that so much easier...",
-        name: "Peter Hadjisavas",
-        title: "CIO and CISO",
-        bgColor: "bg-[#5a4adf]",
-        textColor: "text-white",
-        logoSrc: "/logo-2.svg",
-        logoWidth: "w-[99px]",
-    },
-];
+const TestimonialCarousel = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
+    const [autoplayPaused, setAutoplayPaused] = useState(false);
 
-const HomeTestimonialSection = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const testimonials = [
+        {
+            id: 1,
+            text: "Everyone trying to keep up with everything using complex Google Sheets and Excel spreadsheets — it was a nightmare. We were constantly cross-referencing new reports against available baseline which was incredibly time-consuming. Investigating license usage was a huge hassle — it was like having our detective work cut out for us on every case. The data was spread everywhere and we had to spend too much time just keeping track of it all. It's given me real peace of mind.",
+            author: "Carlos Jiménez",
+            position: "CIO at CMSI",
+            logo: "/images/rula.svg",
+            bgColor: "bg-indigo-950",
+        },
+        {
+            id: 2,
+            text: "Companies trying to keep up with everything using complex Google Sheets and Excel spreadsheets. It was a nightmare. We were constantly cross-referencing new reports against available baseline, which was incredibly time-consuming. Investigating license usage was a huge hassle.",
+            author: "Emma Thompson",
+            position: "IT Director",
+            logo: "/images/hazel.svg",
+            bgColor: "bg-green-100",
+        },
+        {
+            id: 3,
+            text: "One of the hardest things in IT is figuring out what groups do, who manages them, and what they're for. The engineering team trying to piece together this data could spend hours trying to manually or programmatically pull information from disparate locations. Having this all in one place helps us see patterns, inequalities, and access issues more clearly.",
+            author: "Peter Frankstone",
+            position: "VP Infrastructure",
+            logo: "/images/hazel.svg",
+            bgColor: "bg-purple-600",
+        },
+    ];
 
-    const next = () => {
-        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    const totalSlides = testimonials.length;
+
+    const nextSlide = () => {
+        if (!isAnimating) {
+            setIsAnimating(true);
+            setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+            setTimeout(() => setIsAnimating(false), 500);
+        }
     };
 
-    const prev = () => {
-        setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    const prevSlide = () => {
+        if (!isAnimating) {
+            setIsAnimating(true);
+            setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+            setTimeout(() => setIsAnimating(false), 500);
+        }
     };
+
+    // const goToSlide = (index: number) => {
+    //     if (!isAnimating && currentSlide !== index) {
+    //         setIsAnimating(true);
+    //         setCurrentSlide(index);
+    //         setTimeout(() => setIsAnimating(false), 500);
+    //     }
+    // };
+
+    const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        setTouchStart(e.targetTouches[0].clientX);
+        setAutoplayPaused(true);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStart - touchEnd > 75) {
+            nextSlide();
+        }
+
+        if (touchStart - touchEnd < -75) {
+            prevSlide();
+        }
+
+        setTimeout(() => setAutoplayPaused(false), 5000);
+    };
+
+    useEffect(() => {
+        if (autoplayPaused) return;
+
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [currentSlide, autoplayPaused]);
 
     return (
-        <section className="py-20 bg-white w-full relative overflow-hidden">
-            <div className="max-w-[1256px] mx-auto px-4">
-                <div className="flex items-center justify-between mb-16">
-                    <div className="max-w-[616px]">
-                        <h2 className="text-4xl font-semibold text-[#222] leading-tight">Learn from the Best</h2>
-                        <p className="text-base text-[#363338] leading-6 mt-2">
-                            Hear from IT teams who have tamed business sprawl with Stitchflow.
-                        </p>
-                    </div>
-                    <button className="rounded-xl border border-[#54505833] p-4">
-                        <span className="text-[#363338] text-sm font-medium">Download Case Study</span>
-                    </button>
-                </div>
+        <div className="relative px-4 lg:px-0 py-2">
+            <div className="flex justify-center items-center flex-wrap">
+                <div className="w-full md:w-[90%] lg:w-[80%]">
+                    <div className="flex items-center justify-between mb-[72px] flex-wrap">
+                        <div className="flex flex-col gap-2 max-w-[616px]">
+                            <h2 className="font-semibold text-[40px] leading-[48px] text-[#222222] font-['Geist',Helvetica]">
+                                Learn from the Best
+                            </h2>
+                            <p className="text-base text-[#363338] font-['Geist',Helvetica] leading-6">
+                                Hear from IT teams who have tamed business sprawl with Stitchflow.
+                            </p>
+                        </div>
 
-                <div className="relative">
-                    <div
-                        className="flex transition-transform duration-500 ease-in-out"
-                        style={{transform: `translateX(-${currentIndex * 100}%)`}}
-                    >
-                        {testimonials.map((t) => (
-                            <div key={t.id} className="min-w-full flex justify-center px-2">
-                                <div className={`w-[830px] h-[414px] ${t.bgColor} rounded-[32px] p-14 relative`}>
-                                    <p className="text-white text-base leading-6 mb-6">{t.quote}</p>
-                                    <div className="flex items-center gap-4">
-                                        <img
-                                            src="/images/Avatar.png"
-                                            alt={t.name}
-                                            className="w-12 h-12 rounded-full border"
-                                        />
-                                        <div>
-                                            <p className={`text-base font-medium ${t.textColor}`}>{t.name}</p>
-                                            <p className={`text-xs ${t.textColor}`}>{t.title}</p>
-                                        </div>
-                                    </div>
-                                    {t.logoSrc && (
-                                        <img
-                                            className={`absolute h-8 bottom-14 left-14 ${t.logoWidth}`}
-                                            alt="Logo"
-                                            src={t.logoSrc}
-                                        />
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Controls */}
-                    <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10">
-                        <button onClick={prev} className="bg-gray-200 p-2 rounded-full">
-                            &#8592;
-                        </button>
-                    </div>
-                    <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
-                        <button onClick={next} className="bg-gray-200 p-2 rounded-full">
-                            &#8594;
+                        <button
+                            //   variant="outline"
+                            className="rounded-xl border border-[#54505833] p-4"
+                        >
+                            <span className="font-label-medium text-[#363338] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)]">
+                                Download Case Study
+                            </span>
                         </button>
                     </div>
                 </div>
             </div>
-        </section>
+
+            {/* Carousel */}
+            <div
+                className="relative overflow-hidden"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onMouseEnter={() => setAutoplayPaused(true)}
+                onMouseLeave={() => setAutoplayPaused(false)}
+            >
+                <div
+                    className="flex transition-transform duration-500 ease-in-out gap-5"
+                    style={{transform: `translateX(-${currentSlide * 100}%)`}}
+                >
+                    {testimonials.map((testimonial) => (
+                        <div key={testimonial.id} className="w-full md:w-[50%] flex-shrink-0 ">
+                            <div
+                                className={`rounded-xl ${testimonial.bgColor} text-white p-6 md:p-8 lg:p-10 shadow-lg h-full flex flex-col`}
+                            >
+                                <blockquote className="flex-grow mb-6">
+                                    <p className="text-base md:text-lg lg:text-xl leading-relaxed">
+                                        &ldquo;{testimonial.text}&rdquo;
+                                    </p>
+                                </blockquote>
+
+                                <div className="flex items-center justify-between mt-auto">
+                                    <div className="flex items-center">
+                                        <div className="w-8 md:w-10 h-8 md:h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 md:mr-4">
+                                            <span className="text-sm font-bold">{testimonial.author.charAt(0)}</span>
+                                        </div>
+                                        <div>
+                                            <p className="font-semibold text-sm md:text-base">{testimonial.author}</p>
+                                            <p className="text-xs md:text-sm text-gray-200">{testimonial.position}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="h-6 md:h-8">
+                                        {testimonial.logo && (
+                                            <div className="h-full w-16 md:w-24 relative">
+                                                <Image
+                                                    src={testimonial.logo}
+                                                    alt={`${testimonial.author}'s company logo`}
+                                                    width={96}
+                                                    height={32}
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Pagination and Arrows */}
+            <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between">
+                {/* <div className="flex justify-center gap-2 mb-4 md:mb-0">
+                    {testimonials.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => goToSlide(index)}
+                            className={`w-2.5 h-2.5 rounded-full transition-all ${
+                                currentSlide === index ? "bg-blue-600 w-4" : "bg-gray-300"
+                            }`}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div> */}
+
+                {/* <div className="flex justify-center gap-3">
+                    <button
+                        onClick={prevSlide}
+                        className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+                        aria-label="Previous testimonial"
+                    >
+                        <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                        onClick={nextSlide}
+                        className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+                        aria-label="Next testimonial"
+                    >
+                        <ChevronRight className="w-5 h-5" />
+                    </button>
+                </div> */}
+            </div>
+        </div>
     );
 };
 
-export default HomeTestimonialSection;
+export default TestimonialCarousel;

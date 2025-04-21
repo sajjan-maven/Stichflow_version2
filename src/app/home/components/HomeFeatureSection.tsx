@@ -15,7 +15,7 @@ const HomeFeatureSection = () => {
         <section className="w-full py-20 z-[5] bg-gradient-to-b from-[#f8f5f3] to-white">
             <div className="max-w-4xl mx-auto px-6">
                 <div className="flex flex-col items-start gap-12">
-                    <img className="w-[41px] h-10" alt="Quote icon" src="/images/“.svg" />
+                    <Image className="w-[41px] h-10" alt="Quote icon" src="/images/“.svg" width={41} height={10} />
 
                     <div className="flex flex-col items-start gap-6">
                         <p className="text-lg text-[#363338] font-normal leading-[26px] font-['Geist',Helvetica] max-w-[800px]">

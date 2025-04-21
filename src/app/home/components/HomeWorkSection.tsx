@@ -1,70 +1,157 @@
-import React from "react";
+"use client";
+import React, {useState} from "react";
 
-const comparisonData = [
-    {
-        manual: "Manual cross-referencing of user counts against available licenses is time-consuming.",
-        withStitchflow: "All users are reconciled with the system of record—no need for spreadsheets or VLOOKUPs.",
-    },
-    {
-        manual: "Not dynamic enough for companies with frequent employee or org changes.",
-        withStitchflow: "Real-time insights and alerts adapt to company changes, policies, and exceptions.",
-    },
-    {
-        manual: "Inaccurate data disrupts license management, affecting renewals and cost savings.",
-        withStitchflow: "Accurate, up-to-date data prevents license gaps and maximizes cost efficiency.",
-    },
-];
+const comparisonData = {
+    licenseManagement: [
+        {
+            manual: "Manual cross-referencing of user counts against available licenses is time-consuming.",
+            withStitchflow: "All users are reconciled with the system of record—no need for spreadsheets or VLOOKUPs.",
+        },
+        {
+            manual: "Not dynamic enough for companies with frequent employee or org changes.",
+            withStitchflow: "Real-time insights and alerts adapt to company changes, policies, and exceptions.",
+        },
+        {
+            manual: "Inaccurate data disrupts license management, affecting renewals and cost savings.",
+            withStitchflow: "Accurate, up-to-date data prevents license gaps and maximizes cost efficiency.",
+        },
+    ],
+    secureOffboarding: [
+        {
+            manual: "Manual cross-referencing of user counts against available licenses is time-consuming.",
+            withStitchflow: "All users are reconciled with the system of record—no need for spreadsheets or VLOOKUPs.",
+        },
+        {
+            manual: "Not dynamic enough for companies with frequent employee or org changes.",
+            withStitchflow: "Real-time insights and alerts adapt to company changes, policies, and exceptions.",
+        },
+        {
+            manual: "Inaccurate data disrupts license management, affecting renewals and cost savings.",
+            withStitchflow: "Accurate, up-to-date data prevents license gaps and maximizes cost efficiency.",
+        },
+    ],
+    complianceAudits: [
+        {
+            manual: "Manual cross-referencing of user counts against available licenses is time-consuming.",
+            withStitchflow: "All users are reconciled with the system of record—no need for spreadsheets or VLOOKUPs.",
+        },
+        {
+            manual: "Not dynamic enough for companies with frequent employee or org changes.",
+            withStitchflow: "Real-time insights and alerts adapt to company changes, policies, and exceptions.",
+        },
+        {
+            manual: "Inaccurate data disrupts license management, affecting renewals and cost savings.",
+            withStitchflow: "Accurate, up-to-date data prevents license gaps and maximizes cost efficiency.",
+        },
+    ],
+};
 
 const HomeWorkSection = () => {
+    const [activeTab, setActiveTab] = useState<keyof typeof comparisonData>("licenseManagement");
+
+    const handleTabChange = (tab: keyof typeof comparisonData) => {
+        setActiveTab(tab);
+    };
+
     return (
-        <section className="flex flex-col items-center gap-20 py-20 px-6 md:px-12 lg:px-[236px] w-full bg-white z-10 relative">
-            <div className="flex flex-col w-full max-w-[830px] items-center gap-10">
-                <div className="text-center">
-                    <h2 className="text-4xl font-semibold text-[#222222] leading-tight">
-                        How Stitchflow Makes a Difference
-                    </h2>
-                </div>
+        <section className="flex justify-center items-center gap-20 py-20  w-full bg-white z-10 relative px-4 lg:px-0">
+            <div className="w-full md:w-[90%] lg:w-[80%]">
+                <div className="flex flex-col w-full max-w-4xl items-center gap-10 mx-auto">
+                    <div className="text-center">
+                        <h2 className="text-4xl font-semibold text-gray-900 leading-tight">
+                            How Stitchflow Makes a Difference
+                        </h2>
+                    </div>
 
-                {/* Replace this with your own custom tab component if you're not using one */}
-                <div className="flex items-center gap-2 bg-[#f8f5f3] p-2 rounded-full w-full">
-                    <button className="flex-1 px-3 py-2 text-white bg-[#363338] rounded-full shadow-md">
-                        License Management
-                    </button>
-                    <button className="flex-1 px-3 py-2 text-[#7b7481] rounded-full">Secure Offboarding</button>
-                    <button className="flex-1 px-3 py-2 text-[#7b7481] rounded-full">Compliance Audits</button>
-                </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row w-full border border-[#545058] rounded-[32px] overflow-hidden">
-                {/* Manual Side */}
-                <div className="w-full md:w-1/2">
-                    <div className="border-b md:border-b-0 md:border-r border-[#545058]">
-                        <div className="flex items-center justify-center gap-4 px-8 py-6 border-b border-[#545058]">
-                            <img src="/icon-6.svg" alt="Icon" className="w-6 h-6" />
-                            <h3 className="text-[#363338] text-lg font-medium">Manual Reconciliation</h3>
+                    {/* Scrollable tabs for mobile */}
+                    <div className="w-full overflow-x-auto  lg:flex justify-center items-center">
+                        <div className="flex items-center gap-2 bg-gray-100 p-2 rounded-full w-full  lg:w-[60%] min-w-max">
+                            <button
+                                className={`whitespace-nowrap px-4 py-2 ${
+                                    activeTab === "licenseManagement" ? "text-white bg-gray-800" : "text-gray-500"
+                                } rounded-full transition-colors ${
+                                    activeTab === "licenseManagement" ? "shadow-md" : ""
+                                }`}
+                                onClick={() => handleTabChange("licenseManagement")}
+                            >
+                                License Management
+                            </button>
+                            <button
+                                className={`whitespace-nowrap px-4 py-2 ${
+                                    activeTab === "secureOffboarding" ? "text-white bg-gray-800" : "text-gray-500"
+                                } rounded-full transition-colors ${
+                                    activeTab === "secureOffboarding" ? "shadow-md" : ""
+                                }`}
+                                onClick={() => handleTabChange("secureOffboarding")}
+                            >
+                                Secure Offboarding
+                            </button>
+                            <button
+                                className={`whitespace-nowrap px-4 py-2 ${
+                                    activeTab === "complianceAudits" ? "text-white bg-gray-800" : "text-gray-500"
+                                } rounded-full transition-colors ${
+                                    activeTab === "complianceAudits" ? "shadow-md" : ""
+                                }`}
+                                onClick={() => handleTabChange("complianceAudits")}
+                            >
+                                Compliance Audits
+                            </button>
                         </div>
-                        {comparisonData.map((item, index) => (
-                            <div key={`manual-${index}`} className="p-8 border-b border-[#545058]">
-                                <p className="text-[#383f3b] text-lg leading-[26px]">{item.manual}</p>
-                            </div>
-                        ))}
                     </div>
                 </div>
-
-                {/* Stitchflow Side */}
-                <div className="w-full md:w-1/2">
-                    <div className="bg-[#deeaf9]">
-                        <div className="flex items-center justify-center gap-4 px-8 py-6 border-b border-[#545058]">
-                            <img src="/logo-icon.svg" alt="Logo icon" className="w-6 h-6" />
-                            <h3 className="text-[#363338] text-lg font-medium">With Stitchflow</h3>
-                        </div>
-                        {comparisonData.map((item, index) => (
-                            <div key={`stitchflow-${index}`} className="p-8 bg-[#f2f6fc] border-b border-[#545058]">
-                                <p className="text-[#383f3b] text-lg leading-[26px]">{item.withStitchflow}</p>
+                <br /> <br /> <br />
+                <div className="mt-8px">
+                    <div className="w-full">
+                        <div className="flex flex-col md:flex-row w-full border border-[#545058] rounded-3xl overflow-hidden">
+                            {/* Manual Side */}
+                            <div className="w-full md:w-1/2">
+                                <div className="border-b md:border-b-0 md:border-r border-[#545058]">
+                                    <div className="flex items-center justify-center gap-4 px-8 py-6 border-b border-[#545058]">
+                                        <img src="/icon-6.svg" alt="Icon" className="w-6 h-6" />
+                                        <h3 className="text-[#363338] text-lg font-medium">Manual Reconciliation</h3>
+                                    </div>
+                                    {comparisonData[activeTab].map((item, index) => (
+                                        <div
+                                            key={`manual-${index}`}
+                                            className={`p-8 ${
+                                                index !== comparisonData[activeTab].length - 1
+                                                    ? "border-b border-[#545058]"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <p className="text-[#383f3b] text-lg leading-relaxed">{item.manual}</p>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        ))}
+
+                            {/* Stitchflow Side */}
+                            <div className="w-full md:w-1/2">
+                                <div className="bg-blue-50">
+                                    <div className="flex items-center justify-center gap-4 px-8 py-6 border-b border-[#545058]">
+                                        <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
+                                        <h3 className="text-[#363338] text-lg font-medium">With Stitchflow</h3>
+                                    </div>
+                                    {comparisonData[activeTab].map((item, index) => (
+                                        <div
+                                            key={`stitchflow-${index}`}
+                                            className={`p-8 bg-blue-50 ${
+                                                index !== comparisonData[activeTab].length - 1
+                                                    ? "border-b border-[#545058]"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <p className="text-[#383f3b] text-lg leading-relaxed">
+                                                {item.withStitchflow}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div className="h-2 border-b border-[#E4DFDC] py-6"></div>
             </div>
         </section>
     );
