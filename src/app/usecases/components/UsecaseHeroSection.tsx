@@ -8,7 +8,7 @@ const UsecaseHeroSection = () => {
                 <div className="flex justify-center items-center flex-wrap">
                     <div className="w-full md:w-[90%] lg:w-[80%] ">
                         <div className="relative h-[935px] top-35 ">
-                            <div className="flex justify-center items-center flex-wrap ">
+                            <div className="flex justify-center items-center flex-wrap gap-8">
                                 <div className="flex flex-col items-center gap-4 relative self-stretch w-full text-center">
                                     <h1 className="text-center self-stretch mt-[-1.00px] font-['Geist',Helvetica] font-semibold text-[#363338] text-[40px] text-center tracking-[0] leading-[48px]">
                                         Accurate. Continuous. Effortless

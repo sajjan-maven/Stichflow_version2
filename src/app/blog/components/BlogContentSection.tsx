@@ -18,7 +18,7 @@ const featuredPosts = [
         date: "Jan 01, 2025",
         category: "Saas Management",
         categoryColor: "bg-[#f1acc0]",
-        image: "/img.png",
+        image: "/images/img.svg",
     },
     {
         id: 2,
@@ -29,7 +29,7 @@ const featuredPosts = [
         date: "Jan 01, 2025",
         category: "Saas Management",
         categoryColor: "bg-[#f1acc0]",
-        image: "/img-1.png",
+        image: "/images/img-1.svg",
     },
 ];
 
@@ -43,7 +43,7 @@ const recentPosts = [
         date: "Jan 01, 2025",
         category: "Saas Management",
         categoryColor: "bg-[#f1acc0]",
-        image: "/img-2.png",
+        image: "/images/img-2.svg",
     },
     {
         id: 2,
@@ -54,7 +54,7 @@ const recentPosts = [
         date: "Jan 01, 2025",
         category: "IT Tools",
         categoryColor: "bg-[#fce481]",
-        image: "/img-3.png",
+        image: "/images/img-3.svg",
     },
     {
         id: 3,
@@ -65,7 +65,7 @@ const recentPosts = [
         date: "Jan 01, 2025",
         category: "Security and compliance",
         categoryColor: "bg-[#a3c4f4]",
-        image: "/img-4.png",
+        image: "/images/img-4.svg",
     },
     {
         id: 4,
@@ -76,7 +76,7 @@ const recentPosts = [
         date: "Jan 01, 2025",
         category: "Product updates",
         categoryColor: "bg-[#76cab3]",
-        image: "/img-5.png",
+        image: "/images/img-5.svg",
     },
 ];
 
@@ -139,7 +139,7 @@ const BlogContentSection = () => {
                         placeholder="Email address"
                         className="w-full sm:w-[280px] p-3 bg-[#f8f5f3] border border-[#e4dbd0] rounded-xl text-[#aca8b2]"
                     />
-                    <button className="p-3 px-6 rounded-xl border border-[#54505833] bg-white text-[#363338] font-medium">
+                    <button className="p-3 px-6 rounded-xl border border-[#54505833] bg-white text-[#363338] font-medium cursor-not-allowed">
                         Subscribe
                     </button>
                 </div>
@@ -176,7 +176,7 @@ const BlogContentSection = () => {
             </div>
 
             {/* Load More */}
-            <button className="px-6 py-4 rounded-xl border border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] bg-gradient-to-b from-white to-[#f9f8fa] text-[#363338] font-medium">
+            <button className="px-6 py-4 rounded-xl border border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] bg-gradient-to-b from-white to-[#f9f8fa] text-[#363338] font-medium cursor-not-allowed">
                 Load more posts
             </button>
         </section>
