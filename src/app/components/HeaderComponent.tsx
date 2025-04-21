@@ -1,3 +1,4 @@
+"use client";
 import React, {useEffect, useState, useRef} from "react";
 import {ArrowRightIcon, Menu, X} from "lucide-react";
 import Image from "next/image";

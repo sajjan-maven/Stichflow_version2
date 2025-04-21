@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const InsightsSection = () => {
   const testimonialData = {
     quote:
@@ -10,10 +12,10 @@ export const InsightsSection = () => {
   };
 
   return (
-    <section className="flex flex-col items-center py-20 w-full bg-white">
-      <div className="max-w-[800px] border-none shadow-none mx-auto">
-        <div className="flex flex-col items-start gap-12 p-14">
-          <img className="w-[41px] h-10" alt="Quote icon" src="/free-pilot/quotation.png" />
+    <section className="flex flex-col items-center py-4 md:py-20 w-full bg-white">
+      <div className="max-w-[848px] border-none shadow-none mx-auto">
+        <div className="flex flex-col items-start gap-6 md:gap-12 p-6">
+          <Image width={41} height={40} alt="Quote icon" src="/free-pilot/quotation.png" />
 
           <div className="flex flex-col items-start gap-6">
             <p className="font-['Geist',Helvetica] font-normal text-[#363338] text-lg leading-[26px]">
@@ -21,8 +23,10 @@ export const InsightsSection = () => {
             </p>
 
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 border border-solid rounded-full border-[#54505833]">
-                <img
+              <div className="border border-solid rounded-full border-[#54505833]">
+                <Image
+                  height={48}
+                  width={48}
                   src={testimonialData.author.avatarUrl}
                   alt={testimonialData.author.name}
                 />
