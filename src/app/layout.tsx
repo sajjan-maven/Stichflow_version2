@@ -1,20 +1,19 @@
 import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+
 import "./globals.css";
-import Link from "next/link";
 import HeaderComponent from "./components/HeaderComponent";
 import DemoComponent from "./components/DemoComponent";
 import FooterComponent from "./components/FooterComponent";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
+// const geistSans = Geist({
+//     variable: "--font-geist-sans",
+//     subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//     variable: "--font-geist-mono",
+//     subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -28,8 +27,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <div className="flex gap-4 p-1">
+            {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
+            <body>
+                {/* <div className="flex gap-4 p-1">
                     <Link href="/case-study" title="case-study">
                         case-study
                     </Link>
@@ -51,7 +51,7 @@ export default function RootLayout({
                     <Link href="/use-cases" title="use-cases">
                         use-cases
                     </Link>
-                </div>
+                </div> */}
                 <header>
                     <HeaderComponent />
                 </header>

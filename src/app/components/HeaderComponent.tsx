@@ -79,7 +79,7 @@ const HeaderComponent = () => {
                             <p className="text-sm text-gray-500">Insights, trends, and best practices in IT.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/casestudy")}
+                            onClick={() => router.push("/case-study")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Case Studies</h5>
