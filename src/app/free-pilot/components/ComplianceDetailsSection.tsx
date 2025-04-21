@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const businessValueFeatures = [
@@ -65,9 +66,9 @@ const reconciliationFeatures = [
 
 export const ComplianceDetailsSection = () => {
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 xl:px-24 flex flex-col gap-20 w-full">
+    <section className="py-10 md:py-20 px-4 md:px-8 lg:px-16 xl:px-24 flex flex-col gap-20 w-full">
       <div className="flex flex-col w-full items-start gap-10 max-w-[1256px] mx-auto">
-        <h2 className="text-[40px] leading-[48px] font-semibold text-[#363338] font-['Geist',Helvetica]">
+        <h2 className="text-3xl md:text-[40px] md:leading-[48px] font-semibold text-[#363338] font-['Geist',Helvetica]">
           Quantified business value in just 4 weeks
         </h2>
 
@@ -80,8 +81,9 @@ export const ComplianceDetailsSection = () => {
               >
                 <div className="p-0">
                   <div className="flex flex-col items-start gap-2">
-                    <img
-                      className="w-6 h-6"
+                    <Image
+                      width={24}
+                      height={24}
                       alt={feature.title}
                       src={feature.icon}
                     />
@@ -103,8 +105,9 @@ export const ComplianceDetailsSection = () => {
               <div className="border-none shadow-none bg-transparent">
                 <div className="p-0">
                   <div className="flex flex-col items-start gap-2">
-                    <img
-                      className="w-6 h-6"
+                    <Image
+                      width={24}
+                      height={24}
                       alt={businessValueFeatures[4].title}
                       src={businessValueFeatures[4].icon}
                     />
@@ -123,7 +126,7 @@ export const ComplianceDetailsSection = () => {
       </div>
 
       <div className="flex flex-col w-full items-start gap-10 max-w-[1256px] mx-auto">
-        <h2 className="text-[40px] leading-[48px] font-semibold text-[#363338] font-['Geist',Helvetica]">
+        <h2 className="text-3xl md:text-[40px] md:leading-[48px] font-semibold text-[#363338] font-['Geist',Helvetica]">
           See how Stitchflow's reconciliation identifies and prioritizes
           opportunities in your environment
         </h2>
@@ -137,12 +140,13 @@ export const ComplianceDetailsSection = () => {
               >
                 <div className="p-0">
                   <div className="flex flex-col items-start gap-2">
-                    <img
-                      className="w-6 h-6"
+                    <Image
+                      width={24}
+                      height={24}
                       alt={feature.title}
                       src={feature.icon}
                     />
-                    <h3 className="font-h5-medium font-[number:var(--h5-medium-font-weight)] text-[#363338] text-[length:var(--h5-medium-font-size)] tracking-[var(--h5-medium-letter-spacing)] leading-[var(--h5-medium-line-height)]">
+                    <h3 className="font-medium text-[#363338]">
                       {feature.title}
                     </h3>
                     <p className="font-['Geist',Helvetica] font-normal text-[#7b7481] text-base leading-6">
