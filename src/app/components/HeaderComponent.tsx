@@ -39,21 +39,21 @@ const HeaderComponent = () => {
                     {/* <h4 className="text-sm font-semibold text-gray-400 mb-3">Platform</h4> */}
                     <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
                         <div
-                            onClick={() => router.push("/product")}
+                            onClick={() => router.push("/product-page")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Product</h5>
                             <p className="text-sm text-gray-500">Learn how to tame business sprawl with Stitchflow.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/usecase")}
+                            onClick={() => router.push("/usecases")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Use Cases</h5>
                             <p className="text-sm text-gray-500">How teams put Stitchflow into action.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/pilot")}
+                            onClick={() => router.push("/free-pilot")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Free Pilot</h5>
