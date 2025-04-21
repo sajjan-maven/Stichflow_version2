@@ -52,7 +52,14 @@ export default function RootLayout({
                         use-cases
                     </Link>
                 </div>
-                {children}
+                <header>
+                    <HeaderComponent />
+                </header>
+                <main>{children}</main>
+                <footer>
+                    <DemoComponent />
+                    <FooterComponent />
+                </footer>
             </body>
         </html>
     );
