@@ -25,7 +25,6 @@ const recentPosts = [
     },
 ];
 
-// Table of contents data
 const tableOfContents = [
     {
         title: "Active section name here",
@@ -55,9 +54,7 @@ const InnerBlog = () => {
     return (
         <div className="w-full min-h-screen bg-[#F8F5F3]">
             <main className="flex w-full items-start gap-20 pt-20 pb-40 px-6 max-w-[1304px] mx-auto relative">
-                {/* Main content column */}
                 <div className="flex-col w-full lg:w-[829px] items-start gap-16 flex relative">
-                    {/* Blog header */}
                     <header className="flex flex-col w-full items-start gap-6 relative bg-transparent">
                         <div className="inline-flex items-center justify-end gap-2 p-4 rounded-xl border border-solid border-[#54505833]">
                             <div className="relative w-4 h-4">

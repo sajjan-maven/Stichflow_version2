@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, {useState} from "react";
 
 const comparisonData = {
@@ -107,7 +108,13 @@ const HomeWorkSection = () => {
                             <div className="w-full md:w-1/2">
                                 <div className="border-b md:border-b-0 md:border-r border-[#545058]">
                                     <div className="flex items-center justify-center gap-4 px-8 py-6 border-b border-[#545058]">
-                                        <img src="/icon-6.svg" alt="Icon" className="w-6 h-6" />
+                                        <Image
+                                            src="/images/close.svg"
+                                            alt="Icon"
+                                            className="w-6 h-6"
+                                            width={6}
+                                            height={6}
+                                        />
                                         <h3 className="text-[#363338] text-lg font-medium">Manual Reconciliation</h3>
                                     </div>
                                     {comparisonData[activeTab].map((item, index) => (
@@ -129,7 +136,14 @@ const HomeWorkSection = () => {
                             <div className="w-full md:w-1/2">
                                 <div className="bg-blue-50">
                                     <div className="flex items-center justify-center gap-4 px-8 py-6 border-b border-[#545058]">
-                                        <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
+                                        {/* <div className="w-6 h-6 bg-blue-500 rounded-full"></div> */}
+                                        <Image
+                                            src="/images/logo icon.svg"
+                                            alt="Icon"
+                                            className="w-6 h-6"
+                                            width={6}
+                                            height={6}
+                                        />
                                         <h3 className="text-[#363338] text-lg font-medium">With Stitchflow</h3>
                                     </div>
                                     {comparisonData[activeTab].map((item, index) => (
