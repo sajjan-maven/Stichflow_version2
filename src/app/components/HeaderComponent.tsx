@@ -72,7 +72,7 @@ const HeaderComponent = () => {
                     {/* <h4 className="text-sm font-semibold text-gray-400 mb-3">Resources</h4> */}
                     <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
                         <div
-                            onClick={() => router.push("/blogpage")}
+                            onClick={() => router.push("/blog")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Blog</h5>
