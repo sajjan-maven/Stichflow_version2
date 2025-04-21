@@ -33,7 +33,7 @@ export default function StepsSection() {
           number: 4,
           title: "Filter to represent your unique policies and exceptions",
           description:
-            "Stitchflow helps you filter reconciled data to represent your company's unique policies and exceptions.",
+            "Stitchflow helps you filter reconciled data to represent your company&lsquo;s unique policies and exceptions.",
           image: "",
           imageWidth: 0,
           imageHeight: 0,
@@ -42,7 +42,7 @@ export default function StepsSection() {
           number: 5,
           title: "Set up automatic alerts for critical issues",
           description:
-            "Stitchflow's automated insights help uncover gaps, prevent risks and identify vulnerabilities.",
+            "Stitchflow&lsquo;s automated insights help uncover gaps, prevent risks and identify vulnerabilities.",
           image: "/product-page/step-5.png",
           imageWidth: 546,
           imageHeight: 247

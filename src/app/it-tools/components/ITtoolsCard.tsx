@@ -1,39 +1,34 @@
 import Image from "next/image";
 
 export default function ITtoolsCard() {
-    const navigationItems = [
-        { name: "Platform", hasDropdown: true },
-        { name: "App Audits", hasDropdown: false },
-        { name: "Resources", hasDropdown: true },
-        { name: "Company", hasDropdown: true },
-      ];
       
-      const itTools = [
-        {
-          icon: '/it-tools/log-out.png',
-          title: "OffboardIT",
-          description:
-            "Free IT Offboarding Checklist: Streamline your org's offboarding process. Never miss a critical step in your IT offboarding process. Create a customized list of tasks based on the departing employee's role and department.",
-        },
-        {
-          icon: '/it-tools/file-check.png',
-          title: "Renewal tracker",
-          description:
-            "Free SaaS Contract Renewal Tracker. Never miss a SaaS renewal. Organize contracts in one view, track upcoming renewal dates, and stay ahead with automated reminders.",
-        },
-        {
-          icon: '/it-tools/log-out.png',
-          title: "App Access Matrix",
-          description:
-            "Free SaaS App Access Policy Matrix for IT Teams. A structured way to define, review, and share the SaaS app access policies that your organization uses per app and per user role, team, department or location.",
-        },
-        {
-          icon: '/it-tools/briefcase.png',
-          title: "Fwd IT Job Board",
-          description:
-            "Meet your modern IT job board. Every role here is handpicked, vetted, and curated for modern IT pros. Filter by organization size, growth stage, tech stack, and culture fit—we bring you the most relevant jobs at companies that truly value IT.",
-        },
-      ];
+  const itTools = [
+    {
+      icon: '/it-tools/log-out.png',
+      title: "OffboardIT",
+      description:
+        "Free IT Offboarding Checklist: Streamline your org&lsquo;s offboarding process. Never miss a critical step in your IT offboarding process. Create a customized list of tasks based on the departing employee&lsquo;s role and department.",
+    },
+    {
+      icon: '/it-tools/file-check.png',
+      title: "Renewal tracker",
+      description:
+        "Free SaaS Contract Renewal Tracker. Never miss a SaaS renewal. Organize contracts in one view, track upcoming renewal dates, and stay ahead with automated reminders.",
+    },
+    {
+      icon: '/it-tools/log-out.png',
+      title: "App Access Matrix",
+      description:
+        "Free SaaS App Access Policy Matrix for IT Teams. A structured way to define, review, and share the SaaS app access policies that your organization uses per app and per user role, team, department or location.",
+    },
+    {
+      icon: '/it-tools/briefcase.png',
+      title: "Fwd IT Job Board",
+      description:
+        "Meet your modern IT job board. Every role here is handpicked, vetted, and curated for modern IT pros. Filter by organization size, growth stage, tech stack, and culture fit—we bring you the most relevant jobs at companies that truly value IT.",
+    },
+  ];
+  
   return (
     <section className="flex flex-col items-center gap-6 py-6 md:py-40 relative w-full z-[2]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1304px] px-6">

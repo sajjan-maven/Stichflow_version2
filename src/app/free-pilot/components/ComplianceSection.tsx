@@ -23,15 +23,6 @@ export const ComplianceSection = () => {
     },
   ];
 
-  // Data for the illustration labels
-  const illustrationLabels = [
-    { text: "Activity", top: "242px", left: "697px" },
-    { text: "Contractors", top: "85px", left: "577px" },
-    { text: "Departments", top: "11px", left: "683px" },
-    { text: "Applications", top: "149px", left: "0" },
-    { text: "Devices", top: "356px", left: "85px" },
-  ];
-
   return (
     <section className="flex flex-col items-center py-4 md:py-20 px-6 md:px-12 lg:px-24 relative w-full z-[4] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(248,245,243,1)_100%)]">
       <div className="flex flex-col items-center gap-20 w-full  max-w-[1256px] mx-auto">

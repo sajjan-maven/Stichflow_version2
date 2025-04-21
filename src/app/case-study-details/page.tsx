@@ -1,13 +1,7 @@
 import Image from "next/image";
 
 export default function CaseStudiesDetails() {
-  // Navigation menu items
-  const navItems = [
-    { name: "Platform", hasDropdown: true },
-    { name: "App Audits", hasDropdown: false },
-    { name: "Resources", hasDropdown: true },
-    { name: "Company", hasDropdown: true },
-  ];
+
 
   // Case study stats
   const statsData = [
@@ -17,7 +11,7 @@ export default function CaseStudiesDetails() {
     },
     {
       value: "100%",
-      description: "compliance with Turing's security policies",
+      description: "compliance with Turing&lsquo;s security policies",
     },
     {
       value: "220",
@@ -68,7 +62,7 @@ export default function CaseStudiesDetails() {
               </div>
 
               <h1 className="md:text-[34px] text-3xl font-medium text-[#363338] text-center">
-                How Stitchflow enabled Turing's IT and security team to adapt to
+                How Stitchflow enabled Turing&lsquo;s IT and security team to adapt to
                 business scale
               </h1>
 
@@ -101,14 +95,14 @@ export default function CaseStudiesDetails() {
                   <Image width={41} height={40} alt="Quote" src="/case-study-details/quotation.png" />
                   <div className="flex flex-col items-start gap-6 w-full">
                     <p className="[font-family:'Geist',Helvetica] font-normal text-[#363338] text-lg leading-[26px]">
-                      Our biggest challenge wasn't just managing access gaps and
+                      Our biggest challenge wasn&apos;t just managing access gaps and
                       maintaining stringent security standards with our dynamic
-                      workforce. Our manual processes couldn't keep up with the
+                      workforce. Our manual processes couldn&apos;t keep up with the
                       scale.
                     </p>
                     <div className="flex items-center gap-4 w-full">
                       <div className="w-12 h-12 rounded-[100px] border border-solid border-[#54505833] overflow-hidden">
-                        <img width={48} height={48} src="/case-study-details/Avatar.png" alt="Amit Sharma" />
+                        <Image width={48} height={48} src="/case-study-details/Avatar.png" alt="Amit Sharma" />
                       </div>
                       <div className="flex flex-col items-start gap-1 flex-1">
                         <p className="[font-family:'Geist',Helvetica] font-medium text-[#7b7481] text-base leading-6">
@@ -126,10 +120,10 @@ export default function CaseStudiesDetails() {
               {/* Challenge Section */}
               <section className="flex flex-col items-start gap-6 w-full">
                 <h2 className="text-2xl font-medium text-[#363338]">
-                  Turing's challenge
+                  Turing&lsquo;s challenge
                 </h2>
                 <p className="[font-family:'Geist',Helvetica] font-normal text-[#363338] text-base leading-6">
-                  To support Turing's rapid company growth, the nuances
+                  To support Turing&lsquo;s rapid company growth, the nuances
                   that&nbsp;&nbsp;their IT and security teams needed to deal
                   with included:
                   <br />
@@ -152,19 +146,19 @@ export default function CaseStudiesDetails() {
               {/* Response Section */}
               <section className="flex flex-col items-start gap-6 w-full">
                 <h2 className="text-2xl font-medium text-[#363338]">
-                  Turing's Response
+                  Turing&lsquo;s Response
                 </h2>
                 <p className="[font-family:'Geist',Helvetica] font-normal text-[#363338] text-base leading-6">
-                  Stitchflow's customized SaaS management solution met Turing's
+                  Stitchflow&lsquo;s customized SaaS management solution met Turing&lsquo;s
                   needs and:
                   <br />
                   <br />
                   Completed initial setup in 30 minutes
                   <br />
-                  Stitched together all of Turing's tools, including different
+                  Stitched together all of Turing&lsquo;s tools, including different
                   IDPs
                   <br />
-                  Mapped Turing's IT and security processes
+                  Mapped Turing&lsquo;s IT and security processes
                   <br />
                   Automated security policy enforcement
                   <br />
@@ -228,8 +222,9 @@ export default function CaseStudiesDetails() {
                         className="w-full h-[200px] rounded-3xl flex items-center justify-center"
                         style={{ backgroundColor: story.color }}
                       >
-                        <img
-                          className="h-10"
+                        <Image
+                          height={40}
+                          width={40}
                           alt={`${story.name} logo`}
                           src={story.logoSrc}
                         />

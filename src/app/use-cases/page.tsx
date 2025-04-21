@@ -1,13 +1,7 @@
 import Image from "next/image";
 
 export default function UseCases() {
-  // Navigation menu items data
-  const navItems = [
-    { name: "Platform", hasDropdown: true },
-    { name: "App Audits", hasDropdown: false },
-    { name: "Resources", hasDropdown: true },
-    { name: "Company", hasDropdown: true },
-  ];
+
 
   // Use case sections data
   const useCases = [
@@ -21,14 +15,14 @@ export default function UseCases() {
     {
       title: "Secure Offboarding",
       description:
-        '"Before Stitchflow, offboarding was a huge manual effort and error-prone.Now, with Stitchflow, we have dashboards that let us instantly see discrepancies—who is deactivated in Google but still active elsewhere—so we can quickly close those gaps. It\'s a game changer for our team."',
+        '"Before Stitchflow, offboarding was a huge manual effort and error-prone.Now, with Stitchflow, we have dashboards that let us instantly see discrepancies—who is deactivated in Google but still active elsewhere—so we can quickly close those gaps. It\&lsquo;s a game changer for our team."',
       bgColor: "bg-[#ff7c2b]",
       imageSrc: "/use-cases/section.png",
     },
     {
       title: "Error-free Compliance",
       description:
-        '"Stitchflow has helped us ensure compliance (SOC 2, ISO) by making access audits quick and accurate. It\'s reduced security risks by flagging unnecessary permissions and inactive accounts."',
+        '"Stitchflow has helped us ensure compliance (SOC 2, ISO) by making access audits quick and accurate. It\&lsquo;s reduced security risks by flagging unnecessary permissions and inactive accounts."',
       bgColor: "bg-[#f8be65]",
       imageSrc: "/use-cases/section.png",
     },
