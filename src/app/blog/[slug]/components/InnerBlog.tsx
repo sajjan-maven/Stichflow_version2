@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const recentPosts = [
     {
         id: 1,
@@ -56,12 +57,14 @@ const InnerBlog = () => {
             <main className="flex w-full items-start gap-20 pt-20 pb-40 px-6 max-w-[1304px] mx-auto relative">
                 <div className="flex-col w-full lg:w-[829px] items-start gap-16 flex relative">
                     <header className="flex flex-col w-full items-start gap-6 relative bg-transparent">
-                        <div className="inline-flex items-center justify-end gap-2 p-4 rounded-xl border border-solid border-[#54505833]">
-                            <div className="relative w-4 h-4">
-                                <Image width={16} height={16} alt="Icon" src="/blog-details/arrow-left.png" />
+                        <Link href="/blog" passHref>
+                            <div className="inline-flex items-center justify-end gap-2 p-4 rounded-xl border border-solid border-[#54505833]">
+                                <div className="relative w-4 h-4">
+                                    <Image width={16} height={16} alt="Icon" src="/blog-details/arrow-left.png" />
+                                </div>
+                                <span className="font-label-medium text-[#363338]">Blog</span>
                             </div>
-                            <span className="font-label-medium text-[#363338]">Blog</span>
-                        </div>
+                        </Link>
 
                         <h1 className="self-stretch font-h2-medium text-[#363338]">
                             Spring Cleaning for Your SaaS Stack: How to Audit Slack, Zoom, and IDP Assignments at Scale
