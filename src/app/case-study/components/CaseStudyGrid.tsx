@@ -65,8 +65,8 @@ export default function CaseStudyGrid() {
         },
     ];
     return (
-        <section className="w-full px-6 max-w-[1272px] py-20 md:py-40 mx-auto">
-            <div className="flex flex-col items-center gap-6 max-w-[1288px] mx-auto">
+        <section className="w-full px-6 py-20 md:py-40 mx-auto">
+            <div className="flex flex-col items-center gap-6 max-w-[1256px] mx-auto">
                 {/* Featured Case Study */}
                 <div className="w-full">
                     <div className="flex flex-col md:flex-row border border-solid border-[#545058] rounded-[32px] overflow-hidden">

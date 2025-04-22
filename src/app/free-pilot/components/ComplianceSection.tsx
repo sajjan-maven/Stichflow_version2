@@ -24,11 +24,11 @@ export const ComplianceSection = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center py-4 md:py-20 px-6 md:px-12 lg:px-24 relative w-full z-[4] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(248,245,243,1)_100%)]">
+    <section className="flex flex-col items-center py-4 md:py-20 px-6 relative w-full z-[4] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(248,245,243,1)_100%)]">
       <div className="flex flex-col items-center gap-20 w-full  max-w-[1256px] mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 w-full">
           <div className="flex flex-col w-full lg:w-[509px] items-center justify-center gap-10">
-            <h2 className="font-semibold text-3xl md:text-[40px] font-['Geist',Helvetica] text-[#363338]">
+            <h2 className="font-semibold text-3xl md:text-[40px] text-[#363338]">
               30 minute connection call
             </h2>
 

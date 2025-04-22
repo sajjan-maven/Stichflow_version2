@@ -96,13 +96,13 @@ const TestimonialCarousel = () => {
     return (
         <div className="relative px-4 lg:px-0 py-2">
             <div className="flex justify-center items-center flex-wrap">
-                <div className="w-full md:w-[90%] lg:w-[80%]">
+                <div className="w-full max-w-[1256px] mx-auto">
                     <div className="flex items-center justify-between mb-[72px] flex-wrap">
-                        <div className="flex flex-col gap-2 max-w-[616px]">
-                            <h2 className="font-semibold text-[40px] leading-[48px] text-[#222222] font-['Geist',Helvetica]">
+                        <div>
+                            <h2 className="font-semibold text-[40px] leading-[48px] text-[#222222]">
                                 Learn from the Best
                             </h2>
-                            <p className="text-base text-[#363338] font-['Geist',Helvetica] leading-6">
+                            <p className="text-base text-[#363338] leading-6">
                                 Hear from IT teams who have tamed business sprawl with Stitchflow.
                             </p>
                         </div>

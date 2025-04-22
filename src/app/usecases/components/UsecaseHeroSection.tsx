@@ -10,10 +10,10 @@ const UsecaseHeroSection = () => {
                         <div className="relative h-[935px] top-35 ">
                             <div className="flex justify-center items-center flex-wrap gap-8">
                                 <div className="flex flex-col items-center gap-4 relative self-stretch w-full text-center">
-                                    <h1 className="text-center self-stretch mt-[-1.00px] font-['Geist',Helvetica] font-semibold text-[#363338] text-[40px] text-center tracking-[0] leading-[48px]">
+                                    <h1 className="text-center self-stretch mt-[-1.00px] font-semibold text-[#363338] text-[40px] text-center tracking-[0] leading-[48px]">
                                         Accurate. Continuous. Effortless
                                     </h1>
-                                    <p className="text-center self-stretch font-['Geist',Helvetica] font-normal text-[#363338] text-lg text-center tracking-[0] leading-8">
+                                    <p className="text-center self-stretch font-normal text-[#363338] text-lg text-center tracking-[0] leading-8">
                                         Discover how Stitchflow&apos;s instant reconciliation makes a difference to any
                                         use case.
                                     </p>

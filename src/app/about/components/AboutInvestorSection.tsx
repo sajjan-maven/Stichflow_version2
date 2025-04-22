@@ -54,15 +54,11 @@ const investors = [
 
 const AboutInvestorSection = () => {
     return (
-        <div className="px-4 md:px-8 flex justify-center pt-20 pb-20 px-4 lg:px-0">
-            <section className="w-full">
-                <div className="flex justify-center items-center flex-wrap">
-                    <div className="w-full md:w-[90%] lg:w-[80%]">
-                        <h2 className="font-semibold text-[#363338] text-3xl md:text-[40px] leading-tight md:leading-[48px] mb-6 md:mb-10 font-['Geist',Helvetica]">
-                            Our Investors
-                        </h2>
-                    </div>
-                </div>
+        <section className="w-full px-6 py-20">
+            <div className="w-full max-w-[1256px] mx-auto">
+                <h2 className="font-semibold text-[#363338] text-3xl md:text-[40px] leading-tight md:leading-[48px] mb-6 md:mb-10">
+                    Our Investors
+                </h2>
 
                 <div className="flex justify-center items-center flex-wrap ">
                     <div className="w-full md:w-[90%] lg:w-[80%]"></div>
@@ -77,8 +73,8 @@ const AboutInvestorSection = () => {
                         ))}
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     );
 };
 

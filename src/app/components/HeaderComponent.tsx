@@ -3,6 +3,7 @@ import React, {useEffect, useState, useRef} from "react";
 import {ArrowRightIcon, Menu, X} from "lucide-react";
 import Image from "next/image";
 import {useRouter} from "next/navigation";
+import Button from "./Button";
 
 const HeaderComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,7 @@ const HeaderComponent = () => {
                             <p className="text-sm text-gray-500">Learn how to tame business sprawl with Stitchflow.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/usecases")}
+                            onClick={() => router.push("/use-cases")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Use Cases</h5>
@@ -75,21 +76,21 @@ const HeaderComponent = () => {
                             onClick={() => router.push("/blog")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-semibold text-sm text-gray-800">Blog</h5>
+                            <h5 className="font-medium text-sm text-gray-800">Blog</h5>
                             <p className="text-sm text-gray-500">Insights, trends, and best practices in IT.</p>
                         </div>
                         <div
                             onClick={() => router.push("/case-study")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-semibold text-sm text-gray-800">Case Studies</h5>
+                            <h5 className="font-medium text-sm text-gray-800">Case Studies</h5>
                             <p className="text-sm text-gray-500">Real-world success stories with Stitchflow.</p>
                         </div>
                         <div
                             onClick={() => router.push("/it-tools")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-semibold text-sm text-gray-800">Free IT Tools</h5>
+                            <h5 className="font-medium text-sm text-gray-800">Free IT Tools</h5>
                             <p className="text-sm text-gray-500">
                                 Useful microapps built by us, free for anyone to use.
                             </p>
@@ -130,23 +131,16 @@ const HeaderComponent = () => {
     };
 
     return (
-        // <header
-        //     ref={headerRef}
-        //     className={`fixed top-0 w-full h-[88px] z-50 transition-all duration-200
-        // ${isScrolled ? "bg-white shadow-md" : "bg-[#f8f5f3d9] backdrop-blur-[5px]"}
-        // flex items-center justify-between px-4 md:px-8 lg:px-[50px] xl:px-[150px] 2xl:px-[236px]`}
-        // >
-
-        <div
+        <header
             ref={headerRef}
-            className={`fixed top-0 inset-x-0 z-50 transition-all duration-200 
-    ${isScrolled ? "bg-white shadow-md" : "bg-[#f8f5f3d9] backdrop-blur-[5px]"}
-    flex  justify-center items-center py-8 md:py-8 lg:py-4`}
+            className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-in-out 
+            ${isScrolled ? "bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
+            flex  justify-center items-center py-4`}
         >
             <div className="w-full md:w-[90%] lg:w-[80%] ">
-                <div className="flex items-center gap-4 md:gap-12">
-                    {/* Logo */}
-                    <div className="w-1/5 flex items-center">
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4 md:gap-12">
+                        {/* Logo */}
                         <div className="relative w-[109px] h-6 cursor-pointer" onClick={() => router.push("/")}>
                             <Image
                                 className="absolute w-[109px] h-[24px] left-4 md:left-0"
@@ -157,9 +151,7 @@ const HeaderComponent = () => {
                                 priority
                             />
                         </div>
-                    </div>
 
-                    <div className="w-3/5 flex items-center">
                         {/* Desktop Navigation */}
                         <nav className="hidden lg:block">
                             <ul className="relative flex items-center lg:right-[35px] xl:right-0 lg:gap-2 xl:gap-6 lg:px-2 xl:px-0 ">
@@ -214,28 +206,28 @@ const HeaderComponent = () => {
                         </nav>
                     </div>
 
-                    <div className="w-1/5 flex justify-end">
+                    <div className="flex justify-end">
                         {/* CTA Buttons */}
-                        <div className="relative hidden lg:flex flex justify-end items-center gap-2">
-                            <button
+                        <div className="relative hidden lg:flex justify-end items-center gap-2">
+                            <Button
+                                variant="primary"
                                 onClick={() => router.push("/schedule-a-demo")}
-                                className="cursor-pointer w-[136px] h-[52px] px-6 py-3 rounded-xl border border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] bg-gradient-to-b from-white to-[#f9f8fa] text-[#363338] font-medium hover:opacity-90 transition-opacity"
                             >
                                 Book Demo
-                            </button>
+                            </Button>
 
-                            <button
+                            <Button
+                                variant="secondary"
                                 onClick={() => router.push("/pilot")}
-                                className="cursor-pointer w-[148px] h-[52px] px-6 py-3 rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] bg-gradient-to-b from-[#545058] to-[#363338] text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center"
                             >
                                 Start Trial
                                 <ArrowRightIcon className="ml-2 h-4 w-4" />
-                            </button>
+                            </Button>
                         </div>
                     </div>
 
                     {/* Mobile Menu Toggle */}
-                    <button className="lg:hidden p-2 absolute right-4 fixed" onClick={() => setIsOpen(!isOpen)}>
+                    <button className="lg:hidden p-2 right-4 fixed" onClick={() => setIsOpen(!isOpen)}>
                         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                     </button>
                 </div>
@@ -292,7 +284,7 @@ const HeaderComponent = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </header>
     );
 };
 

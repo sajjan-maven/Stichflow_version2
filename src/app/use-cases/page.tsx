@@ -71,9 +71,10 @@ export default function UseCases() {
       {useCases.map((useCase, index) => (
         <section
           key={index}
+          className="inline-flex flex-col items-center justify-center gap-6 md:gap-20 pt-20 md:pt-40 px-6 w-full"
         >
-          <div className="inline-flex flex-col items-center justify-center gap-6 md:gap-20 pt-20 md:pt-40 px-6 w-full">
-            <div className="flex flex-col items-center gap-2 max-w-[878px] mx-auto">
+          <div className="max-w-[1256px] mx-auto">
+            <div className="flex flex-col items-center gap-2 max-w-[878px] mx-auto pb-10 md:pb-20">
               <h2 className="mt-[-1.00px] [font-family:'Geist',Helvetica] font-semibold text-[#363338] text-[40px] text-center tracking-[0] leading-[48px]">
                 {useCase.title}
               </h2>
@@ -83,16 +84,14 @@ export default function UseCases() {
             </div>
 
             <div
-              className={`flex flex-col gap-2 p-8 md:p-20 max-w-[1256px] mx-auto ${useCase.bgColor} rounded-[48px] border-none`}
+              className={`flex flex-col gap-2 p-8 md:p-20 ${useCase.bgColor} rounded-3xl md:rounded-[48px] border-none`}
             >
-              <div className="p-0">
-                <Image
-                  width={1096}
-                  height={708}
-                  alt="Users employees"
-                  src={useCase.imageSrc}
-                />
-              </div>
+              <Image
+                width={1096}
+                height={708}
+                alt="Users employees"
+                src={useCase.imageSrc}
+              />
             </div>
           </div>
         </section>

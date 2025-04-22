@@ -7,7 +7,7 @@
 //     return <div>
 //         <header className="w-full py-16 px-4 md:px-8 lg:px-16 bg-[#e3dad0] z-[3]">
 //       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
-//         <h1 className="font-semibold text-[40px] leading-[48px] text-[#363338] font-['Geist',Helvetica]">
+//         <h1 className="font-semibold text-[40px] leading-[48px] text-[#363338]">
 //           {pageTitle}
 //         </h1>
 
@@ -36,12 +36,12 @@ const BlogHeroSection = () => {
 
     return (
         <div>
-            <header className="w-full bg-[#e3dad0] pt-[130px] px-4 lg:px-0">
+            <header className="w-full bg-[#e3dad0] px-6 py-16">
                 <div className="flex justify-center items-center flex-wrap">
                     <div className="w-full md:w-[90%] lg:w-[80%]">
                         <div className="flex justify-center">
                             <div className="w-full max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
-                                <h1 className="font-semibold text-[40px] leading-[48px] text-[#363338] font-['Geist',Helvetica]">
+                                <h1 className="font-semibold text-[40px] leading-[48px] text-[#363338]">
                                     {pageTitle}
                                 </h1>
 

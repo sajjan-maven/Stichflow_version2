@@ -82,104 +82,112 @@ const recentPosts = [
 
 const BlogContentSection = () => {
     return (
-        <section className="flex flex-col items-center gap-14 py-20 px-4 md:px-8 lg:px-16 xl:px-[236px] w-full">
+        <>
             {/* Categories */}
-            <div className="flex flex-wrap items-center gap-2">
-                {categories.map((category) => (
-                    <button
-                        key={category.id}
-                        className={`rounded-full px-3 py-2 font-medium transition ${
-                            category.active ? "bg-[#363338] text-white shadow-md" : "text-[#7b7481] hover:bg-gray-100"
-                        }`}
-                    >
-                        {category.name}
-                    </button>
-                ))}
-            </div>
+            <section className="flex flex-col items-center gap-14 p-6 w-full pt-12 md:pt-20">
+                <div className="flex flex-wrap items-center gap-2 max-w-[829px]">
+                    {categories.map((category) => (
+                        <button
+                            key={category.id}
+                            className={`rounded-full px-3 py-2 font-medium transition ${
+                                category.active ? "bg-[#363338] text-white shadow-md" : "text-[#7b7481] hover:bg-gray-100"
+                            }`}
+                        >
+                            {category.name}
+                        </button>
+                    ))}
+                </div>
+            </section>
 
             {/* Featured */}
-            <div className="w-full max-w-[829px] flex flex-col gap-14">
-                <h2 className="text-[#7b7481] text-2xl font-semibold">Featured</h2>
+            <section className="flex flex-col items-center gap-14 p-6 w-full">
+                <div className="w-full max-w-[829px] flex flex-col gap-14">
+                    <h2 className="text-[#7b7481] text-2xl font-semibold">Featured</h2>
 
-                {featuredPosts.map((post) => (
-                    <div key={post.id} className="flex flex-col md:flex-row items-center gap-10">
-                        <div className="flex flex-col gap-4 flex-1">
-                            <h3 className="text-[#363338] text-xl font-semibold">{post.title}</h3>
-                            <p className="text-[#7b7481]">{post.description}</p>
-                            <div className="flex items-center gap-4 flex-wrap">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-6 h-6 rounded-full border border-[#54505833] bg-[url('/images/Avatar.svg')] bg-cover bg-center" />
-                                    <span className="text-[#363338] text-sm font-medium">{post.author}</span>
+                    {featuredPosts.map((post) => (
+                        <div key={post.id} className="flex flex-col md:flex-row items-center gap-10">
+                            <div className="flex flex-col gap-4 flex-1">
+                                <h3 className="text-[#363338] text-xl font-semibold">{post.title}</h3>
+                                <p className="text-[#7b7481]">{post.description}</p>
+                                <div className="flex items-center gap-4 flex-wrap">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-6 h-6 rounded-full border border-[#54505833] bg-[url('/images/Avatar.svg')] bg-cover bg-center" />
+                                        <span className="text-[#363338] text-sm font-medium">{post.author}</span>
+                                    </div>
+                                    <span className="text-sm text-[#7b7481]">{post.date}</span>
+                                    <span
+                                        className={`text-[#363338] text-xs font-medium rounded-full px-2 py-1 ${post.categoryColor}`}
+                                    >
+                                        {post.category}
+                                    </span>
                                 </div>
-                                <span className="text-sm text-[#7b7481]">{post.date}</span>
-                                <span
-                                    className={`text-[#363338] text-xs font-medium rounded-full px-2 py-1 ${post.categoryColor}`}
-                                >
-                                    {post.category}
-                                </span>
                             </div>
+                            <div
+                                className="w-[280px] h-48 rounded-[32px] bg-cover bg-center"
+                                style={{backgroundImage: `url(${post.image})`}}
+                            />
                         </div>
-                        <div
-                            className="w-[280px] h-48 rounded-[32px] bg-cover bg-center"
-                            style={{backgroundImage: `url(${post.image})`}}
-                        />
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            </section>
 
             {/* Newsletter */}
-            <div className="w-full max-w-[830px] bg-white rounded-[32px] border border-[#545058] p-10 flex flex-col gap-8 items-center">
-                <div className="text-center">
-                    <h3 className="text-[#363338] text-xl font-semibold mb-2">Subscribe to our newsletter</h3>
-                    <p className="text-[#363338]">Get expert-led insights on SaaS management, delivered weekly.</p>
+            <section className="flex flex-col items-center gap-14 p-6 w-full">
+                <div className="w-full max-w-[830px] bg-white rounded-[32px] border border-[#545058] p-10 flex flex-col gap-8 items-center">
+                    <div className="text-center">
+                        <h3 className="text-[#363338] text-xl font-semibold mb-2">Subscribe to our newsletter</h3>
+                        <p className="text-[#363338]">Get expert-led insights on SaaS management, delivered weekly.</p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-2 w-full justify-center">
+                        <input
+                            type="email"
+                            placeholder="Email address"
+                            className="w-full sm:w-[280px] p-3 bg-[#f8f5f3] border border-[#e4dbd0] rounded-xl text-[#aca8b2]"
+                        />
+                        <button className="p-3 px-6 rounded-xl border border-[#54505833] bg-white text-[#363338] font-medium cursor-not-allowed">
+                            Subscribe
+                        </button>
+                    </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-2 w-full justify-center">
-                    <input
-                        type="email"
-                        placeholder="Email address"
-                        className="w-full sm:w-[280px] p-3 bg-[#f8f5f3] border border-[#e4dbd0] rounded-xl text-[#aca8b2]"
-                    />
-                    <button className="p-3 px-6 rounded-xl border border-[#54505833] bg-white text-[#363338] font-medium cursor-not-allowed">
-                        Subscribe
-                    </button>
-                </div>
-            </div>
+            </section>
 
             {/* Most Recent */}
-            <div className="w-full max-w-[829px] flex flex-col gap-14">
-                <h2 className="text-[#7b7481] text-2xl font-semibold">Most recent</h2>
+            <section className="flex flex-col items-center gap-14 p-6 w-full mb-[106px]">
+                <div className="w-full max-w-[829px] flex flex-col gap-14">
+                    <h2 className="text-[#7b7481] text-2xl font-semibold">Most recent</h2>
 
-                {recentPosts.map((post) => (
-                    <div key={post.id} className="flex flex-col-reverse md:flex-row items-center gap-10">
-                        <div
-                            className="w-[280px] h-48 rounded-[32px] bg-cover bg-center"
-                            style={{backgroundImage: `url(${post.image})`}}
-                        />
-                        <div className="flex flex-col gap-4 flex-1">
-                            <h3 className="text-[#363338] text-xl font-semibold">{post.title}</h3>
-                            <p className="text-[#7b7481]">{post.description}</p>
-                            <div className="flex items-center gap-4 flex-wrap">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-6 h-6 rounded-full border border-[#54505833] bg-[url('/images/Avatar.svg')] bg-cover bg-center" />
-                                    <span className="text-[#363338] text-sm font-medium">{post.author}</span>
+                    {recentPosts.map((post) => (
+                        <div key={post.id} className="flex flex-col-reverse md:flex-row items-center gap-10">
+                            <div
+                                className="w-[280px] h-48 rounded-[32px] bg-cover bg-center"
+                                style={{backgroundImage: `url(${post.image})`}}
+                            />
+                            <div className="flex flex-col gap-4 flex-1">
+                                <h3 className="text-[#363338] text-xl font-semibold">{post.title}</h3>
+                                <p className="text-[#7b7481]">{post.description}</p>
+                                <div className="flex items-center gap-4 flex-wrap">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-6 h-6 rounded-full border border-[#54505833] bg-[url('/images/Avatar.svg')] bg-cover bg-center" />
+                                        <span className="text-[#363338] text-sm font-medium">{post.author}</span>
+                                    </div>
+                                    <span className="text-sm text-[#7b7481]">{post.date}</span>
+                                    <span
+                                        className={`text-[#363338] text-xs font-medium rounded-full px-2 py-1 ${post.categoryColor}`}
+                                    >
+                                        {post.category}
+                                    </span>
                                 </div>
-                                <span className="text-sm text-[#7b7481]">{post.date}</span>
-                                <span
-                                    className={`text-[#363338] text-xs font-medium rounded-full px-2 py-1 ${post.categoryColor}`}
-                                >
-                                    {post.category}
-                                </span>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
-            {/* Load More */}
-            <button className="px-6 py-4 rounded-xl border border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] bg-gradient-to-b from-white to-[#f9f8fa] text-[#363338] font-medium cursor-not-allowed">
-                Load more posts
-            </button>
-        </section>
+                {/* Load More */}
+                <button className="px-6 py-4 rounded-xl border border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] bg-gradient-to-b from-white to-[#f9f8fa] text-[#363338] font-medium cursor-not-allowed">
+                    Load more posts
+                </button>
+            </section>
+        </>
     );
 };
 

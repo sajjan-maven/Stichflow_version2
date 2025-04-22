@@ -56,7 +56,7 @@ const HomeWorkSection = () => {
 
     return (
         <section className="flex justify-center items-center gap-20 py-20  w-full bg-white z-10 relative px-4 lg:px-0">
-            <div className="w-full md:w-[90%] lg:w-[80%]">
+            <div className="w-full max-w-[1256px]">
                 <div className="flex flex-col w-full max-w-4xl items-center gap-10 mx-auto">
                     <div className="text-center">
                         <h2 className="text-4xl font-semibold text-gray-900 leading-tight">
@@ -65,8 +65,8 @@ const HomeWorkSection = () => {
                     </div>
 
                     {/* Scrollable tabs for mobile */}
-                    <div className="w-full overflow-x-auto  lg:flex justify-center items-center">
-                        <div className="flex items-center gap-2 bg-gray-100 p-2 rounded-full w-full  lg:w-[60%] min-w-max">
+                    <div className="w-full overflow-x-auto flex justify-center items-center">
+                        <div className="flex items-center gap-2 bg-gray-100 p-2 rounded-full w-fit">
                             <button
                                 className={`whitespace-nowrap px-4 py-2 ${
                                     activeTab === "licenseManagement" ? "text-white bg-gray-800" : "text-gray-500"

@@ -59,7 +59,8 @@ export default function StepsSection() {
       ];
 
   return (
-    <section className="flex flex-col items-center py-16 md:py-40 w-full z-[2] max-w-[1224px] mx-auto px-6">
+    <section className="flex flex-col items-center py-16 md:py-40 w-full z-[2] px-6">
+      <div className="w-full max-w-[1256px] mx-auto">
         {steps.map((step, index) => (
         <div
             key={index}
@@ -104,6 +105,7 @@ export default function StepsSection() {
             </div>
         </div>
         ))}
+      </div>
     </section>
   )
 }
