@@ -1,18 +1,6 @@
 import { ChevronRightIcon } from "lucide-react";
 
 export default function DemoDesktop() {
-
-  // Company size options
-  const companySizeOptions = [
-    "1 - 50",
-    "51 - 100",
-    "101 - 200",
-    "201 - 1,000",
-    "1,001 - 10,000",
-    "10,001+",
-    "Unknown",
-  ];
-
   // Benefits data
   const benefits = [
     {
@@ -46,14 +34,6 @@ export default function DemoDesktop() {
       author: "Aaron",
       position: "IT Administrator",
     },
-  ];
-
-  // Footer links
-  const footerLinks = [
-    "Terms of Service",
-    "Privacy Policy",
-    "Security",
-    "support@stitchflow.com",
   ];
 
   return (
