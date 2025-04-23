@@ -16,7 +16,7 @@
     "node-html-parser": "^7.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scroll": "^1.9.3",
+    "react-scroll": "^1.9.2",
     "react-slick": "^0.30.3",
     "react-toastify": "^11.0.5"
   },
