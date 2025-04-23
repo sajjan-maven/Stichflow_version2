@@ -32,7 +32,7 @@ export default function RootLayout({
                 cz-shortcut-listen="true"
             >
                 <HeaderComponent />
-                <main className="pt-14 md:pt-20">
+                <main className="pt-14 lg:pt-20">
                     {children}
                 </main>
                 <DemoComponent />

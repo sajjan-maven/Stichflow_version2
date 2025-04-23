@@ -12,9 +12,9 @@ const HomeFeatureSection = () => {
     };
 
     return (
-        <section className="w-full pb-10 md:pb-20 z-[5] bg-gradient-to-b from-[#f8f5f3] to-white">
-            <div className="max-w-4xl mx-auto px-6">
-                <div className="flex flex-col items-start gap-12">
+        <section className="w-full pb-10 md:pb-20 z-[5] px-6 bg-gradient-to-b from-[#f8f5f3] to-white bg-[#f8f5f3]">
+            <div className="max-w-[800px] mx-auto">
+                <div className="flex flex-col items-start gap-6 md:gap-12">
                     <Image className="w-[41px] h-10" alt="Quote icon" src="/images/“.svg" width={41} height={10} />
 
                     <div className="flex flex-col items-start gap-6">

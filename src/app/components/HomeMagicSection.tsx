@@ -56,33 +56,31 @@ const HomeMagicSection = () => {
     return (
         // <section className="flex flex-col items-start gap-14 py-20 px-6 md:px-12 lg:px-20 xl:px-[236px] relative w-full bg-white">
 
-        <section className="flex justify-center items-center gap-14 py-20  relative px-4 lg:px-0">
-            <div className="w-full">
-                <div className="flex flex-col w-full items-start gap-10 mx-auto ">
-                    <h2 className="w-full font-semibold text-[#363338] text-[40px] text-center leading-[48px]">
-                        The Stitchflow Magic
-                    </h2>
+        <section className="flex justify-center items-center gap-14 py-0 pt-10 md:py-20 relative px-6">
+            <div className="flex flex-col w-full items-start gap-6 md:gap-10 mx-auto ">
+                <h2 className="w-full font-semibold text-[#363338] text-3xl md:text-[40px] text-center leading-[48px]">
+                    The Stitchflow Magic
+                </h2>
 
-                    <div className="grid grid-rows-1 md:grid-cols-3 gap-4 max-w-[1256px] mx-auto">
-                        {featureCards.map((card) => (
-                            <div key={card.id} className="overflow-hidden rounded-2xl w-full bg-[#F8F5F3] h-full" >
-                                <div className="relative w-full pt-[50%]">
-                                    <Image
-                                        className="absolute top-0 left-0 w-full h-full object-cover"
-                                        layout="fill"
-                                        src={`${card.imageSrc}`}
-                                        alt="tumbnail"
-                                    />
-                                </div>
-                                <div className="p-6 flex flex-col items-start gap-2">
-                                    <h3 className="text-[#363338] text-lg font-semibold">{card.title}</h3>
-                                    <p className="text-[#7b7481] text-base leading-6 font-normal">
-                                        {card.description}
-                                    </p>
-                                </div>
+                <div className="grid grid-rows-1 md:grid-cols-3 gap-8 md:gap-4 max-w-[1256px] mx-auto">
+                    {featureCards.map((card) => (
+                        <div key={card.id} className="overflow-hidden rounded-2xl w-full bg-[#F8F5F3] h-full" >
+                            <div className="relative w-full pt-[50%]">
+                                <Image
+                                    className="absolute top-0 left-0 w-full h-full object-cover"
+                                    layout="fill"
+                                    src={`${card.imageSrc}`}
+                                    alt="tumbnail"
+                                />
                             </div>
-                        ))}
-                    </div>
+                            <div className="p-6 flex flex-col items-start gap-2">
+                                <h3 className="text-[#363338] text-lg font-semibold">{card.title}</h3>
+                                <p className="text-[#7b7481] text-base leading-6 font-normal">
+                                    {card.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

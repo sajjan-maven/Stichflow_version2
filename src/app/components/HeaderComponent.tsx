@@ -37,7 +37,6 @@ const HeaderComponent = () => {
             hasDropdown: true,
             content: (
                 <div className="w-[280px] md:w-[500px] pt-1 md:pt-3">
-                    {/* <h4 className="text-sm font-semibold text-gray-400 mb-3">Platform</h4> */}
                     <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
                         <div
                             onClick={() => router.push("/product-page")}
@@ -64,7 +63,7 @@ const HeaderComponent = () => {
                 </div>
             ),
         },
-        {name: "App Audits", hasDropdown: false},
+        // {name: "App Audits", hasDropdown: false},
         {
             name: "Resources",
             hasDropdown: true,
@@ -134,16 +133,15 @@ const HeaderComponent = () => {
         <header
             ref={headerRef}
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-in-out 
-            ${isScrolled ? "bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
-            flex  justify-center items-center py-4`}
+            ${isScrolled ? "bg-white lg:bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
+            flex justify-center items-center py-4 px-6`}
         >
-            <div className="w-full md:w-[90%] lg:w-[80%] ">
+            <div className="w-full max-w-[1256px] mx-auto">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4 md:gap-12">
                         {/* Logo */}
-                        <div className="relative w-[109px] h-6 cursor-pointer" onClick={() => router.push("/")}>
+                        <div className="cursor-pointer" onClick={() => router.push("/")}>
                             <Image
-                                className="absolute w-[109px] h-[24px] left-4 md:left-0"
                                 alt="Wordmark"
                                 src="/images/logo (1).svg"
                                 width={109}
@@ -211,14 +209,14 @@ const HeaderComponent = () => {
                         <div className="relative hidden lg:flex justify-end items-center gap-2">
                             <Button
                                 variant="primary"
-                                onClick={() => router.push("/schedule-a-demo")}
+                                onClick={() => router.push("/schedule-demo")}
                             >
                                 Book Demo
                             </Button>
 
                             <Button
                                 variant="secondary"
-                                onClick={() => router.push("/pilot")}
+                                onClick={() => router.push("/free-pilot")}
                             >
                                 Start Trial
                                 <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -234,8 +232,8 @@ const HeaderComponent = () => {
 
                 {/* Mobile Navigation */}
                 {isOpen && (
-                    <div className="fixed inset-0 top-[88px] bg-white z-40 lg:hidden">
-                        <div className="p-6 space-y-6 bg-white">
+                    <div className="fixed inset-0 mt-14 z-40 lg:hidden">
+                        <div className="p-4 pb-10 space-y-6 bg-white">
                             {menuItems.map((item, index) => (
                                 <div key={index} className="space-y-4">
                                     <button
@@ -264,21 +262,21 @@ const HeaderComponent = () => {
                                     {item.hasDropdown && activeDropdown === index && item.content}
                                 </div>
                             ))}
-                            <div className="flex flex-row gap-4 pt-6">
-                                <button
+                            <div className="flex flex-row gap-4 pt-6 flex-wrap">
+                                <Button
+                                    variant="primary"
                                     onClick={() => router.push("/schedule-a-demo")}
-                                    className="cursor-pointer w-[136px] h-[52px] px-6 py-3 rounded-xl border border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] bg-gradient-to-b from-white to-[#f9f8fa] text-[#363338] font-medium hover:opacity-90 transition-opacity"
                                 >
                                     Book Demo
-                                </button>
+                                </Button>
 
-                                <button
+                                <Button
+                                    variant="secondary"
                                     onClick={() => router.push("/pilot")}
-                                    className="cursor-pointer w-[148px] h-[52px] px-6 py-3 rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] bg-gradient-to-b from-[#545058] to-[#363338] text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center"
                                 >
                                     Start Trial
                                     <ArrowRightIcon className="ml-2 h-4 w-4" />
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>

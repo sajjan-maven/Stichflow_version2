@@ -87,17 +87,21 @@ const TestimonialCarousel = () => {
         if (autoplayPaused) return;
 
         const interval = setInterval(() => {
-            nextSlide();
+            if (!isAnimating) {
+                setIsAnimating(true);
+                setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+                setTimeout(() => setIsAnimating(false), 500);
+            }
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [currentSlide, autoplayPaused]);
+    }, [currentSlide, autoplayPaused, isAnimating, totalSlides]);
 
     return (
-        <div className="relative px-4 lg:px-0 py-2">
-            <div className="flex justify-center items-center flex-wrap">
+        <>
+            <div className="flex justify-center items-center flex-wrap px-6">
                 <div className="w-full max-w-[1256px] mx-auto">
-                    <div className="flex items-center justify-between mb-[72px] flex-wrap">
+                    <div className="flex items-center justify-between mb-10 md:mb-[72px] flex-wrap gap-4">
                         <div>
                             <h2 className="font-semibold text-[40px] leading-[48px] text-[#222222]">
                                 Learn from the Best
@@ -107,14 +111,14 @@ const TestimonialCarousel = () => {
                             </p>
                         </div>
 
-                        <button
+                        {/* <button
                             //   variant="outline"
                             className="rounded-xl border border-[#54505833] p-4"
                         >
                             <span className="font-label-medium text-[#363338] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)]">
                                 Download Case Study
                             </span>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
@@ -206,7 +210,7 @@ const TestimonialCarousel = () => {
                     </button>
                 </div> */}
             </div>
-        </div>
+        </>
     );
 };
 
