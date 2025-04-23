@@ -95,7 +95,7 @@ const HomeHeroSection = () => {
                             <span className="font-['Geist',Helvetica] font-medium text-[#363338] text-base leading-4 whitespace-nowrap">
                                 Book a 15 min demo
                             </span>
-                            {isSubmitting ? "Processing..." : "Schedule a demo"}
+                            {isSubmitting ? "Processing..." : ""}
                         </Button>
                     </div>
                     <Image
