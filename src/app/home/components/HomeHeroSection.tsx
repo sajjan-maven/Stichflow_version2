@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import {useRouter} from "next/navigation";
+import React, {useState} from "react";
+
 const appIcons = [
     {
         id: 1,
@@ -161,6 +164,49 @@ const labelElements = [
 ];
 
 const HomeHeroSection = () => {
+    const [email, setEmail] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const router = useRouter();
+    const validateEmail = (email: string) => {
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return re.test(email);
+    };
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        if (!email) {
+            setIsSubmitting(false);
+            return;
+        }
+        if (!validateEmail(email)) {
+            setIsSubmitting(false);
+            return;
+        }
+        try {
+            await fetch("https://hooks.zapier.com/hooks/catch/17929582/2x33nkh/", {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: "Website Hero Form",
+                    email: email,
+                    message: "New demo request from homepage hero section",
+                }),
+            });
+
+            setEmail("");
+            setTimeout(() => {
+                router.push("/schedule-a-demo");
+            }, 500);
+        } catch (error) {
+            console.error("Error submitting email:", error);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     return (
         <div>
             <section className="relative w-full py-24 bg-[#f8f5f3] overflow-hidden">
@@ -184,12 +230,22 @@ const HomeHeroSection = () => {
                             <div className="flex justify-center gap-4 items-start">
                                 <div className="flex w-[280px] items-center gap-2 px-3 py-4 bg-white rounded-xl border border-solid border-[#e4dbd0]">
                                     <input
+                                        type="email"
                                         className="border-0 shadow-none p-0 h-auto font-label-regular text-[#7b7481]"
                                         placeholder="Work email address"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                        disabled={isSubmitting}
                                     />
                                 </div>
 
-                                <button className="flex items-center gap-2 px-3 py-2 rounded-xl border border-solid border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(249,248,250,1)_100%)] h-auto">
+                                <button
+                                    type="button"
+                                    className="flex items-center gap-2 px-3 py-2 rounded-xl border border-solid border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(249,248,250,1)_100%)] h-auto"
+                                    onClick={handleSubmit}
+                                    disabled={isSubmitting}
+                                >
                                     <div className="relative flex items-center gap-2">
                                         <div className="relative w-8 h-8 rounded-[100px] [background:url(/images/Avatar.svg)_50%_50%_/_cover] border border-solid border-[#54505833]" />
                                         <div className="absolute w-2.5 h-2.5 -top-px left-[23px] bg-[#30ba70] rounded-[5px] border border-solid border-white" />
@@ -197,6 +253,7 @@ const HomeHeroSection = () => {
                                     <span className="font-['Geist',Helvetica] font-medium text-[#363338] text-base leading-4 whitespace-nowrap">
                                         Book a 15 min demo
                                     </span>
+                                    {isSubmitting ? "Processing..." : "Schedule a demo"}
                                 </button>
                             </div>
                         </div>
