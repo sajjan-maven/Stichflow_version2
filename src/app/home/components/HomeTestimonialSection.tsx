@@ -107,14 +107,11 @@ const TestimonialCarousel = () => {
                             </p>
                         </div>
 
-                        <button
-                            //   variant="outline"
-                            className="rounded-xl border border-[#54505833] p-4"
-                        >
+                        {/* <button className="rounded-xl border border-[#54505833] p-4">
                             <span className="font-label-medium text-[#363338] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)]">
                                 Download Case Study
                             </span>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>

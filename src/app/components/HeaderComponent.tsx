@@ -63,7 +63,7 @@ const HeaderComponent = () => {
                 </div>
             ),
         },
-        {name: "App Audits", hasDropdown: false},
+        // {name: "App Audits", hasDropdown: false},
         {
             name: "Resources",
             hasDropdown: true,
