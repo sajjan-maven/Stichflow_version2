@@ -1,0 +1,242 @@
+.blog-container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.blog-search-input {
+    border-radius: 50px !important;
+}
+
+.blog-int-search-input {
+    background-color: var(--white);
+    color: var(--dark-grey);
+    background-image: url("../../images/Material-1.svg");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    border: 1.987px solid #dfdde4;
+    border-radius: 0.99rem;
+    min-height: 3rem;
+    margin-bottom: 0;
+    padding: 0.89rem 2.54rem 0.98rem 1rem;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* Banner Section */
+.hero-banner {
+    margin-top: 48px;
+}
+
+.banner-img {
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+}
+
+.banner-category {
+    color: #ac72f5;
+    font-weight: 600;
+}
+
+.banner-blog-tittle {
+    margin: 10px 0;
+}
+
+.banner-left,
+.popular-article-left {
+    text-align: center;
+}
+
+/* Popular Articles */
+.popular-articles-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #dfdfdf;
+    margin-top: 30px;
+}
+
+.popular-article-left img {
+    border-radius: 10px;
+    object-fit: cover;
+    max-width: 500px;
+}
+.popular-img {
+    height: auto;
+}
+.popular-article-right {
+    flex: 1;
+}
+.popular-article-category {
+    font-size: 16px;
+    color: #ac72f5;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Blog List */
+
+.blogs-container {
+    margin: 8rem 0;
+}
+
+.tabs button {
+    padding: 8px;
+    margin: 20px 15px;
+    font-size: 16px;
+    border: none;
+    background: #f7f1fe;
+    color: #ac72f5;
+    cursor: pointer;
+    border-radius: 6px;
+    /* transition: 0.3s; */
+}
+
+.tabs button.active {
+    font-weight: 600;
+}
+
+.tabs {
+    width: 70%;
+}
+
+.tabs button:hover {
+    background: #e0e0e0;
+}
+
+.tab-content {
+    border-top: 1px solid #ddd;
+}
+
+.cards-parent {
+    margin-top: 5rem;
+}
+
+.no-data-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #555;
+}
+
+.banner-right {
+    margin-left: 1.5rem;
+}
+
+.no-information {
+    min-height: 30rem;
+    padding-top: 5rem !important;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+    .popular-article-left img {
+        width: 240px;
+        height: auto;
+    }
+}
+
+@media (max-width: 1023px) {
+    .popular-article-left img {
+        width: 300px;
+    }
+
+    .banner-right {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-search-input {
+        margin-top: 10px;
+    }
+
+    .tabs button {
+        margin: 5px;
+    }
+
+    .popular-article-category {
+        margin-top: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .no-information {
+        min-height: 0rem;
+    }
+
+    .blogs-container {
+        margin: 4rem 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .popular-article-left img {
+        width: 240px;
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+    .blog-home {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .blog-search {
+        width: 30% !important;
+    }
+
+    .popular-article-list {
+        display: flex;
+        gap: 20px;
+        /* align-items: center; */
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-banner {
+        display: flex;
+        gap: 30;
+    }
+
+    .blog-search {
+        width: 25% !important;
+    }
+
+    .banner-left,
+    .banner-right {
+        min-width: 420px;
+    }
+
+    .popular-articles-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner-left,
+    .banner-right {
+        min-width: 550px;
+    }
+
+    .blog-container {
+        margin-left: 18%;
+        margin-right: 18%;
+    }
+}

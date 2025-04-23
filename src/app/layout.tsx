@@ -1,9 +1,19 @@
 import type {Metadata} from "next";
-
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HeaderComponent from "./components/HeaderComponent";
 import DemoComponent from "./components/DemoComponent";
 import FooterComponent from "./components/FooterComponent";
+
+const geistSans = Geist({
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+  });
+  
+  const geistMono = Geist_Mono({
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+  });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -17,39 +27,16 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
-            <body>
-                {/* <div className="flex gap-4 p-1">
-                    <Link href="/case-study" title="case-study">
-                        case-study
-                    </Link>
-                    <Link href="/case-study-details" title="case-study-details">
-                        case-study-details
-                    </Link>
-                    <Link href="/free-pilot" title="free-pilot">
-                        free-pilot
-                    </Link>
-                    <Link href="/it-tools" title="it-tool">
-                        it-tools
-                    </Link>
-                    <Link href="/product-page" title="product-page">
-                        product-page
-                    </Link>
-                    <Link href="/blog-details" title="blog-details">
-                        blog-details
-                    </Link>
-                    <Link href="/use-cases" title="use-cases">
-                        use-cases
-                    </Link>
-                </div> */}
-                <header>
-                    <HeaderComponent />
-                </header>
-                <main>{children}</main>
-                <footer>
-                    <DemoComponent />
-                    <FooterComponent />
-                </footer>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                cz-shortcut-listen="true"
+            >
+                <HeaderComponent />
+                <main className="pt-14 lg:pt-20">
+                    {children}
+                </main>
+                <DemoComponent />
+                <FooterComponent />
             </body>
         </html>
     );

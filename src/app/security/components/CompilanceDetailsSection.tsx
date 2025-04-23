@@ -73,49 +73,47 @@ const ComplianceDetailsSection = () => {
         </div>
     );
     return (
-        <section className="flex flex-col gap-20   w-full px-4 lg:px-0">
-            <div className="flex justify-center items-center flex-wrap">
-                <div className="w-full md:w-[90%] lg:w-[80%] ">
-                    {/* Product Security Section */}
-                    <div className="flex flex-col w-full items-start gap-10 pt-25">
-                        <h2 className="font-['Geist',Helvetica] font-semibold text-[#363338] text-4xl leading-[48px]">
-                            Product Security
-                        </h2>
+        <section className="flex flex-col gap-20 w-full px-6">
+            <div className="flex justify-center items-center flex-wrap max-w-[1256px] mx-auto">
+                {/* Product Security Section */}
+                <div className="flex flex-col w-full items-start gap-10 pt-25">
+                    <h2 className="font-['Geist',Helvetica] font-semibold text-[#363338] text-4xl leading-[48px]">
+                        Product Security
+                    </h2>
 
-                        <div className="flex flex-col w-full gap-10">
-                            <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20 w-full">
-                                {renderSecurityFeature(productSecurityFeatures[0])}
-                                {renderSecurityFeature(productSecurityFeatures[1])}
-                            </div>
+                    <div className="flex flex-col w-full gap-10">
+                        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20 w-full">
+                            {renderSecurityFeature(productSecurityFeatures[0])}
+                            {renderSecurityFeature(productSecurityFeatures[1])}
+                        </div>
 
-                            <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20 w-full">
-                                {renderSecurityFeature(productSecurityFeatures[2])}
-                                {renderSecurityFeature(productSecurityFeatures[3])}
-                            </div>
+                        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20 w-full">
+                            {renderSecurityFeature(productSecurityFeatures[2])}
+                            {renderSecurityFeature(productSecurityFeatures[3])}
                         </div>
                     </div>
+                </div>
 
-                    {/* Organizational Security Section */}
-                    <div className="flex flex-col w-full items-start gap-10 pt-10 pb-25">
-                        <h2 className="font-['Geist',Helvetica] font-semibold text-[#363338] text-4xl leading-[48px]">
-                            Organizational Security
-                        </h2>
+                {/* Organizational Security Section */}
+                <div className="flex flex-col w-full items-start gap-10 pt-20 pb-25">
+                    <h2 className="font-['Geist',Helvetica] font-semibold text-[#363338] text-4xl leading-[48px]">
+                        Organizational Security
+                    </h2>
 
-                        <div className="flex flex-col w-full gap-10">
-                            <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20 w-full">
-                                {renderSecurityFeature(organizationalSecurityFeatures[0])}
-                                {renderSecurityFeature(organizationalSecurityFeatures[1])}
-                            </div>
+                    <div className="flex flex-col w-full gap-10">
+                        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20 w-full">
+                            {renderSecurityFeature(organizationalSecurityFeatures[0])}
+                            {renderSecurityFeature(organizationalSecurityFeatures[1])}
+                        </div>
 
-                            <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20 w-full">
-                                {renderSecurityFeature(organizationalSecurityFeatures[2])}
-                                {renderSecurityFeature(organizationalSecurityFeatures[3])}
-                            </div>
+                        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-20 w-full">
+                            {renderSecurityFeature(organizationalSecurityFeatures[2])}
+                            {renderSecurityFeature(organizationalSecurityFeatures[3])}
+                        </div>
 
-                            <div className="flex items-start w-full">
-                                {renderSecurityFeature(organizationalSecurityFeatures[4])}
-                                <div className="hidden md:block flex-1"></div> {/* Empty div for layout balance */}
-                            </div>
+                        <div className="flex items-start w-full">
+                            {renderSecurityFeature(organizationalSecurityFeatures[4])}
+                            <div className="hidden md:block flex-1"></div> {/* Empty div for layout balance */}
                         </div>
                     </div>
                 </div>
