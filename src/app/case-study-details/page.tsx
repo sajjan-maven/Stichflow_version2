@@ -51,7 +51,7 @@ export default function CaseStudiesDetails() {
       {/* Main Content */}
       <main className="relative w-full">
         <div className="flex justify-center gap-20 pt-20 pb-40 px-6 max-w-[1272px] mx-auto">
-          <div className="flex flex-col w-[829px] items-start gap-16">
+          <div className="flex flex-col w-[830px] items-start gap-16">
             {/* Case Study Header */}
             <header className="flex flex-col w-full items-start gap-6 bg-transparent">
               <div

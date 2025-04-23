@@ -56,7 +56,7 @@ export const InsightsWrapperSection = () => {
   return (
     <section className="flex flex-col items-center py-10 md:py-20 px-6 w-full gap-20">
       <div className="flex flex-col items-center gap-10 max-w-[1256px] w-full">
-        <h2 className="text-3xl md:text-[40px] font-semibold text-[#363338] leading-8 md:leading-[48px] font-['Geist',Helvetica] w-full">
+        <h2 className="text-3xl md:text-[40px] font-semibold text-[#363338] leading-8 md:leading-[48px] w-full">
           Sample insights and recommendations from the pilot
         </h2>
 

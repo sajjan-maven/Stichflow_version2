@@ -30,8 +30,8 @@ export default function ITtoolsCard() {
   ];
   
   return (
-    <section className="flex flex-col items-center gap-6 py-6 md:py-40 relative w-full z-[2]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1304px] px-6">
+    <section className="flex flex-col items-center gap-6 py-6 md:py-40 relative w-full z-[2] px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1256px] ">
         {itTools.map((tool, index) => (
             <div
             key={index}

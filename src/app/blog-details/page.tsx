@@ -58,7 +58,7 @@ export default function Box() {
         <div className="w-full min-h-screen bg-[#F8F5F3]">
             <main className="flex w-full items-start gap-20 pt-20 pb-40 px-6 max-w-[1304px] mx-auto relative">
                 {/* Main content column */}
-                <div className="flex-col w-full lg:w-[829px] items-start gap-16 flex relative">
+                <div className="flex-col w-full lg:w-[830px] items-start gap-16 flex relative">
                     {/* Blog header */}
                     <header className="flex flex-col w-full items-start gap-6 relative bg-transparent">
                         <Link href="/blog" passHref>

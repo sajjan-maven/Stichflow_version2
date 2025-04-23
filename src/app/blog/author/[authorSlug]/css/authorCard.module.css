@@ -1,0 +1,114 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    background: white;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 180px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+.category {
+    font-size: 14px;
+    font-weight: bold;
+    color: #9461ff;
+    margin-bottom: 5px;
+}
+.moreLatestTitle {
+    font-size: 36px;
+    font-family: var(--font-epilogue);
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 700;
+}
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.summary {
+    font-size: 14px;
+    color: #666;
+}
+
+.authorCards {
+    max-width: 1043px;
+    margin: 0 auto;
+    padding: 16px;
+    margin-bottom: 8rem;
+}
+
+.cardsPparent {
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .authorCards {
+        padding: 16px 20px;
+    }
+}
+
+/* @media (min-width: 1200px) {
+    .authorCards {
+        padding: 0 15.5rem;
+    }
+} */
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
+    }
+}
+
+.cardcontainerSec {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+    /* padding: 20px; */
+    align-items: stretch;
+    justify-items: center;
+    /* margin-left: 5%;
+    margin-right: 5%; */
+}
