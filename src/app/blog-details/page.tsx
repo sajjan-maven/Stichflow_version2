@@ -215,8 +215,10 @@ export default function Box() {
 
                                         {post.id === 2 && (
                                             <div className="relative h-[126px] top-[41px]">
-                                                <img
-                                                    className="absolute w-[280px] h-[110px] top-0 left-0"
+                                                <Image
+                                                    width={280}
+                                                    height={110}
+                                                    className="absolute top-0 left-0"
                                                     alt="Frame"
                                                     src="/frame-152.svg"
                                                 />

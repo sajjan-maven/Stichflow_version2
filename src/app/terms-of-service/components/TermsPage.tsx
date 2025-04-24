@@ -19,13 +19,13 @@ const TermsPage: React.FC<TermsOfServiceProps> = ({termsData}) => {
                 <TermsBanner termsData={termsData} />
             </div>
             <div className="main-content">
-                <section className="section">
-                    <div className="my-contain">
+                <section className="section px-6">
+                    <div className="max-w-[1256px] mx-auto mb-8">
                         <div className="relative flex justify-between">
-                            <div className="w-full max-w-[310px] hidden md:block sticky top-2">
+                            <div className="left-div _30cent hide-mobile sticky-left">
                                 <TermsLeftContainer termsData={termsData} activeSection={activeSection} />
                             </div>
-                            <div className="w-full max-w-[725px]">
+                            <div className="right-div _70cent right-container">
                                 <TermsRightContainer termsData={termsData} onSectionChange={setActiveSection} />
                             </div>
                         </div>

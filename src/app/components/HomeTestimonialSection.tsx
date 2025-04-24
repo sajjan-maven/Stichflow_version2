@@ -99,7 +99,7 @@ const TestimonialCarousel = () => {
 
     return (
         <>
-            <div className="flex justify-center items-center flex-wrap px-6">
+            {/* <div className="flex justify-center items-center flex-wrap px-6">
                 <div className="w-full max-w-[1256px] mx-auto">
                     <div className="flex items-center justify-between mb-10 md:mb-[72px] flex-wrap gap-4">
                         <div>
@@ -110,21 +110,12 @@ const TestimonialCarousel = () => {
                                 Hear from IT teams who have tamed business sprawl with Stitchflow.
                             </p>
                         </div>
-
-                        {/* <button
-                            //   variant="outline"
-                            className="rounded-xl border border-[#54505833] p-4"
-                        >
-                            <span className="font-label-medium text-[#363338] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)]">
-                                Download Case Study
-                            </span>
-                        </button> */}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Carousel */}
-            <div
+            {/* <div
                 className="relative overflow-hidden"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
@@ -176,7 +167,7 @@ const TestimonialCarousel = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
             {/* Pagination and Arrows */}
             <div className="mt-8 flex flex-col md:flex-row md:items-center justify-between">

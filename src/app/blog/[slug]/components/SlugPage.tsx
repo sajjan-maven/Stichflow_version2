@@ -220,145 +220,114 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, newsLetterData, blogUrl, ti
                     <link rel="canonical" href={`${API_BASE_URL}/blog/${blogPost.heroSection.urlSlug}`} />
                 )}
             </Head>
-            <div className={`${styles.pageWrapper} mainSec`}>
-                <main className={styles.mainContainer}>
-                    <div className={styles.gridContainer}>
-                        <div className={`${styles.leftColumn} ${styles.hideOnMobile}`}>
-                            <div className={`${styles.stickyContent} ${styles.boxStyle}`}>
-                                <div className={styles.metaTitle} role="heading" aria-level={2}>
-                                    Table of Contents
-                                </div>
-                                <TableOfContents sections={headings} />
+            <div className='flex flex-col items-center w-full px-6 bg-gradient-to-b from-[#f8f5f3] to-white bg-[#f8f5f3]'>
+                <main className='flex justify-between w-full max-w-[1256px] mx-auto'>
+                    <div className='lg:grid lg:grid-cols-[3fr_1fr] lg:gap-4 w-full'>
+
+
+                        <article className='px-4 pt-12'>
+                            <div className='inline-block bg-[#F1ACC0] text-gray-600 rounded-4xl mb-4 px-4 py-1'>{blogPost?.heroSection.category}</div>
+                            <h1 className='text-xl md:text-2xl font-medium mb-2 md:mb-4'>{blogPost?.blogTitle || "Untitled"}</h1>
+                            <p className='text-gray-600 text-lg'>
+                                {blogPost.heroSection.postedSummary}
+                            </p>
+                            <p className='text-gray-500 text-sm mt-4 mb-2'>
+                                {blogPost.heroSection?.modifiedDate ? (
+                                    <>Modified on {formatDate(blogPost.heroSection.modifiedDate)}</>
+                                ) : (
+                                    <>Published on {formatDate(blogPost.heroSection.postedDate)}</>
+                                )}
+                                {blogPost.heroSection?.readTime && ` | ${blogPost.heroSection.readTime} minutes`}
+                            </p>
+
+                            <time dateTime={blogPost.heroSection?.postedDate} hidden>
+                                Published on {formatDate(blogPost.heroSection?.postedDate)}
+                            </time>
+                            <time dateTime={blogPost.heroSection?.modifiedDate} hidden>
+                                Modified on {formatDate(blogPost.heroSection?.modifiedDate)}
+                            </time>
+
+                            <div className='mt-4 mb-6'>
+                                <Image
+                                    height={250}
+                                    width={600}
+                                    className={styles.heroImage}
+                                    src={blogPost.heroSection?.bannerImage?.url || "/images/default-banner.jpg"}
+                                    alt={blogPost?.heroSection?.bannerImage?.alternativeText || "Default Alt Text"}
+                                    priority
+                                    loading="eager"
+                                />
                             </div>
-                        </div>
 
-                        <div className={styles.middleColumn}>
-                            <article className={styles.articleContent}>
-                                <div className={`${styles.articleCategory}`}>{blogPost?.heroSection.category}</div>
-                                <h1 className={styles.articleTitle}>{blogPost?.blogTitle || "Untitled"}</h1>
-                                <p className={styles.description} style={{marginTop: "1%"}}>
-                                    {blogPost.heroSection.postedSummary}
-                                </p>
-                                <p className={styles.description} style={{marginTop: "2.5%", marginBottom: "3.5%"}}>
-                                    {blogPost.heroSection?.modifiedDate ? (
-                                        <>Modified on {formatDate(blogPost.heroSection.modifiedDate)}</>
-                                    ) : (
-                                        <>Published on {formatDate(blogPost.heroSection.postedDate)}</>
-                                    )}
-                                    {blogPost.heroSection?.readTime && ` | ${blogPost.heroSection.readTime} minutes`}
-                                </p>
-
-                                <time dateTime={blogPost.heroSection?.postedDate} hidden>
-                                    Published on {formatDate(blogPost.heroSection?.postedDate)}
-                                </time>
-                                <time dateTime={blogPost.heroSection?.modifiedDate} hidden>
-                                    Modified on {formatDate(blogPost.heroSection?.modifiedDate)}
-                                </time>
-
-                                <div className={styles.heroImageDiv}>
-                                    <Image
-                                        height={250}
-                                        width={600}
-                                        className={styles.heroImage}
-                                        src={blogPost.heroSection?.bannerImage?.url || "/images/default-banner.jpg"}
-                                        alt={blogPost?.heroSection?.bannerImage?.alternativeText || "Default Alt Text"}
-                                        priority
-                                        loading="eager"
+                            <div className={`${styles.content} ${styles.blogContent}`}>
+                                <section
+                                    className={styles.content}
+                                    dangerouslySetInnerHTML={{
+                                        __html: modifiedDescription.replace(/<a /g, `<a class="${styles.link}" `),
+                                    }}
+                                />
+                                {quotesData && (
+                                    <QuotesComponent
+                                        description={quotesData.description}
+                                        name={quotesData.name}
+                                        role={quotesData.role}
                                     />
-                                </div>
-
-                                <div className={`${styles.content} ${styles.blogContent}`}>
-                                    <section
-                                        className={styles.content}
-                                        dangerouslySetInnerHTML={{
-                                            __html: modifiedDescription.replace(/<a /g, `<a class="${styles.link}" `),
-                                        }}
+                                )}
+                                {ctaData && (
+                                    <CTAComponent
+                                        heading={ctaData.heading}
+                                        buttonName={ctaData["button-name"]}
+                                        buttonLink={ctaData["button-link"]}
                                     />
-                                    {quotesData && (
-                                        <QuotesComponent
-                                            description={quotesData.description}
-                                            name={quotesData.name}
-                                            role={quotesData.role}
-                                        />
-                                    )}
-                                    {ctaData && (
-                                        <CTAComponent
-                                            heading={ctaData.heading}
-                                            buttonName={ctaData["button-name"]}
-                                            buttonLink={ctaData["button-link"]}
-                                        />
-                                    )}
-                                </div>
-                                <SocialMediaComponent blogUrl={blogUrl} title={title} />
-                            </article>
-                        </div>
+                                )}
+                            </div>
+                            <SocialMediaComponent blogUrl={blogUrl} title={title} />
+                        </article>
 
                         <div className={styles.rightColumn}>
-                            <div className={`${styles.stickyContent} ${styles.rightTop}`}>
-                                {blogPost?.author && (
-                                    <div className={styles.profileCard}>
-                                        <div className={styles.avatarContainer}>
-                                            <Link href={`/blog/author/${authorSlug}`}>
-                                                <Image
-                                                    height={36}
-                                                    width={36}
-                                                    src={blogPost?.author?.avatar?.url || "/images/default-avatar.png"}
-                                                    alt="Profile"
-                                                    className={styles.profileImage}
-                                                    loading="lazy"
-                                                />
-                                            </Link>
-                                            <div className={styles.authorSocialIcon}>
-                                                {linkedInMedia && (
-                                                    <div className={styles.slugAuthorSocialIcons}>
-                                                        <Link
-                                                            href={
-                                                                linkedInMedia?.mediaLink?.startsWith("http")
-                                                                    ? linkedInMedia.mediaLink
-                                                                    : `https://${linkedInMedia?.mediaLink}`
-                                                            }
-                                                            target="_blank"
-                                                        >
-                                                            <Image
-                                                                src="/images/li.svg"
-                                                                alt="LinkedIn"
-                                                                width={16}
-                                                                height={16}
-                                                            />
-                                                        </Link>
-                                                    </div>
-                                                )}
-                                                {twitterMedia && (
-                                                    <div className={styles.slugAuthorSocialIcons}>
-                                                        <Link
-                                                            href={
-                                                                twitterMedia?.mediaLink?.startsWith("http")
-                                                                    ? twitterMedia.mediaLink
-                                                                    : `https://${twitterMedia?.mediaLink}`
-                                                            }
-                                                            target="_blank"
-                                                        >
-                                                            <Image
-                                                                src="/images/tw.svg"
-                                                                alt="Twitter"
-                                                                width={16}
-                                                                height={16}
-                                                            />
-                                                        </Link>
-                                                    </div>
-                                                )}
+                            <div className='sticky top-32'>
+                                <div className="min-h-screen overflow-y-auto pr-2 custom-scrollbar">
+                                    {blogPost?.author && (
+                                        <div className='border rounded-4xl bg-white shadow-sm p-6 hidden lg:block mb-4'>
+                                            <div className='flex gap-2 items-center'>
+                                                <Link href={`/blog/author/${authorSlug}`}>
+                                                    <Image
+                                                        height={36}
+                                                        width={36}
+                                                        src={blogPost?.author?.avatar?.url || "/images/default-avatar.png"}
+                                                        alt="Profile"
+                                                        className={styles.profileImage}
+                                                        loading="lazy"
+                                                    />
+                                                </Link>
+                                                <div>
+                                                    <div className={styles.profileName}>{blogPost.author.name}</div>
+                                                    <p className={styles.role}>{blogPost.author.role}</p>
+                                                </div>
                                             </div>
-                                            {/* )} */}
-                                        </div>
-                                        <div className={styles.profileName}>{blogPost.author.name}</div>
 
-                                        <p className={styles.role}>{blogPost.author.role}</p>
-                                        <div>
-                                            <p className={styles.profileBio}>{blogPost.author.aboutAuthor}</p>
+                                            <div>
+                                                <p className='text-gray-500 text-xs mt-2'>{blogPost.author.aboutAuthor}</p>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <div className='hidden lg:block mb-4'>
+                                        <div className='border rounded-4xl bg-white shadow-sm p-6'>
+                                            <div className='text-xl font-medium mb-4 pb-2 border-b border-[#E6E6E6]' role="heading" aria-level={2}>
+                                                Table of Contents
+                                            </div>
+                                            <TableOfContents sections={headings} />
                                         </div>
                                     </div>
-                                )}
-                                {newsLetterData && (
+                                    <div className='hidden lg:block'>
+                                        <div className='border rounded-4xl bg-white shadow-sm p-6'>
+                                            <div className='text-xl font-medium mb-4 pb-2 border-b border-[#E6E6E6]' role="heading" aria-level={2}>
+                                                Share this article
+                                            </div>     
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* {newsLetterData && (
                                     <div className={styles.newsletterCard}>
                                         <div className={styles.newsletterTitle}>
                                             {newsLetterData?.data?.newsLetterHeading}
@@ -408,7 +377,7 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, newsLetterData, blogUrl, ti
                                             ))}
                                         </div>
                                     </div>
-                                )}
+                                )} */}
                             </div>
                         </div>
                     </div>
@@ -417,16 +386,16 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, newsLetterData, blogUrl, ti
                 <div>
                     <FAQComponent faqData={blogPost.faqSection} />
                 </div>
-                <div className={styles.relatedBlogs}>
+                <div className='w-full px-6 py-20'>
                     {Array.isArray(relatedBlogs) && relatedBlogs.length > 0 && (
-                        <div className={styles.relatedBlogsContainer}>
-                            <div className={styles.moreBlogTitle}>Related Articles</div>
-                            <div className="card-container">
+                        <div className='w-full max-w-[1256px] mx-auto'>
+                            <div className='mb-8 text-4xl text-gray-500 text-center md:text-start'>Related Articles</div>
+                            <div className="w-full flex flex-col md:flex-row max-w-[360px] md:max-w-full mx-auto gap-6">
                                 {relatedBlogs.map((post: BlogData) => (
                                     <Link
                                         href={`/blog/${post.heroSection?.urlSlug}`}
                                         key={post.id}
-                                        className={styles.noUnderline}
+                                        className="w-full"
                                         rel="noopener noreferrer"
                                     >
                                         <BlogCard

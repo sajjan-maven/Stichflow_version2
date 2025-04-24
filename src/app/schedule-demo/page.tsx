@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from "lucide-react";
+import Image from "next/image";
 
 export default function DemoDesktop() {
   // Benefits data
@@ -41,8 +42,10 @@ export default function DemoDesktop() {
       <div className="relative w-full max-w-[1360px] h-full min-h-[1024px]">
         {/* Header/Logo */}
         <header className="absolute w-[109px] h-6 top-9 left-0">
-          <img
-            className="absolute w-[75px] h-3 top-1.5 left-[34px]"
+          <Image
+            width={75}
+            height={12}
+            className="absolute top-1.5 left-[34px]"
             alt="Wordmark"
             src="/wordmark-1.svg"
           />

@@ -15,7 +15,7 @@ const FooterComponent = () => {
                 <div className="w-full flex justify-center relative">
                     <Image
                         alt="Stitchflow Wordmark"
-                        src="images/Wordmark.svg"
+                        src="/images/Wordmark.svg"
                         width={1256}
                         height={199}
                     />

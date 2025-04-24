@@ -21,11 +21,11 @@ const BlogHomePage: React.FC<BlogTabProps> = ({ blogData, newsLetterData }) => {
             : blogData?.data,
     };
     return (
-        <div className='w-full px-6 py-14 md:py-20'>
+        <>
             <BlogHeroSection blogData={filteredBlogData} newsLetterData={newsLetterData} />
             <PopularArticlesSection blogData={filteredBlogData} />
             <AllBlogs blogData={filteredBlogData} />
-        </div>
+        </>
     )
 }
 

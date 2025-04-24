@@ -45,11 +45,11 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
     .filter(matchesSearchQuery)
     .filter((blog) => activeTab === "all" || formatCategory(blog.heroSection?.category || "") === activeTab);
     return (
-        <section className="w-full max-w-[1256px] mx-auto">
-            <div className="tabs-container">
-                <div className="blog-top">
-                    <div className="tabs">
-                        <button className={activeTab === "all" ? "active" : ""} onClick={() => setActiveTab("all")}>
+        <section className="w-full px-6 py-10 md:pb-20">
+            <div className="max-w-[1256px] mx-auto">
+                <div className="flex flex-wrap gap-4 items-center justify-center md:justify-between border-b border-gray-300">
+                    <div className="flexflex-wrap gap-2 items-center justify-center">
+                        <button className={`${activeTab === "all" ? "bg-gray-600 text-white" : ""} py-2 px-4 rounded-full font-medium`} onClick={() => setActiveTab("all")}>
                             All
                         </button>
                         {uniqueCategories.map((category) => {
@@ -57,7 +57,7 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                             return (
                                 <button
                                     key={formattedCategory}
-                                    className={activeTab === formattedCategory ? "active" : ""}
+                                    className={`${activeTab === formattedCategory ? "bg-gray-600 text-white" : ""} py-2 px-4 rounded-full font-medium`}
                                     onClick={() => setActiveTab(formattedCategory)}
                                 >
                                     {category}
@@ -65,10 +65,10 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                             );
                         })}
                     </div>
-                    <div id="int-search" className="blog-search">
+                    <div id="int-search" className="mb-2">
                         <form id="wf-form-Search-form" name="wf-form-Search-form" method="get">
                             <input
-                                className="blog-int-search-input blog-search-input jetboost-list-search-input-24ow w-input"
+                                className="bg-white text-gray-800 border border-gray-800 rounded-3xl min-h-3 px-4 py-2 text-xl"
                                 maxLength={256}
                                 name="Search-2"
                                 placeholder="Search our blog"
@@ -81,45 +81,43 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                             <input
                                 type="submit"
                                 data-wait="Please wait..."
-                                className="hide w-button hidden"
+                                className="hidden"
                                 defaultValue="Submit"
                             />
                         </form>
                     </div>
                 </div>
 
-                <div className="tab-content">
+                <div>
                     {filteredBlogs.length > 0 ? (
-                        <div className="content">
-                            <div className="card-container">
-                                {filteredBlogs.map((blog) => (
-                                    <div className="cards-parent" key={blog.id}>
-                                        <Link
-                                            href={`/blog/${blog.heroSection?.urlSlug}`}
-                                            key={blog.id}
-                                            style={{textDecoration: "none"}}
-                                            rel="noopener noreferrer"
-                                        >
-                                            <BlogCard
-                                                altText={
-                                                    blog.heroSection?.bannerImage?.alternativeText || "Banner Image"
-                                                }
-                                                title={blog.blogTitle || "Untitled"}
-                                                bannerImage={
-                                                    blog.heroSection?.bannerImage?.url ||
-                                                    "/images/default-placeholder.png"
-                                                }
-                                                category={blog.heroSection?.category || "Uncategorized"}
-                                                summary={blog.heroSection?.postedSummary || "No summary available"}
-                                                loading="lazy"
-                                            />
-                                        </Link>
-                                    </div>
-                                ))}
-                            </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                            {filteredBlogs.map((blog) => (
+                                <div className="mt-2 md:mt-10" key={blog.id}>
+                                    <Link
+                                        href={`/blog/${blog.heroSection?.urlSlug}`}
+                                        key={blog.id}
+                                        style={{textDecoration: "none"}}
+                                        rel="noopener noreferrer"
+                                    >
+                                        <BlogCard
+                                            altText={
+                                                blog.heroSection?.bannerImage?.alternativeText || "Banner Image"
+                                            }
+                                            title={blog.blogTitle || "Untitled"}
+                                            bannerImage={
+                                                blog.heroSection?.bannerImage?.url ||
+                                                "/images/default-placeholder.png"
+                                            }
+                                            category={blog.heroSection?.category || "Uncategorized"}
+                                            summary={blog.heroSection?.postedSummary || "No summary available"}
+                                            loading="lazy"
+                                        />
+                                    </Link>
+                                </div>
+                            ))}
                         </div>
                     ) : (
-                        <p className="no-information">No blogs available in this category.</p>
+                        <p className="pt-7 text-center font-medium">No blogs available in this category.</p>
                     )}
                 </div>
             </div>

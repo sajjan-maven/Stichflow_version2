@@ -10,7 +10,8 @@ const HeaderComponent = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
     const router = useRouter();
-    const headerRef = useRef<HTMLDivElement>(null); // ✅ ref to detect outside click
+    const headerRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 0);
@@ -23,13 +24,19 @@ const HeaderComponent = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-        document.addEventListener("mousedown", handleClickOutside); // ✅ close on outside click
+        document.addEventListener("mousedown", handleClickOutside);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    const handleDropdownItemClick = (path: string) => {
+        router.push(path);
+        setActiveDropdown(null);
+        setIsOpen(false); // Also close mobile menu if open
+    };
 
     const menuItems = [
         {
@@ -39,21 +46,21 @@ const HeaderComponent = () => {
                 <div className="w-[280px] md:w-[500px] pt-1 md:pt-3">
                     <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
                         <div
-                            onClick={() => router.push("/product-page")}
+                            onClick={() => handleDropdownItemClick("/product-page")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Product</h5>
                             <p className="text-sm text-gray-500">Learn how to tame business sprawl with Stitchflow.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/use-cases")}
+                            onClick={() => handleDropdownItemClick("/use-cases")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Use Cases</h5>
                             <p className="text-sm text-gray-500">How teams put Stitchflow into action.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/free-pilot")}
+                            onClick={() => handleDropdownItemClick("/free-pilot")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Free Pilot</h5>
@@ -63,30 +70,28 @@ const HeaderComponent = () => {
                 </div>
             ),
         },
-        // {name: "App Audits", hasDropdown: false},
         {
             name: "Resources",
             hasDropdown: true,
             content: (
                 <div className="w-[280px] md:w-[500px] pt-1 md:pt-3">
-                    {/* <h4 className="text-sm font-semibold text-gray-400 mb-3">Resources</h4> */}
                     <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
                         <div
-                            onClick={() => router.push("/blog")}
+                            onClick={() => handleDropdownItemClick("/blog")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-medium text-sm text-gray-800">Blog</h5>
                             <p className="text-sm text-gray-500">Insights, trends, and best practices in IT.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/case-study")}
+                            onClick={() => handleDropdownItemClick("/case-study")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-medium text-sm text-gray-800">Case Studies</h5>
                             <p className="text-sm text-gray-500">Real-world success stories with Stitchflow.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/it-tools")}
+                            onClick={() => handleDropdownItemClick("/it-tools")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-medium text-sm text-gray-800">Free IT Tools</h5>
@@ -103,17 +108,16 @@ const HeaderComponent = () => {
             hasDropdown: true,
             content: (
                 <div className="w-[280px] md:w-[500px] pt-1 md:pt-3">
-                    {/* <h4 className="text-sm font-semibold text-gray-400 mb-3">Company</h4> */}
                     <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
                         <div
-                            onClick={() => router.push("/about")}
+                            onClick={() => handleDropdownItemClick("/about")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">About Us</h5>
                             <p className="text-sm text-gray-500">Meet the team behind Stitchflow.</p>
                         </div>
                         <div
-                            onClick={() => router.push("/security")}
+                            onClick={() => handleDropdownItemClick("/security")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Security</h5>
@@ -134,7 +138,7 @@ const HeaderComponent = () => {
             ref={headerRef}
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-in-out 
             ${isScrolled ? "bg-white lg:bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
-            flex justify-center items-center py-4 px-6`}
+            flex justify-center items-center py-4 h-20 px-6`}
         >
             <div className="w-full max-w-[1256px] mx-auto">
                 <div className="flex items-center justify-between">

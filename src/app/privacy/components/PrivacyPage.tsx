@@ -18,13 +18,13 @@ const PrivacyPage: React.FC<PrivacyPolicyProps> = ({ privacyData }) => {
             <div className="fixed-header">
                 <PrivacyBanner privacyData={privacyData} />
             </div>
-            <section className="section">
+            <section className="section px-6">
                 <div className="w-full max-w-[1256px] mx-auto mb-8">
                     <div className="relative flex justify-between">
-                        <div className="w-full max-w-[310px] hidden md:block sticky top-2">
+                        <div className="left-div _30cent hide-mobile sticky-left">
                             <PrivacyLeftContainer privacyData={privacyData} activeSection={activeSection} />
                         </div>
-                        <div className="w-full max-w-[725px]">
+                        <div className="right-div _70cent right-container">
                             <PrivacyRightContainer privacyData={privacyData} onSectionChange={setActiveSection} />
                         </div>
                     </div>

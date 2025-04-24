@@ -67,7 +67,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({sections}) => {
     }, [sections, activeSection, isManualClick, pathname, router]);
 
     return (
-        <nav className={`${styles.tableOfContents} ${styles.stickyTOC}`}>
+        <nav className="flex flex-col gap-3">
             {sections.map((section) => (
                 <ScrollLink
                     key={section.id}
@@ -76,7 +76,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({sections}) => {
                     duration={300}
                     offset={-100} // Adjust based on your navbar height
                     spy={true}
-                    className={`${styles.tocLink} ${activeSection === section.id ? styles.active : ""}`}
+                    className={`transition-all text-sm duration-300  ease-in ${activeSection === section.id ? "font-medium text-[#F25C30]" : "text-gray-500"}`}
                     onClick={() => {
                         handleClick(section.id);
                         //updateUrl(section.id);

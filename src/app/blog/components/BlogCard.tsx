@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 
 interface BlogCardProps {
     title: string;
@@ -21,22 +20,22 @@ const BlogCard: React.FC<BlogCardProps> = ({
     useHeading = false,
 }) => {
     return (
-        <div className="blog-card">
+        <div className="w-full max-w-[500px] md:max-w-full mx-auto">
             {bannerImage && (
                 <Image
                     src={bannerImage}
                     alt={altText}
                     width={500}
                     height={300}
-                    className="blog-image"
+                    className="mx-auto"
                     loading={loading}
                 />
             )}
-            <div className="slug-card-content">
-                <div className="blogs-category">{category}</div>
-                {useHeading ? <h3 className="card-title">{title}</h3> : <div className="card-title">{title}</div>}
+            <div className="pt-4 flex flex-col justify-between">
+                <div className="font-semibold text-gray-500">{category}</div>
+                {useHeading ? <h3 className="text-lg">{title}</h3> : <div className="card-title">{title}</div>}
                 {/* <div className="card-title">{title}</div> */}
-                <p className="blog-summary">{summary}</p>
+                <p className="text-gray-500">{summary}</p>
             </div>
         </div>
     );
