@@ -70,6 +70,7 @@ const HeaderComponent = () => {
                 </div>
             ),
         },
+        // {name: "App Audits", hasDropdown: false},
         {
             name: "Resources",
             hasDropdown: true,
@@ -145,13 +146,7 @@ const HeaderComponent = () => {
                     <div className="flex items-center gap-4 md:gap-12">
                         {/* Logo */}
                         <div className="cursor-pointer" onClick={() => router.push("/")}>
-                            <Image
-                                alt="Wordmark"
-                                src="/images/logo (1).svg"
-                                width={109}
-                                height={24}
-                                priority
-                            />
+                            <Image alt="Wordmark" src="/images/logo (1).svg" width={109} height={24} priority />
                         </div>
 
                         {/* Desktop Navigation */}
@@ -211,17 +206,11 @@ const HeaderComponent = () => {
                     <div className="flex justify-end">
                         {/* CTA Buttons */}
                         <div className="relative hidden lg:flex justify-end items-center gap-2">
-                            <Button
-                                variant="primary"
-                                onClick={() => router.push("/schedule-demo")}
-                            >
+                            <Button variant="primary" onClick={() => router.push("/schedule-a-demo")}>
                                 Book Demo
                             </Button>
 
-                            <Button
-                                variant="secondary"
-                                onClick={() => router.push("/free-pilot")}
-                            >
+                            <Button variant="secondary" onClick={() => router.push("/free-pilot")}>
                                 Start Trial
                                 <ArrowRightIcon className="ml-2 h-4 w-4" />
                             </Button>
@@ -267,17 +256,11 @@ const HeaderComponent = () => {
                                 </div>
                             ))}
                             <div className="flex flex-row gap-4 pt-6 flex-wrap">
-                                <Button
-                                    variant="primary"
-                                    onClick={() => router.push("/schedule-a-demo")}
-                                >
+                                <Button variant="primary" onClick={() => router.push("/schedule-a-demo")}>
                                     Book Demo
                                 </Button>
 
-                                <Button
-                                    variant="secondary"
-                                    onClick={() => router.push("/pilot")}
-                                >
+                                <Button variant="secondary" onClick={() => router.push("/pilot")}>
                                     Start Trial
                                     <ArrowRightIcon className="ml-2 h-4 w-4" />
                                 </Button>
