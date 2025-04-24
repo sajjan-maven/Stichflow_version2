@@ -46,7 +46,7 @@ const HeaderComponent = () => {
                 <div className="w-[280px] md:w-[500px] pt-1 md:pt-3">
                     <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
                         <div
-                            onClick={() => handleDropdownItemClick("/product-page")}
+                            onClick={() => handleDropdownItemClick("/platform")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Product</h5>
@@ -60,7 +60,7 @@ const HeaderComponent = () => {
                             <p className="text-sm text-gray-500">How teams put Stitchflow into action.</p>
                         </div>
                         <div
-                            onClick={() => handleDropdownItemClick("/free-pilot")}
+                            onClick={() => handleDropdownItemClick("/pilot")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-semibold text-sm text-gray-800">Free Pilot</h5>
@@ -85,14 +85,14 @@ const HeaderComponent = () => {
                             <p className="text-sm text-gray-500">Insights, trends, and best practices in IT.</p>
                         </div>
                         <div
-                            onClick={() => handleDropdownItemClick("/case-study")}
+                            onClick={() => handleDropdownItemClick("/case-studies")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-medium text-sm text-gray-800">Case Studies</h5>
                             <p className="text-sm text-gray-500">Real-world success stories with Stitchflow.</p>
                         </div>
                         <div
-                            onClick={() => handleDropdownItemClick("/it-tools")}
+                            onClick={() => handleDropdownItemClick("/tools")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
                             <h5 className="font-medium text-sm text-gray-800">Free IT Tools</h5>
@@ -210,7 +210,7 @@ const HeaderComponent = () => {
                                 Book Demo
                             </Button>
 
-                            <Button variant="secondary" onClick={() => router.push("/free-pilot")}>
+                            <Button variant="secondary" onClick={() => router.push("/pilot")}>
                                 Start Trial
                                 <ArrowRightIcon className="ml-2 h-4 w-4" />
                             </Button>
