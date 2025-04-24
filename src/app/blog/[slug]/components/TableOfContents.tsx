@@ -1,7 +1,6 @@
 "use client";
 
 import React, {useEffect, useState} from "react";
-import styles from "../BlogPost.module.css";
 import {Link as ScrollLink} from "react-scroll";
 import {useRouter, usePathname} from "next/navigation";
 

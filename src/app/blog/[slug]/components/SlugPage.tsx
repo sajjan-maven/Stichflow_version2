@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState, useRef} from "react";
+// import React, {useState, useRef} from "react";
 import {useParams, useRouter} from "next/navigation";
 import styles from "../BlogPost.module.css";
 import Image from "next/image";
@@ -8,12 +8,13 @@ import TableOfContents from "./TableOfContents";
 import {parse} from "node-html-parser";
 import Link from "next/link";
 import Head from "next/head";
-import {BlogData, BlogResponse, INewsLetterSection} from "@/app/types/blog";
+// import {BlogData, BlogResponse, INewsLetterSection} from "@/app/types/blog";
+import {BlogData, BlogResponse} from "@/app/types/blog";
 import FAQComponent from "./FAQComponent";
 import QuotesComponent from "./QuotesComponent";
 import CTAComponent from "./CTAComponent";
 import BlogCard from "../../components/BlogCard";
-import {toast, Id} from "react-toastify";
+// import {toast, Id} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SocialMediaComponent from "./SocialMediaComponent";
 
@@ -88,17 +89,24 @@ const extractCustomData = (htmlString: string) => {
 
     return {ctaData, quotesData, cleanedHtml};
 };
+// interface BlogTabProps {
+//     blogData: BlogData;
+//     newsLetterData: {data: INewsLetterSection};
+//     blogUrl?: string;
+//     title?: string;
+//     relatedBlogs: BlogResponse;
+// }
 interface BlogTabProps {
     blogData: BlogData;
-    newsLetterData: {data: INewsLetterSection};
+    // newsLetterData: {data: INewsLetterSection};
     blogUrl?: string;
     title?: string;
     relatedBlogs: BlogResponse;
 }
-
-const SlugPage: React.FC<BlogTabProps> = ({blogData, newsLetterData, blogUrl, title, relatedBlogs}) => {
-    const [value, setValue] = useState("");
-    const toastShown = useRef<Id | null>(null);
+// const SlugPage: React.FC<BlogTabProps> = ({blogData, newsLetterData, blogUrl, title, relatedBlogs}) => {
+const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlogs}) => {
+    // const [value, setValue] = useState("");
+    // const toastShown = useRef<Id | null>(null);
 
     const router = useRouter();
     const {slug} = useParams<{slug: string}>();
@@ -130,78 +138,78 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, newsLetterData, blogUrl, ti
         return name.toLowerCase().replace(/\s+/g, "-");
     };
     const authorSlug = formatAuthorSlug(blogPost?.author?.name || "");
-    const linkedInMedia = blogPost?.author?.socialMediaList?.find((media) => media.mediaList === "LinkedIn");
-    const twitterMedia = blogPost?.author?.socialMediaList?.find((media) => media.mediaList === "Twitter");
+    // const linkedInMedia = blogPost?.author?.socialMediaList?.find((media) => media.mediaList === "LinkedIn");
+    // const twitterMedia = blogPost?.author?.socialMediaList?.find((media) => media.mediaList === "Twitter");
 
-    const handleNewsletterSubmit = async () => {
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        const subscribedAt = new Date().toISOString();
-        const errorToastId = "newsletter-error";
-        const successToastId = "newsletter-success";
+    // const handleNewsletterSubmit = async () => {
+    //     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    //     const subscribedAt = new Date().toISOString();
+    //     const errorToastId = "newsletter-error";
+    //     const successToastId = "newsletter-success";
 
-        console.log("Before dismissing, toastShown.current:", toastShown.current);
-        toast.dismiss(errorToastId);
-        toast.dismiss(successToastId);
-        if (toastShown.current) {
-            toast.dismiss(toastShown.current);
-            console.log("Dismissed previous toast:", toastShown.current);
-            toastShown.current = null;
-        }
-        console.log("After dismissing, toastShown.current:", toastShown.current);
-        if (!value) {
-            toastShown.current = toast.error("Please enter the email", {
-                toastId: errorToastId,
-                position: "top-center",
-            });
-            console.log("Error toast shown, new toastShown.current:", toastShown.current);
-            return;
-        } else if (!emailRegex.test(value)) {
-            toastShown.current = toast.warning("Please enter a valid email", {
-                toastId: errorToastId,
-                position: "top-center",
-            });
-            console.log("Warning toast shown, new toastShown.current:", toastShown.current);
-            return;
-        } else {
-            try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/newsletter-mails`, {
-                    method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify({data: {email: value, subscribedAt: subscribedAt}}),
-                });
-                const result = await response.json();
+    //     console.log("Before dismissing, toastShown.current:", toastShown.current);
+    //     toast.dismiss(errorToastId);
+    //     toast.dismiss(successToastId);
+    //     if (toastShown.current) {
+    //         toast.dismiss(toastShown.current);
+    //         console.log("Dismissed previous toast:", toastShown.current);
+    //         toastShown.current = null;
+    //     }
+    //     console.log("After dismissing, toastShown.current:", toastShown.current);
+    //     if (!value) {
+    //         toastShown.current = toast.error("Please enter the email", {
+    //             toastId: errorToastId,
+    //             position: "top-center",
+    //         });
+    //         console.log("Error toast shown, new toastShown.current:", toastShown.current);
+    //         return;
+    //     } else if (!emailRegex.test(value)) {
+    //         toastShown.current = toast.warning("Please enter a valid email", {
+    //             toastId: errorToastId,
+    //             position: "top-center",
+    //         });
+    //         console.log("Warning toast shown, new toastShown.current:", toastShown.current);
+    //         return;
+    //     } else {
+    //         try {
+    //             const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/newsletter-mails`, {
+    //                 method: "POST",
+    //                 headers: {"Content-Type": "application/json"},
+    //                 body: JSON.stringify({data: {email: value, subscribedAt: subscribedAt}}),
+    //             });
+    //             const result = await response.json();
 
-                if (result) {
-                    setValue("");
+    //             if (result) {
+    //                 setValue("");
 
-                    if (toastShown.current) {
-                        toast.dismiss(toastShown.current);
-                        toastShown.current = null;
-                    }
+    //                 if (toastShown.current) {
+    //                     toast.dismiss(toastShown.current);
+    //                     toastShown.current = null;
+    //                 }
 
-                    toastShown.current = toast.success("Your email has been submitted!", {
-                        toastId: successToastId,
-                        position: "top-center",
-                        autoClose: 3000,
-                    });
+    //                 toastShown.current = toast.success("Your email has been submitted!", {
+    //                     toastId: successToastId,
+    //                     position: "top-center",
+    //                     autoClose: 3000,
+    //                 });
 
-                    return;
-                }
-            } catch (error) {
-                console.error("Error submitting newsletter:", error);
-                toastShown.current = toast.error("Failed to submit your email. Please try again.", {
-                    toastId: errorToastId,
-                    position: "top-center",
-                });
-                console.log("Error toast shown due to fetch error, new toastShown.current:", toastShown.current);
-            }
-        }
-    };
-    const handleKeyDown = async (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === "Enter") {
-            handleNewsletterSubmit();
-        }
-    };
+    //                 return;
+    //             }
+    //         } catch (error) {
+    //             console.error("Error submitting newsletter:", error);
+    //             toastShown.current = toast.error("Failed to submit your email. Please try again.", {
+    //                 toastId: errorToastId,
+    //                 position: "top-center",
+    //             });
+    //             console.log("Error toast shown due to fetch error, new toastShown.current:", toastShown.current);
+    //         }
+    //     }
+    // };
+    // const handleKeyDown = async (event: React.KeyboardEvent<HTMLInputElement>) => {
+    //     if (event.key === "Enter") {
+    //         handleNewsletterSubmit();
+    //     }
+    // };
 
     return (
         <>
