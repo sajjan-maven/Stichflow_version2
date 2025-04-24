@@ -2,6 +2,7 @@
 import {ChevronRightIcon} from "lucide-react";
 import Image from "next/image";
 import {useEffect, useState} from "react";
+import Script from "next/script";
 
 export default function DemoDesktop() {
     const [step, setStep] = useState(1);
@@ -67,7 +68,7 @@ export default function DemoDesktop() {
                 setEmailError(data.message || "There was an error saving your email. Please try again.");
             }
         } catch (error) {
-            setEmailError("Connection error. Please try again later.");
+            setEmailError(String(error) || "Connection error. Please try again later.");
         } finally {
             setLoading(false);
         }
@@ -391,10 +392,10 @@ export default function DemoDesktop() {
                                             className="meetings-iframe-container w-full min-h-[600px]"
                                             data-src="https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true"
                                         ></div>
-                                        <script
+                                        <Script
                                             type="text/javascript"
                                             src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
-                                        ></script>
+                                        ></Script>
 
                                         {/* <div className="relative w-[564px] h-[500.03px]">
                                            
