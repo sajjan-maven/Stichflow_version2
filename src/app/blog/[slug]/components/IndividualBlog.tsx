@@ -66,9 +66,13 @@ export async function generateMetadata({params}: {params: PageParams}): Promise<
 
 export default async function IndividualBlog({params}: {params: PageParams}) {
     const {slug} = await params;
-    const [blogPageData, newsLetterData] = await Promise.all([
+    // const [blogPageData, newsLetterData] = await Promise.all([
+    //     BlogsService.getAllHomeBlogs(),
+    //     BlogsService.getNewsLetter(),
+    // ]);
+
+    const [blogPageData] = await Promise.all([
         BlogsService.getAllHomeBlogs(),
-        BlogsService.getNewsLetter(),
     ]);
     const blogPost = blogPageData?.data?.find((post: BlogData) => post.heroSection?.urlSlug === slug);
 
@@ -217,7 +221,7 @@ export default async function IndividualBlog({params}: {params: PageParams}) {
         <>
             <SlugPage
                 blogData={individualBlog?.data}
-                newsLetterData={newsLetterData}
+                // newsLetterData={newsLetterData}
                 blogUrl={blogPost.heroSection.urlSlug}
                 title={blogPost.blogTitle}
                 relatedBlogs={matchedBlogs}

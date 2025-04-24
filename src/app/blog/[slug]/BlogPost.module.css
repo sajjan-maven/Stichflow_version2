@@ -57,7 +57,7 @@
     .articleCategory {
         display: inline-block;
         background-color: #f7f1fe;
-        color: #ac72f5;
+        color: #F25C30;
         gap: 8px;
         /* padding: 1.3% 2.5%; */
         /* padding: 6px 16px; */
@@ -175,7 +175,6 @@
 }
 
 .middleColumn {
-    font-family: Inter, sans-serif;
     max-width: 673px;
     margin: 0 auto;
     width: 100%;
@@ -232,7 +231,6 @@
 }
 
 .metaTitle {
-    font-family: Epilogue, sans-serif;
     font-weight: bold;
     font-size: 1.25rem;
     line-height: 2.5rem;
@@ -261,7 +259,6 @@
 }
 
 .articleTitle {
-    font-family: Epilogue, sans-serif;
     font-size: 36px;
     font-weight: 700;
     color: #18181b;
@@ -284,7 +281,6 @@
 .descriptionDate {
     font-size: 14px;
     color: #747474;
-    font-family: Inter;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -313,7 +309,6 @@
 }
 
 .content {
-    /* margin-top: 2rem; */
     width: 100%;
     padding: 0;
 }
@@ -325,7 +320,6 @@
 }
 
 .content h3 {
-    font-family: Epilogue, sans-serif;
     font-size: 1rem;
     font-weight: 600;
     margin: 1.5rem 0;
@@ -389,12 +383,12 @@
 
 .tocLink:hover {
     text-decoration: underline;
-    color: #ac72f5;
+    color: #F25C30;
     transition: all 0.2s ease;
 }
 .tocLink.active {
     text-decoration: none;
-    color: #ac72f5;
+    color: #F25C30;
     transition: all 0.3s ease;
 }
 
@@ -463,7 +457,6 @@
     font-size: 12px;
     line-height: normal;
     text-align: start;
-    font-family: Inter;
     font-weight: 500;
 }
 
@@ -498,7 +491,6 @@
 }
 
 .moreBlogTitle {
-    font-family: Epilogue, sans-serif;
     font-weight: 700;
     font-size: 36px;
     margin-bottom: 35px;
@@ -583,7 +575,6 @@
     color: #cdcdcd;
     font-size: 10px;
     line-height: 13.5px;
-    font-family: inter;
 }
 
 /* .boxWrapper {
@@ -653,7 +644,7 @@
 .articleCategory {
     display: inline-block;
     background-color: #f7f1fe;
-    color: #ac72f5;
+    color: #F25C30;
     gap: 8px;
     /* padding: 1.3% 2.5%; */
     padding: 6px 16px;
@@ -666,11 +657,10 @@
 }
 
 .badgeText {
-    color: #ac72f5;
+    color: #F25C30;
     font-size: 14px;
     font-weight: 400px !important;
     line-height: 26px;
-    font-family: inter;
     /* letter-spacing: 0%; */
 }
 
@@ -860,7 +850,7 @@
 }
 
 .blogContent .content .link u {
-    color: #ac72f5 !important;
+    color: #F25C30 !important;
     text-decoration: none;
 }
 
@@ -889,7 +879,6 @@
 .blogContent .content h4 *,
 .blogContent .content h5 *,
 .blogContent .content h6 * {
-    font-family: "Epilogue", sans-serif !important;
     font-size: 24px !important;
     line-height: 32.4px !important;
     font-weight: 700 !important;
@@ -936,7 +925,6 @@
 .blogContent .content address,
 .blogContent .content a,
 .blogContent .content div {
-    font-family: "Inter", sans-serif !important;
     font-size: 16px !important;
     line-height: 21.6px !important;
     font-weight: 400 !important;
@@ -1011,7 +999,6 @@
 
 .articleContent .blogContent .content p {
     font-size: 16px;
-    font-family: Inter;
     font-weight: 400;
     line-height: 21.6px;
 }

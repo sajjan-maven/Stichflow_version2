@@ -73,9 +73,6 @@ html {
     }
 }
 
-.blog-rtb {
-    font-family: Inter, sans-serif;
-}
 .terms-content p a {
     color: blue;
     text-decoration: none;
@@ -91,12 +88,11 @@ html {
 }
 
 .fs-toc_link.active {
-    color: #b581f6 !important;
+    color: #F25C30 !important;
     font-weight: 600;
 }
 
 .fs-toc_link {
-    font-family: Inter, sans-serif;
     transition: all 0.3s ease;
     display: block;
     text-decoration: none;
@@ -180,7 +176,6 @@ html {
     overflow: hidden;
     background-color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: Inter, sans-serif;
 }
 
 .card-image {
@@ -295,13 +290,6 @@ html {
     color: #18181b;
     /* margin-bottom: 5px; */
     line-height: 27px;
-}
-
-.blog-summary {
-    font-size: 14px;
-    line-height: 18.9px;
-    font-weight: 400;
-    color: #747474;
 }
 
 .card-author {
@@ -668,7 +656,6 @@ div:has(> figure.table) {
 }
 
 .not-found-title {
-    font-family: "Epilogue", sans-serif;
     font-size: 150px;
     font-weight: 700;
     line-height: 90%;
@@ -677,7 +664,6 @@ div:has(> figure.table) {
 }
 
 .not-found-message {
-    font-family: "Inter", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 140%;
@@ -964,7 +950,6 @@ div:has(> figure.table) {
     color: var(--silver);
     margin-right: 0;
     padding: 1.35rem 0;
-    font-family: Inter, sans-serif;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.5rem;
@@ -1006,7 +991,6 @@ div:has(> figure.table) {
 .blog-rtb h2 {
     color: var(--new-black);
     margin-bottom: 1rem;
-    font-family: Inter, sans-serif;
     font-size: 2rem;
     font-weight: 500;
     line-height: 2.5rem;
@@ -1023,7 +1007,6 @@ div:has(> figure.table) {
     color: var(--new-black);
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
-    font-family: Inter, sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
@@ -1873,7 +1856,6 @@ div:has(> figure.table) {
     min-width: 26.375rem;
     min-height: 3.375rem;
     padding: 0.875rem 8.175rem 0.875rem 1.1875rem;
-    font-family: Inter, sans-serif;
     font-size: 1.125rem;
     line-height: 1.625rem;
     transition: all 0.35s;
@@ -2203,13 +2185,6 @@ div:has(> figure.table) {
     display: flex;
 }
 
-
-
-
-.mt-4 {
-    margin-top: 4rem;
-}
-
 .announcement-bar {
     z-index: 90;
     justify-content: space-between;
@@ -2402,7 +2377,6 @@ div:has(> figure.table) {
     border: 1px solid #9692a524;
     border-radius: 4px;
     padding: 0.25rem 0.5rem;
-    font-family: Inter, sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1rem;
@@ -2699,7 +2673,6 @@ div:has(> figure.table) {
     min-height: 3.5rem;
     max-height: 3.5rem;
     padding: 0.9375rem 1px 0.9375rem 3px;
-    font-family: Inter, sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     transition: all 0.35s;
@@ -2906,7 +2879,6 @@ div:has(> figure.table) {
 
 .footer-link {
     color: var(--light-slate-grey);
-    font-family: Inter, sans-serif;
     font-size: 0.875rem;
     text-decoration: none;
     transition: all 0.35s;
@@ -2964,7 +2936,6 @@ div:has(> figure.table) {
 }
 
 .h2-2rem {
-    font-family: Epilogue, sans-serif;
     font-size: 2rem;
     font-weight: 600;
     line-height: 2.5rem;
@@ -4173,7 +4144,6 @@ div:has(> figure.table) {
 
 .main-job-title {
     color: var(--black-2);
-    font-family: Epilogue, sans-serif;
     font-size: 1.125rem;
     font-weight: 600;
     line-height: 1.5rem;
@@ -4237,7 +4207,6 @@ div:has(> figure.table) {
     flex-direction: column;
     align-items: center;
     padding: 0 2.25rem;
-    font-family: Epilogue, sans-serif;
     font-size: 1.125rem;
     font-weight: 600;
     line-height: 1.5rem;
@@ -4434,7 +4403,6 @@ div:has(> figure.table) {
 }
 
 .blop-page-heading {
-    font-family: Inter, sans-serif;
     font-size: 3.75rem;
     font-weight: 400;
     line-height: 4.7rem;
@@ -4543,7 +4511,6 @@ div:has(> figure.table) {
 
 ._1-625-f {
     color: var(--new-black);
-    font-family: Inter, sans-serif;
     font-size: 1.625rem;
     font-weight: 500;
     line-height: 2.275rem;
@@ -4775,7 +4742,6 @@ div:has(> figure.table) {
 
 ._1-75f {
     color: #090808;
-    font-family: Inter, sans-serif;
     font-size: 1.75rem;
     font-weight: 500;
     line-height: 2.45rem;
@@ -4792,10 +4758,6 @@ div:has(> figure.table) {
     line-height: 1.75rem;
 }
 
-._1-25-h4.font-inter {
-    font-family: Inter, sans-serif;
-}
-
 ._1-25-h4.font-inter.fw-500 {
     font-weight: 500;
 }
@@ -4810,7 +4772,6 @@ div:has(> figure.table) {
 
 .footer-link-2 {
     color: #9692a5;
-    font-family: Inter, sans-serif;
     font-size: 0.875rem;
     text-decoration: none;
     transition: all 0.35s;
@@ -4831,7 +4792,6 @@ div:has(> figure.table) {
 
 ._1-5-f {
     color: #090808;
-    font-family: Inter, sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.1rem;
@@ -4968,7 +4928,6 @@ div:has(> figure.table) {
 }
 
 .blop-page-heading-copy {
-    font-family: Inter, sans-serif;
     font-size: 3.75rem;
     font-weight: 400;
     line-height: 4.7rem;
@@ -5465,7 +5424,6 @@ div:has(> figure.table) {
 
 .sm-table-header {
     color: #ff6e66;
-    font-family: Epilogue, sans-serif;
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.4;
@@ -5616,7 +5574,6 @@ div:has(> figure.table) {
 .lp-subheading {
     color: #4193ff;
     text-transform: uppercase;
-    font-family: Epilogue, sans-serif;
     font-size: 24px;
 }
 
@@ -7231,7 +7188,6 @@ div:has(> figure.table) {
     margin: 0px !important;
 }
 table {
-    font-family: Inter;
     border-collapse: collapse;
     width: 100%;
 }
@@ -7294,4 +7250,9 @@ table tr:first-child td {
 .quote-role {
     color: gray;
     font-size: 12px;
+}
+
+.custom-scrollbar {
+    scrollbar-width: 0px;
+    scrollbar-color: #f1acc000 transparent;
 }

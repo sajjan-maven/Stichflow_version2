@@ -67,10 +67,10 @@ const HomeHeroSection = () => {
                 </div>
                 <div className="relative w-full px-6 md:px-0 pt-0 md:pt-10 lg:pt-0">
                     <div className="md:absolute top-0 flex justify-center gap-4 items-center mb-10 mt-8 w-full flex-wrap">
-                        <div className="flex w-[280px] items-center gap-2 px-3 py-3 bg-white rounded-xl border border-solid border-[#e4dbd0]">
+                        <div className="flex w-[280px] items-center gap-2 bg-white rounded-xl border border-solid border-[#e4dbd0]">
                             <input
                                 type="email"
-                                className="border-0 shadow-none p-0 h-auto font-label-regular text-[#7b7481]"
+                                className="border-0 shadow-none px-3 py-3 outline-none active:outline-none active:border-none h-auto font-label-regular text-[#7b7481]"
                                 placeholder="Work email address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}

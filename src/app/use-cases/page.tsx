@@ -73,7 +73,7 @@ export default function UseCases() {
               <h2 className="font-semibold text-[#363338] text-3xl md:text-[40px] text-center tracking-[0] md:leading-[48px]">
                 {useCase.title}
               </h2>
-              <p className="[font-family:'Geist',Helvetica] font-normal text-[#7b7481] text-base text-center tracking-[0] leading-6">
+              <p className=" font-normal text-[#7b7481] text-base text-center tracking-[0] leading-6">
                 {useCase.description}
               </p>
             </div>

@@ -16,42 +16,46 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
     const latestBannerBlog = bannerBlogs.length > 0 ? bannerBlogs[0] : null;
 
     return (
-        <section className="w-full max-w-[1256px] mx-auto mb-8">
-            <div className="text-4xl font-semibold">
-                <h1>Blogs</h1>
-            </div>
-
-            {latestBannerBlog && (
-                <div>
-                    <Link
-                        href={`/blog/${latestBannerBlog.heroSection?.urlSlug}`}
-                        key={latestBannerBlog.id}
-                        style={{textDecoration: "none"}}
-                        rel="noopener noreferrer"
-                    >
-                        <div className="hero-banner">
-                            <div className="banner-left">
+        <>
+            <section className="w-full px-6 py-20 md:py-20 text-4xl font-semibold bg-[#e4dbd0]">
+                <h1 className="text-center">Blogs</h1>
+            </section>
+            <section className="w-full bg-[#f8f5f3] px-6 pt-20 pb-14">
+                <div className="max-w-[1256px] mx-auto">
+                    <div className="text-4xl font-semibold mb-8">
+                        <h2>Featured</h2>
+                    </div>
+                    {latestBannerBlog && (
+                        <Link
+                            href={`/blog/${latestBannerBlog.heroSection?.urlSlug}`}
+                            key={latestBannerBlog.id}
+                            style={{textDecoration: "none"}}
+                            rel="noopener noreferrer"
+                        >
+                            <div className="w-full max-w-[500px] md:max-w-full mx-auto flex flex-col md:flex-row items-center md:items-start justify-between md:justify-start gap-6">
                                 {latestBannerBlog?.heroSection?.bannerImage?.url && (
-                                    <Image
-                                        src={latestBannerBlog.heroSection.bannerImage.url}
-                                        alt={latestBannerBlog.blogTitle || "Banner"}
-                                        height={303}
-                                        width={478.83}
-                                        className="banner-img"
-                                        loading="lazy"
-                                    />
+                                    <div className="lg:min-w-[479px]">
+                                        <Image
+                                            src={latestBannerBlog.heroSection.bannerImage.url}
+                                            alt={latestBannerBlog.blogTitle || "Banner"}
+                                            height={371}
+                                            width={479}
+                                            className="rounded-4xl"
+                                            loading="lazy"
+                                        />
+                                    </div>
                                 )}
+                                <div className="lg:mt-4 lg:ml-1.5">
+                                    <p className="font-semibold text-gray-500">{latestBannerBlog?.heroSection?.category}</p>
+                                    <h3 className="text-2xl lg:text-4xl lg:leading-12 font-medium mb-2 mt-1">{latestBannerBlog?.blogTitle}</h3>
+                                    <p className="text-xl text-gray-500">{latestBannerBlog?.heroSection?.postedSummary}</p>
+                                </div>
                             </div>
-                            <div className="banner-right">
-                                <p className="banner-category">{latestBannerBlog?.heroSection?.category}</p>
-                                <h3 className="banner-blog-tittle">{latestBannerBlog?.blogTitle}</h3>
-                                <p>{latestBannerBlog?.heroSection?.postedSummary}</p>
-                            </div>
-                        </div>
-                    </Link>
+                        </Link>
+                    )}
                 </div>
-            )}
-        </section>
+            </section>
+        </>
     );
 };
 

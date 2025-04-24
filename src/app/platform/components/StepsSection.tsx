@@ -84,7 +84,7 @@ export default function StepsSection() {
                     {step.title}
                     </h2>
 
-                    <p className=" [font-family:'Geist',Helvetica] font-normal text-[#7b7481] text-base tracking-[0] leading-6">
+                    <p className="  font-normal text-[#7b7481] text-base tracking-[0] leading-6">
                     {step.description}
                     </p>
                 </div>
