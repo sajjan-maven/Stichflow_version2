@@ -12,9 +12,9 @@ export const InsightsSection = () => {
   };
 
   return (
-    <section className="flex flex-col items-center py-4 md:py-20 w-full bg-white">
-      <div className="max-w-[848px] border-none shadow-none mx-auto">
-        <div className="flex flex-col items-start gap-6 md:gap-12 p-6">
+    <section className="flex flex-col items-center py-4 md:py-20 w-full bg-white p-6">
+      <div className="max-w-[800px] border-none shadow-none mx-auto">
+        <div className="flex flex-col items-start gap-6 md:gap-12">
           <Image width={41} height={40} alt="Quote icon" src="/free-pilot/quotation.png" />
 
           <div className="flex flex-col items-start gap-6">

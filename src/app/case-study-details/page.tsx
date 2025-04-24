@@ -51,7 +51,7 @@ export default function CaseStudiesDetails() {
       {/* Main Content */}
       <main className="relative w-full">
         <div className="flex justify-center gap-20 pt-20 pb-40 px-6 max-w-[1272px] mx-auto">
-          <div className="flex flex-col w-[829px] items-start gap-16">
+          <div className="flex flex-col w-[830px] items-start gap-16">
             {/* Case Study Header */}
             <header className="flex flex-col w-full items-start gap-6 bg-transparent">
               <div
@@ -94,7 +94,7 @@ export default function CaseStudiesDetails() {
                 <div className="flex flex-col items-start gap-12 pt-6 p-8 md:pt-10 md:p-14">
                   <Image width={41} height={40} alt="Quote" src="/case-study-details/quotation.png" />
                   <div className="flex flex-col items-start gap-6 w-full">
-                    <p className="[font-family:'Geist',Helvetica] font-normal text-[#363338] text-lg leading-[26px]">
+                    <p className=" font-normal text-[#363338] text-lg leading-[26px]">
                       Our biggest challenge wasn&apos;t just managing access gaps and
                       maintaining stringent security standards with our dynamic
                       workforce. Our manual processes couldn&apos;t keep up with the
@@ -105,10 +105,10 @@ export default function CaseStudiesDetails() {
                         <Image width={48} height={48} src="/case-study-details/Avatar.png" alt="Amit Sharma" />
                       </div>
                       <div className="flex flex-col items-start gap-1 flex-1">
-                        <p className="[font-family:'Geist',Helvetica] font-medium text-[#7b7481] text-base leading-6">
+                        <p className=" font-medium text-[#7b7481] text-base leading-6">
                           Amit Sharma
                         </p>
-                        <p className="[font-family:'Geist',Helvetica] font-normal text-[#7b7481] text-xs leading-4">
+                        <p className=" font-normal text-[#7b7481] text-xs leading-4">
                           Manager of IT Systems, Turing
                         </p>
                       </div>
@@ -122,7 +122,7 @@ export default function CaseStudiesDetails() {
                 <h2 className="text-2xl font-medium text-[#363338]">
                   Turing&lsquo;s challenge
                 </h2>
-                <p className="[font-family:'Geist',Helvetica] font-normal text-[#363338] text-base leading-6">
+                <p className=" font-normal text-[#363338] text-base leading-6">
                   To support Turing&lsquo;s rapid company growth, the nuances
                   that&nbsp;&nbsp;their IT and security teams needed to deal
                   with included:
@@ -148,7 +148,7 @@ export default function CaseStudiesDetails() {
                 <h2 className="text-2xl font-medium text-[#363338]">
                   Turing&lsquo;s Response
                 </h2>
-                <p className="[font-family:'Geist',Helvetica] font-normal text-[#363338] text-base leading-6">
+                <p className=" font-normal text-[#363338] text-base leading-6">
                   Stitchflow&lsquo;s customized SaaS management solution met Turing&lsquo;s
                   needs and:
                   <br />
@@ -185,7 +185,7 @@ export default function CaseStudiesDetails() {
                         <h3 className="text-3xl font-medium text-[#363338]">
                           {stat.value}
                         </h3>
-                        <p className="[font-family:'Geist',Helvetica] font-normal text-[#7b7481] text-base leading-6">
+                        <p className=" font-normal text-[#7b7481] text-base leading-6">
                           {stat.description}
                         </p>
                       </div>
@@ -196,7 +196,7 @@ export default function CaseStudiesDetails() {
                       <h3 className="text-3xl font-medium text-[#363338]">
                         {statsData[4].value}
                       </h3>
-                      <p className="[font-family:'Geist',Helvetica] font-normal text-[#7b7481] text-base leading-6">
+                      <p className=" font-normal text-[#7b7481] text-base leading-6">
                         {statsData[4].description}
                       </p>
                     </div>

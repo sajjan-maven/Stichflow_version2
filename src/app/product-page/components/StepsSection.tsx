@@ -59,34 +59,32 @@ export default function StepsSection() {
       ];
 
   return (
-    <section className="flex flex-col items-center py-16 md:py-40 w-full z-[2] max-w-[1224px] mx-auto px-6">
+    <section className="flex flex-col items-center py-14 md:py-40 w-full z-[2] px-6">
+      <div className="w-full max-w-[1256px] mx-auto">
         {steps.map((step, index) => (
         <div
             key={index}
-            className="flex items-start justify-center lg:gap-8 w-full lg:border-l border-[#E4DFDC]"
+            className="flex relative items-start justify-center lg:gap-8 w-full lg:border-l border-[#E4DFDC]"
         >
-            <div className="hidden lg:flex flex-col w-px items-center gap-2 pt-3 pb-0 px-0 ">
-            <div className="border-8 border-[#f8f5f3]">
+            <div className="hidden lg:flex justify-center items-center bg-[#F8F5F3] w-[40px] h-[40px] absolute -left-[20px]">
                 <div className="w-2 h-2 bg-[#e4dfdc] rounded" />
-            </div>
-            <div className=" flex-1 w-px grow" />
             </div>
 
             <div
-            className={`${index !== steps.length - 1 ? "pt-0 pb-14 md:pb-20" : ""} px-0 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6  flex-1 grow`}
+            className={`${index !== steps.length - 1 ? "pt-0 pb-14 md:pb-20" : ""} px-0 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6  flex-1 lg:ml-8`}
             >
                 <div className="gap-2  flex-1 grow flex flex-col items-start">
-                    <div className="inline-flex items-start gap-2 px-4 py-2  bg-[#f1acc0] rounded-[100px]">
-                    <span className=" w-fit mt-[-1.00px] font-label-medium font-[number:var(--label-medium-font-weight)] text-[#363338] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)] whitespace-nowrap [font-style:var(--label-medium-font-style)]">
+                    <div className="inline-flex items-start gap-2 px-3 py-1 md:px-4 md:py-2  bg-[#f1acc0] rounded-[100px]">
+                    <span className=" w-fit text-[#363338] whitespace-nowrap">
                         Step {step.number}
                     </span>
                     </div>
 
-                    <h2 className="font-h2-medium font-[number:var(--h2-medium-font-weight)] text-[#363338] text-[length:var(--h2-medium-font-size)] tracking-[var(--h2-medium-letter-spacing)] leading-[var(--h2-medium-line-height)] [font-style:var(--h2-medium-font-style)]">
+                    <h2 className="font-medium text-[#363338] md:text-2xl text-xl">
                     {step.title}
                     </h2>
 
-                    <p className=" [font-family:'Geist',Helvetica] font-normal text-[#7b7481] text-base tracking-[0] leading-6">
+                    <p className="  font-normal text-[#7b7481] text-base tracking-[0] leading-6">
                     {step.description}
                     </p>
                 </div>
@@ -104,6 +102,7 @@ export default function StepsSection() {
             </div>
         </div>
         ))}
+      </div>
     </section>
   )
 }

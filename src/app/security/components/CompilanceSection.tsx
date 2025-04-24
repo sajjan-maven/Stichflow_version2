@@ -106,29 +106,25 @@ const complianceData = [
 
 const ComplianceSection = () => {
     return (
-        <section className="py-20 bg-[#e4dbd0] w-full px-4 lg:px-0">
-            <div className="flex justify-center items-center flex-wrap">
-                <div className="w-full md:w-[90%] lg:w-[80%]">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                            {complianceData.map((item) => (
-                                <div
-                                    key={item.id}
-                                    className="flex flex-col overflow-hidden border border-[#545058] rounded-[32px] bg-white"
-                                >
-                                    <div className="p-0 h-[200px] bg-[#a3c4f4] flex items-center justify-center">
-                                        {item.headerContent}
-                                    </div>
-                                    <div className="flex flex-col items-center gap-2 p-8">
-                                        <h3 className="text-[#363338] text-xl font-semibold text-center">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-[#7b7481] text-sm text-center">{item.description}</p>
-                                    </div>
-                                </div>
-                            ))}
+        <section className="py-20 bg-[#e4dbd0] w-full px-6">
+            <div className="flex justify-center items-center flex-wrap max-w-[1256px] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {complianceData.map((item) => (
+                        <div
+                            key={item.id}
+                            className="flex flex-col overflow-hidden border border-[#545058] rounded-[32px] bg-white"
+                        >
+                            <div className="p-0 h-[200px] bg-[#a3c4f4] flex items-center justify-center">
+                                {item.headerContent}
+                            </div>
+                            <div className="flex flex-col items-center gap-2 p-8">
+                                <h3 className="text-[#363338] text-xl font-semibold text-center">
+                                    {item.title}
+                                </h3>
+                                <p className="text-[#7b7481] text-sm text-center">{item.description}</p>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

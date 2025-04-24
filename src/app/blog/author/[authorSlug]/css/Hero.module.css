@@ -1,0 +1,210 @@
+.heroContainer {
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    background: white;
+    /* padding: 32px; */
+    margin-top: 120px;
+    max-width: 1043px;
+    margin: 0 auto;
+
+    position: relative;
+    /* left: 188px; */
+    /* margin-left: 14.1%; */
+}
+
+.heroSubContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: white;
+    max-width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+    /* margin-bottom: 1.5%; */
+}
+
+.profileImage {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.imageWrapper {
+    width: 100px;
+    height: 100px;
+    /* background: #f8d775;  */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.content {
+    margin-left: 24px;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    max-width: 430px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.name {
+    font-size: 40px;
+    font-weight: 500;
+    /* line-height: 54px; */
+    margin: 0;
+    color: #000000;
+    margin-top: -13px;
+}
+
+.icons {
+    display: flex;
+    /* margin-top: 3px; */
+    /* align-items: center; */
+    /* margin-right: 690px; */
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+    position: relative;
+    /* right: 717px; */
+}
+
+.icon {
+    font-size: 1.2rem;
+    color: gray;
+    cursor: pointer;
+}
+
+.position {
+    color: #000000;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 21.6px;
+}
+
+.bio {
+    font-size: 14px;
+    font-weight: 400;
+    color: #747474;
+    margin-top: 12px;
+    line-height: 18.9px;
+    /* padding-right: 80px; */
+}
+
+.parentSec {
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    margin-top: 170px;
+}
+
+.authorCard {
+    /* max-width: 587px; */
+    margin-left: 0px;
+    /* margin-right: auto; */
+    display: flex;
+    /* align-items: center; */
+    padding: 16px;
+}
+
+/* .hr {
+    border: none;
+    border-top: 1px solid #E5E7EB;
+    margin-top: 16px;
+} */
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #e5e7eb;
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+    .heroContainer {
+        max-width: 95%;
+        padding: 24px;
+        margin-top: 80px;
+        /* Reduce margin */
+    }
+
+    .authorCard {
+        padding: 16px 0;
+    }
+
+    /* .content {
+        margin-left: 16px;
+    } */
+
+    .name {
+        font-size: 1.3rem;
+        /* Slightly reduce */
+    }
+
+    .position {
+        font-size: 1rem;
+    }
+
+    .bio {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .parentSec {
+        margin-top: 10px !important;
+    }
+
+    .heroContainer {
+        max-width: 90%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 12px;
+        text-align: center;
+    }
+
+    .header {
+        /* flex-direction: column;
+        gap: 8px; */
+        display: inline-block !important;
+    }
+
+    .icons {
+        margin: 0 auto;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .authorCard {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+        /* margin: 0 auto; */
+    }
+
+    .bio {
+        padding-right: 0px;
+    }
+
+    .name {
+        align-items: center;
+    }
+}

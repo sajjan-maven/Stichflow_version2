@@ -10,22 +10,21 @@ const FooterComponent = () => {
     ];
 
     return (
-        <div>
-            <footer className="flex flex-col items-start gap-16 py-16 px-8 md:px-16 lg:px-[236px] w-full bg-[#363338] text-white">
-                <div className="w-full flex justify-center">
+        <footer className="w-full bg-[#363338] text-white pb-10 md:pb-16 px-4">
+            <div className="max-w-[1256px] mx-auto flex flex-col items-start gap-8 md:gap-16">
+                <div className="w-full flex justify-center relative">
                     <Image
-                        className="h-[120px] w-auto"
                         alt="Stitchflow Wordmark"
-                        src="images/Wordmark.svg"
-                        width={20}
-                        height={19}
+                        src="/images/Wordmark.svg"
+                        width={1256}
+                        height={199}
                     />
                 </div>
 
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-6">
+                <div className="flex flex-row items-center justify-between flex-wrap w-full gap-4 md:gap-6">
                     <div className="font-normal text-xs leading-6">Copyright © 2025 Stitchflow, Inc.</div>
 
-                    <div className="flex items-center gap-6 flex-wrap">
+                    <div className="flex items-center gap-2 md:gap-6 flex-wrap">
                         {footerLinks.map((link, index) => (
                             <Link
                                 key={index}
@@ -37,8 +36,8 @@ const FooterComponent = () => {
                         ))}
                     </div>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
     );
 };
 
