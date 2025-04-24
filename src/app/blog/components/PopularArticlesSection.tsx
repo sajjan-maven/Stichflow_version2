@@ -13,10 +13,10 @@ const PopularArticlesSection: React.FC<BlogTabProps> = ({blogData}) => {
     return (
         <section className="w-full px-6 bg-gradient-to-b from-[#f8f5f3] to-white bg-[#f8f5f3]">
             <div className="w-full max-w-[1256px] mx-auto">
-                <div className="text-4xl font-semibold">
+                <div className="text-4xl font-semibold mb-8">
                     <h3>Editor&rsquo;s picks</h3>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 p-6 gap-5 mt-8 rounded-3xl border border-[#545058] bg-white">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 p-6 gap-5 rounded-3xl border border-[#545058] bg-white">
                     {popularData.length > 0 ? (
                         popularData.map((article) => (
                             <Link

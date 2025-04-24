@@ -1,3 +1,4 @@
+import Button from "@/app/components/Button";
 import Image from "next/image";
 import Link from "next/link";
 export default function CaseStudyGrid() {
@@ -69,7 +70,7 @@ export default function CaseStudyGrid() {
             <div className="flex flex-col items-center gap-6 max-w-[1256px] mx-auto">
                 {/* Featured Case Study */}
                 <div className="w-full">
-                    <div className="flex flex-col md:flex-row border border-solid border-[#545058] rounded-[32px] overflow-hidden">
+                    <div className="flex flex-col md:flex-row border border-solid border-[#545058] bg-white rounded-[32px] overflow-hidden">
                         <div className="flex-1 flex justify-center items-center h-[400px] py-20 bg-[#1a1a1a] rounded-3xl">
                             <Image width={248} height={40} alt="Turing logo" src="/case-study/turing-logo.png" />
                         </div>
@@ -84,9 +85,11 @@ export default function CaseStudyGrid() {
                                 </p>
                             </div>
                             <Link href="/case-study-details" passHref>
-                                <button className="self-start px-4 py-3 mt-2 rounded-xl border border-solid border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(249,248,250,1)_100%)]">
+                                <Button
+                                    variant="primary"
+                                >
                                     Read story
-                                </button>
+                                </Button>
                             </Link>
                         </div>
                     </div>
@@ -97,7 +100,7 @@ export default function CaseStudyGrid() {
                     {caseStudies.slice(1, 3).map((study) => (
                         <div
                             key={study.id}
-                            className="flex-1 border border-solid border-[#545058] rounded-[32px] overflow-hidden"
+                            className="flex-1 border border-solid border-[#545058] bg-white rounded-[32px] overflow-hidden"
                         >
                             <div className="p-4 md:p-6 pb-0">
                                 <div
@@ -127,7 +130,7 @@ export default function CaseStudyGrid() {
                     {caseStudies.slice(3, 6).map((study) => (
                         <div
                             key={study.id}
-                            className="flex-1 border border-solid border-[#545058] rounded-[32px] overflow-hidden"
+                            className="flex-1 border border-solid border-[#545058] bg-white rounded-[32px] overflow-hidden"
                         >
                             <div className="p-4 md:p-6 pb-0">
                                 <div

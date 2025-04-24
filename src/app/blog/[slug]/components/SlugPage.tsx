@@ -228,7 +228,7 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                     <link rel="canonical" href={`${API_BASE_URL}/blog/${blogPost.heroSection.urlSlug}`} />
                 )}
             </Head>
-            <div className='flex flex-col items-center w-full px-6 bg-gradient-to-b from-[#f8f5f3] to-white bg-[#f8f5f3]'>
+            <div className='flex flex-col items-center w-full px-6'>
                 <main className='flex justify-between w-full max-w-[1256px] mx-auto'>
                     <div className='lg:grid lg:grid-cols-[3fr_1fr] lg:gap-4 w-full'>
 
@@ -296,7 +296,7 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                             <div className='sticky top-32'>
                                 <div className="min-h-screen overflow-y-auto pr-2 custom-scrollbar">
                                     {blogPost?.author && (
-                                        <div className='border rounded-4xl bg-white shadow-sm p-6 hidden lg:block mb-4'>
+                                        <div className='rounded-4xl bg-[#F8F5F3] shadow-sm p-6 hidden lg:block mb-4'>
                                             <div className='flex gap-2 items-center'>
                                                 <Link href={`/blog/author/${authorSlug}`}>
                                                     <Image
@@ -320,18 +320,11 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                                         </div>
                                     )}
                                     <div className='hidden lg:block mb-4'>
-                                        <div className='border rounded-4xl bg-white shadow-sm p-6'>
+                                        <div className='rounded-4xl bg-[#F8F5F3] shadow-sm p-6'>
                                             <div className='text-xl font-medium mb-4 pb-2 border-b border-[#E6E6E6]' role="heading" aria-level={2}>
                                                 Table of Contents
                                             </div>
                                             <TableOfContents sections={headings} />
-                                        </div>
-                                    </div>
-                                    <div className='hidden lg:block'>
-                                        <div className='border rounded-4xl bg-white shadow-sm p-6'>
-                                            <div className='text-xl font-medium mb-4 pb-2 border-b border-[#E6E6E6]' role="heading" aria-level={2}>
-                                                Share this article
-                                            </div>     
                                         </div>
                                     </div>
                                 </div>

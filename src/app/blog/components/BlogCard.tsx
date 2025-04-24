@@ -22,14 +22,16 @@ const BlogCard: React.FC<BlogCardProps> = ({
     return (
         <div className="w-full max-w-[500px] md:max-w-full mx-auto">
             {bannerImage && (
+            <div className="w-full pt-[55%] rounded-lg overflow-hidden relative">
                 <Image
                     src={bannerImage}
                     alt={altText}
                     width={500}
                     height={300}
-                    className="mx-auto"
+                    className="absolute top-0 left-0 h-full w-full object-cover mx-auto"
                     loading={loading}
                 />
+            </div>
             )}
             <div className="pt-4 flex flex-col justify-between">
                 <div className="font-semibold text-gray-500">{category}</div>

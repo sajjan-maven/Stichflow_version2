@@ -21,9 +21,11 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
                 <h1 className="text-center">Blogs</h1>
             </section>
             <section className="w-full bg-[#f8f5f3] px-6 pt-20 pb-14">
-
-                {latestBannerBlog && (
-                    <div className="max-w-[1256px] mx-auto">
+                <div className="max-w-[1256px] mx-auto">
+                    <div className="text-4xl font-semibold mb-8">
+                        <h2>Featured</h2>
+                    </div>
+                    {latestBannerBlog && (
                         <Link
                             href={`/blog/${latestBannerBlog.heroSection?.urlSlug}`}
                             key={latestBannerBlog.id}
@@ -32,7 +34,7 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
                         >
                             <div className="w-full max-w-[500px] md:max-w-full mx-auto flex flex-col md:flex-row items-center md:items-start justify-between md:justify-start gap-6">
                                 {latestBannerBlog?.heroSection?.bannerImage?.url && (
-                                    <div>
+                                    <div className="lg:min-w-[479px]">
                                         <Image
                                             src={latestBannerBlog.heroSection.bannerImage.url}
                                             alt={latestBannerBlog.blogTitle || "Banner"}
@@ -50,8 +52,8 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
                                 </div>
                             </div>
                         </Link>
-                    </div>
-                )}
+                    )}
+                </div>
             </section>
         </>
     );

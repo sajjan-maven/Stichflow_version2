@@ -7253,6 +7253,6 @@ table tr:first-child td {
 }
 
 .custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #f1acc0 transparent;
+    scrollbar-width: 0px;
+    scrollbar-color: #f1acc000 transparent;
 }
