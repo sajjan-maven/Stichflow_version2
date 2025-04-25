@@ -25,7 +25,7 @@ const HomeHeroSection = () => {
             return;
         }
         try {
-            await fetch("https://hooks.zapier.com/hooks/catch/17929582/2x33nkh/", {
+            await fetch(" https://hooks.zapier.com/hooks/catch/20853066/2pbpc2i/", {
                 method: "POST",
                 mode: "no-cors",
                 headers: {
