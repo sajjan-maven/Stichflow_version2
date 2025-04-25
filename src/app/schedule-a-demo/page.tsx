@@ -131,13 +131,13 @@ export default function DemoDesktop() {
         <div className="flex flex-col items-center relative bg-[#faf9f8]">
             <div className="relative w-full max-w-[1360px] h-full min-h-[1024px]">
                 {/* Header/Logo */}
-                <header className="absolute w-[109px] h-6 top-9 left-0">
+                <header className="absolute w-[108.84px] h-24 top-9 left-0">
                     <Image
-                        width={75}
-                        height={12}
+                        width={108.84}
+                        height={24}
                         className="absolute top-1.5 left-[34px]"
                         alt="Wordmark"
-                        src="/wordmark-1.svg"
+                        src="/images/logo (1).svg"
                     />
                     <img className="absolute w-6 h-6 top-0 left-0" alt="Logo icon" src="/logo-icon.svg" />
                 </header>
