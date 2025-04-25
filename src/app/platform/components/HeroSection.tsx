@@ -4,7 +4,7 @@ import React from 'react'
 export default function HeroSection() {
   return (
     <section className="w-full z-[3] bg-[#e4dbd0] pt-12 px-6 md:pt-16">
-        <div className="flex flex-col w-full max-w-[1728px] mx-auto items-center gap-4">
+        <div className="flex flex-col w-full items-center gap-4">
           <h1 className=" font-semibold text-[#363338] text-[40px] text-center tracking-[0] leading-[48px]">
             How Stitchflow Works
           </h1>

@@ -70,7 +70,7 @@ const HomeHeroSection = () => {
                         <div className="flex w-[280px] items-center gap-2 bg-white rounded-xl border border-solid border-[#e4dbd0]">
                             <input
                                 type="email"
-                                className="border-0 shadow-none px-3 py-3 outline-none active:outline-none active:border-none h-auto font-label-regular text-[#7b7481]"
+                                className="border-0 shadow-none px-3 py-2 outline-none active:outline-none active:border-none h-[44px] font-label-regular text-[#7b7481]"
                                 placeholder="Work email address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}

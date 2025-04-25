@@ -15,7 +15,7 @@ const recentPosts = [
     },
     {
         id: 2,
-        title: "An IT Leader&lsquo;s Guide to ISO/IEC 27001 Certification",
+        title: "An IT Leader&apos;s Guide to ISO/IEC 27001 Certification",
         description:
             "This guide empowers IT leaders to achieve ISO/IEC 27001 Certification with detailed steps, risk management techniques, & strategies to safeguard organizational data.",
         author: "Jay srinivasan",

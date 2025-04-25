@@ -141,7 +141,7 @@ const HeaderComponent = () => {
             ${isScrolled ? "bg-white lg:bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
             flex justify-center items-center py-4 h-20 px-6`}
         >
-            <div className="w-full max-w-[1256px] mx-auto">
+            <div className="w-full max-w-[1220px] mx-auto">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4 md:gap-12">
                         {/* Logo */}
@@ -205,7 +205,7 @@ const HeaderComponent = () => {
 
                     <div className="flex justify-end">
                         {/* CTA Buttons */}
-                        <div className="relative hidden lg:flex justify-end items-center gap-2">
+                        <div className="relative hidden lg:flex justify-end items-center gap-3">
                             <Button variant="primary" onClick={() => router.push("/schedule-a-demo")}>
                                 Book Demo
                             </Button>

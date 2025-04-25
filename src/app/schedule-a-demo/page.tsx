@@ -44,7 +44,7 @@ export default function DemoDesktop() {
     };
     const handleEmailSubmit = async () => {
         if (!formData.email) {
-            setEmailError("Please enter your work email");
+            setEmailError("Please enter your business email");
             return;
         }
         if (!validateEmail(formData.email)) {
@@ -227,7 +227,7 @@ export default function DemoDesktop() {
                 </section>
 
                 {/* Right side form section */}
-                <section className="flex w-full max-w-[623px] h-full min-h-[1024px] items-center justify-center gap-2.5 p-2.5 absolute top-0 right-0 [background:linear-gradient(0deg,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0.2)_100%),linear-gradient(0deg,rgba(228,219,208,1)_0%,rgba(228,219,208,1)_100%)]">
+                <section className="flex w-full max-w-[623px] h-full min-h-[1024px] items-center justify-center gap-2.5 p-2.5 absolute top-0 right-0 bg-[#E9E2D9]">
                     <div className="flex flex-col items-center gap-4 relative rounded-[32px] w-full max-w-[455px]">
                         <div className="flex flex-col items-center gap-6 relative w-full">
                             <h2 className="w-full max-w-[455px] mt-[-1.00px] font-['Geist',Helvetica] font-medium text-[#222222] text-[35px] tracking-[0] leading-[47.2px]">
@@ -242,7 +242,7 @@ export default function DemoDesktop() {
                                             <div className="flex flex-col items-start gap-1 relative w-full">
                                                 <label className="flex h-4 items-center gap-2 relative w-full">
                                                     <span className="flex-1 mt-[-1.00px] font-label-medium font-[number:var(--label-medium-font-weight)] text-[#7b7481] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)] [font-style:var(--label-medium-font-style)]">
-                                                        Work email
+                                                        Business email
                                                     </span>
                                                 </label>
                                             </div>
@@ -254,7 +254,6 @@ export default function DemoDesktop() {
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 type="email"
-                                                placeholder="your.name@company.com"
                                             />
                                             {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
                                         </div>
@@ -280,7 +279,7 @@ export default function DemoDesktop() {
                                             <div className="flex flex-col items-start gap-1 relative w-full">
                                                 <label className="flex h-4 items-center gap-2 relative w-full">
                                                     <span className="flex-1 mt-[-1.00px] font-label-medium font-[number:var(--label-medium-font-weight)] text-[#7b7481] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)] [font-style:var(--label-medium-font-style)]">
-                                                        Work email
+                                                        Business email
                                                     </span>
                                                 </label>
                                             </div>
