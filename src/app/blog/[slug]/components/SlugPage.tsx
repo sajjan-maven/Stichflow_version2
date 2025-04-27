@@ -228,18 +228,18 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                     <link rel="canonical" href={`${API_BASE_URL}/blog/${blogPost.heroSection.urlSlug}`} />
                 )}
             </Head>
-            <div className='flex flex-col items-center w-full px-6'>
-                <main className='flex justify-between w-full max-w-[1256px] mx-auto'>
-                    <div className='lg:grid lg:grid-cols-[3fr_1fr] lg:gap-4 w-full'>
-
-
-                        <article className='px-4 pt-12'>
-                            <div className='inline-block bg-[#F1ACC0] text-gray-600 rounded-4xl mb-4 px-4 py-1'>{blogPost?.heroSection.category}</div>
-                            <h1 className='text-xl md:text-2xl font-medium mb-2 md:mb-4'>{blogPost?.blogTitle || "Untitled"}</h1>
-                            <p className='text-gray-600 text-lg'>
-                                {blogPost.heroSection.postedSummary}
-                            </p>
-                            <p className='text-gray-500 text-sm mt-4 mb-2'>
+            <div className="flex flex-col items-center w-full px-6">
+                <main className="flex justify-between w-full max-w-[1256px] mx-auto">
+                    <div className="lg:grid lg:grid-cols-[3fr_1fr] lg:gap-4 w-full">
+                        <article className="px-4 pt-12">
+                            <div className="inline-block bg-[#F1ACC0] text-gray-600 rounded-4xl mb-4 px-4 py-1">
+                                {blogPost?.heroSection.category}
+                            </div>
+                            <h1 className="text-xl md:text-2xl font-medium mb-2 md:mb-4">
+                                {blogPost?.blogTitle || "Untitled"}
+                            </h1>
+                            <p className="text-gray-600 text-lg">{blogPost.heroSection.postedSummary}</p>
+                            <p className="text-gray-500 text-sm mt-4 mb-2">
                                 {blogPost.heroSection?.modifiedDate ? (
                                     <>Modified on {formatDate(blogPost.heroSection.modifiedDate)}</>
                                 ) : (
@@ -255,7 +255,7 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                                 Modified on {formatDate(blogPost.heroSection?.modifiedDate)}
                             </time>
 
-                            <div className='mt-4 mb-6'>
+                            <div className="mt-4 mb-6">
                                 <Image
                                     height={250}
                                     width={600}
@@ -293,16 +293,19 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                         </article>
 
                         <div className={styles.rightColumn}>
-                            <div className='sticky top-32'>
+                            <div className="sticky top-32">
                                 <div className="min-h-screen overflow-y-auto pr-2 custom-scrollbar">
                                     {blogPost?.author && (
-                                        <div className='rounded-4xl bg-[#F8F5F3] shadow-sm p-6 hidden lg:block mb-4'>
-                                            <div className='flex gap-2 items-center'>
+                                        <div className="rounded-4xl bg-[#F8F5F3] shadow-sm p-6 hidden lg:block mb-4">
+                                            <div className="flex gap-2 items-center">
                                                 <Link href={`/blog/author/${authorSlug}`}>
                                                     <Image
                                                         height={36}
                                                         width={36}
-                                                        src={blogPost?.author?.avatar?.url || "/images/default-avatar.png"}
+                                                        src={
+                                                            blogPost?.author?.avatar?.url ||
+                                                            "/images/default-avatar.png"
+                                                        }
                                                         alt="Profile"
                                                         className={styles.profileImage}
                                                         loading="lazy"
@@ -315,13 +318,22 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                                             </div>
 
                                             <div>
-                                                <p className='text-gray-500 text-xs mt-2'>{blogPost.author.aboutAuthor}</p>
+                                                <p
+                                                    // className='text-gray-500 text-xs mt-2'
+                                                    className="font-normal text-[14px] leading-[20px] text-[#363338] tracking-[0%] font-[Geist] mt-2"
+                                                >
+                                                    {blogPost.author.aboutAuthor}
+                                                </p>
                                             </div>
                                         </div>
                                     )}
-                                    <div className='hidden lg:block mb-4'>
-                                        <div className='rounded-4xl bg-[#F8F5F3] shadow-sm p-6'>
-                                            <div className='text-xl font-medium mb-4 pb-2 border-b border-[#E6E6E6]' role="heading" aria-level={2}>
+                                    <div className="hidden lg:block mb-4">
+                                        <div className="rounded-4xl bg-[#F8F5F3] shadow-sm p-6">
+                                            <div
+                                                className="text-xl font-medium mb-4 pb-2 border-b border-[#E6E6E6]"
+                                                role="heading"
+                                                aria-level={2}
+                                            >
                                                 Table of Contents
                                             </div>
                                             <TableOfContents sections={headings} />
@@ -387,10 +399,12 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                 <div>
                     <FAQComponent faqData={blogPost.faqSection} />
                 </div>
-                <div className='w-full px-6 py-20'>
+                <div className="w-full px-6 py-20">
                     {Array.isArray(relatedBlogs) && relatedBlogs.length > 0 && (
-                        <div className='w-full max-w-[1256px] mx-auto'>
-                            <div className='mb-8 text-4xl text-gray-500 text-center md:text-start'>Related Articles</div>
+                        <div className="w-full max-w-[1256px] mx-auto">
+                            <div className="mb-8 text-4xl text-gray-500 text-center md:text-start">
+                                Related Articles
+                            </div>
                             <div className="w-full flex flex-col md:flex-row max-w-[360px] md:max-w-full mx-auto gap-6">
                                 {relatedBlogs.map((post: BlogData) => (
                                     <Link

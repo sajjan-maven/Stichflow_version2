@@ -47,9 +47,14 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
     return (
         <section className="w-full px-6 py-10 md:pb-20">
             <div className="max-w-[1256px] mx-auto">
-                <div className="flex flex-wrap gap-4 items-center justify-center md:justify-between border-b border-gray-300">
+                <div className="flex flex-wrap gap-4 items-center justify-center md:justify-between border-b border-gray-300 ">
                     <div className="flexflex-wrap gap-2 items-center justify-center">
-                        <button className={`${activeTab === "all" ? "bg-gray-600 text-white" : ""} py-2 px-4 rounded-full font-medium`} onClick={() => setActiveTab("all")}>
+                        <button
+                            className={`${
+                                activeTab === "all" ? "bg-gray-600 text-white" : ""
+                            } py-2 px-4 rounded-full font-medium`}
+                            onClick={() => setActiveTab("all")}
+                        >
                             All
                         </button>
                         {uniqueCategories.map((category) => {
@@ -57,7 +62,9 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                             return (
                                 <button
                                     key={formattedCategory}
-                                    className={`${activeTab === formattedCategory ? "bg-gray-600 text-white" : ""} py-2 px-4 rounded-full font-medium`}
+                                    className={`${
+                                        activeTab === formattedCategory ? "bg-gray-600 text-white" : ""
+                                    } py-2 px-4 rounded-full font-medium`}
                                     onClick={() => setActiveTab(formattedCategory)}
                                 >
                                     {category}
@@ -78,12 +85,7 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 required
                             />
-                            <input
-                                type="submit"
-                                data-wait="Please wait..."
-                                className="hidden"
-                                defaultValue="Submit"
-                            />
+                            <input type="submit" data-wait="Please wait..." className="hidden" defaultValue="Submit" />
                         </form>
                     </div>
                 </div>
@@ -100,13 +102,10 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                                         rel="noopener noreferrer"
                                     >
                                         <BlogCard
-                                            altText={
-                                                blog.heroSection?.bannerImage?.alternativeText || "Banner Image"
-                                            }
+                                            altText={blog.heroSection?.bannerImage?.alternativeText || "Banner Image"}
                                             title={blog.blogTitle || "Untitled"}
                                             bannerImage={
-                                                blog.heroSection?.bannerImage?.url ||
-                                                "/images/default-placeholder.png"
+                                                blog.heroSection?.bannerImage?.url || "/images/default-placeholder.png"
                                             }
                                             category={blog.heroSection?.category || "Uncategorized"}
                                             summary={blog.heroSection?.postedSummary || "No summary available"}
