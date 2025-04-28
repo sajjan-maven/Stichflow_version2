@@ -14,14 +14,14 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({sections}) => {
     const router = useRouter();
     const pathname = usePathname();
 
-    const updateUrl = (sectionId: string) => {
-        router.push(`${pathname}#${sectionId}`, {scroll: false});
-    };
+    // const updateUrl = (sectionId: string) => {
+    //     router.push(`${pathname}#${sectionId}`, {scroll: false});
+    // };
 
     const handleClick = (sectionId: string) => {
         setIsManualClick(true); // ✅ Track that user clicked manually
         setActiveSection(sectionId);
-        updateUrl(sectionId);
+        // updateUrl(sectionId);
 
         setTimeout(() => {
             setIsManualClick(false); // ✅ Reset after smooth scroll completes
@@ -56,7 +56,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({sections}) => {
             if (newActiveSection !== activeSection) {
                 setActiveSection(newActiveSection);
                 if (newActiveSection) {
-                    router.push(`${pathname}#${newActiveSection}`, {scroll: false});
+                    // router.push(`${pathname}#${newActiveSection}`, {scroll: false});
                 }
             }
         };
@@ -75,7 +75,9 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({sections}) => {
                     duration={300}
                     offset={-100} // Adjust based on your navbar height
                     spy={true}
-                    className={`transition-all text-sm duration-300  ease-in ${activeSection === section.id ? "font-medium text-[#F25C30]" : "text-gray-500"}`}
+                    className={`transition-all text-sm duration-300  ease-in ${
+                        activeSection === section.id ? "font-medium text-[#F25C30]" : "text-gray-500"
+                    }`}
                     onClick={() => {
                         handleClick(section.id);
                         //updateUrl(section.id);
