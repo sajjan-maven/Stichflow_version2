@@ -89,7 +89,7 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                         </form>
                     </div>
                 </div>
-                <div className="mt-5">
+                <div className="mt-8 mb-4">
                     <div className="border-b border-gray-300 "></div>
                 </div>
                 <div>
