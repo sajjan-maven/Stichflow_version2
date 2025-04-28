@@ -329,13 +329,14 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                                     )}
                                     <div className="hidden lg:block mb-4">
                                         <div className="rounded-4xl bg-[#F8F5F3] shadow-sm p-6">
-                                            <div
-                                                className="text-xl font-medium mb-4 pb-2 border-b border-[#E6E6E6]"
+                                            <h6
+                                                // className="text-xl font-medium mb-4 pb-2 border-b border-[#E6E6E6]"
+                                                className="font-medium text-[16px] leading-[20px] text-[#363338] tracking-[0%] font-[Geist] mb-4"
                                                 role="heading"
                                                 aria-level={2}
                                             >
-                                                Table of Contents
-                                            </div>
+                                                Contents
+                                            </h6>
                                             <TableOfContents sections={headings} />
                                         </div>
                                     </div>

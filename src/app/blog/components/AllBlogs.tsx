@@ -45,10 +45,10 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
     .filter(matchesSearchQuery)
     .filter((blog) => activeTab === "all" || formatCategory(blog.heroSection?.category || "") === activeTab);
     return (
-        <section className="w-full px-6 py-10 md:pb-20">
+        <section className="w-full px-6 py-10 md:pb-20 ">
             <div className="max-w-[1256px] mx-auto">
-                <div className="flex flex-wrap gap-4 items-center justify-center md:justify-between border-b border-gray-300 ">
-                    <div className="flexflex-wrap gap-2 items-center justify-center">
+                <div className="flex flex-wrap gap-4 items-center justify-center md:justify-between">
+                    <div className="flexflex-wrap gap-2 items-center justify-center ">
                         <button
                             className={`${
                                 activeTab === "all" ? "bg-gray-600 text-white" : ""
@@ -89,7 +89,9 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                         </form>
                     </div>
                 </div>
-
+                <div className="mt-5">
+                    <div className="border-b border-gray-300 "></div>
+                </div>
                 <div>
                     {filteredBlogs.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
