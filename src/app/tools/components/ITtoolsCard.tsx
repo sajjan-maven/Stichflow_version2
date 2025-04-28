@@ -5,35 +5,33 @@ export default function ITtoolsCard() {
     const itTools = [
         {
             label: "License Renewal",
-            icon: "/it-tools/log-out.png",
+            icon: "/it-tools/license.png",
             title: "Renewal tracker",
             url: "/tools/offboard-it",
             description:
-                "Free IT Offboarding Checklist: Streamline your org&apos;s offboarding process. Never miss a critical step in your IT offboarding process. Create a customized list of tasks based on the departing employee&apos;s role and department.",
+                "Never miss a SaaS renewal. Organize contracts in one view, track upcoming renewal dates, and stay ahead with automated email & calendar reminders.",
         },
         {
             label: "Employee Offboarding",
-            icon: "/it-tools/file-check.png",
+            icon: "/it-tools/offboardIT.png",
             title: "OffboardIT",
             url: "/tools/renewal-tracker",
             description:
-                "Free SaaS Contract Renewal Tracker. Never miss a SaaS renewal. Organize contracts in one view, track upcoming renewal dates, and stay ahead with automated reminders.",
+                "Streamline your org’s offboardingprocess. Create a customized list of tasks based on the departing employee's roleand department.",
         },
         {
             label: "Access Management",
-            icon: "/it-tools/log-out.png",
+            icon: "/it-tools/appAccessMatrix.png",
             title: "App Access Matrix",
             url: "/tools/access-matrix",
-            description:
-                "Free SaaS App Access Policy Matrix for IT Teams. A structured way to define, review, and share the SaaS app access policies that your organization uses per app and per user role, team, department or location.",
+            description: "Visualize, track, review, and share app permissions across roles, teams, and locations—without the spreadsheet mess.",
         },
         {
             label: "Cost Savings",
-            icon: "/it-tools/briefcase.png",
+            icon: "/it-tools/ROIcalculator.png",
             title: "ROI Calculator",
             url: "/tools/roi-calculator",
-            description:
-                "Meet your modern IT job board. Every role here is handpicked, vetted, and curated for modern IT pros. Filter by organization size, growth stage, tech stack, and culture fit—we bring you the most relevant jobs at companies that truly value IT.",
+            description: "Estimate your org’s app and business sprawl levels and see how much you could save in license gaps, cost, and IT hours with Stitchflow’s offering.",
         },
     ];
 
@@ -46,18 +44,18 @@ export default function ITtoolsCard() {
                     <Link
                         href={tool.url}
                         key={index}
-                        className="flex flex-col items-start p-6 md:p-8 bg-white rounded-[32px] border border-solid border-[#545058]"
+                        className="flex flex-col relative items-start p-6 md:p-8 bg-white rounded-[32px] border border-solid border-[#545058] min-h-[330px]"
                     >
-                        <div className="bg-[#f1acc0] text-gray-500 px-4 py-1 font-medium rounded-full mb-6">{tool.label}</div>
-                        <div className="flex flex-col items-start gap-4 w-full pb-8">
+                        <div className="bg-[#f4eaff] rounded-4xl px-4 py-1 text-[#7b7481] mb-6">{tool.label}</div>
+                        <div className="flex flex-col items-start gap-4 w-full pb-12">
                             <div className="flex items-center gap-4">
-                                <Image width={32} height={32} alt={`icon-${index}`} src={tool.icon} />
+                                <Image width={36} height={36} alt={`icon-${index}`} src={tool.icon} />
                                 <div className="font-medium text-[#363338] text-3xl">{tool.title}</div>
                             </div>
                             <p className="text-[#7b7481]">{tool.description}</p>
                         </div>
 
-                        <Button variant = "primary" >
+                        <Button variant = "primary" className="absolute left-6 bottom-6 md:right-8 w-fit" >
                             <span className="font-label-medium text-[#363338]">Try for Free</span>
                             <Image width={14} height={14} className="ml-2" alt="button-icon" src="/it-tools/external.png" />
                         </Button>

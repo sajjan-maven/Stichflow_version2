@@ -29,22 +29,22 @@ export default function StepsSection() {
             imageHeight: 400,
         },
         {
-            number: 4,
-            title: "Filter to represent your unique policies and exceptions",
-            description:
-                "Stitchflow helps you filter reconciled data to represent your company's unique policies and exceptions.",
-            image: "",
-            imageWidth: 0,
-            imageHeight: 0,
+          number: 4,
+          title: "Filter to represent your unique policies and exceptions",
+          description:
+            "Stitchflow helps you filter reconciled data to represent your company's unique policies and exceptions.",
+          image: "/product-page/step-4.png",
+          imageWidth: 578,
+          imageHeight: 313,
         },
         {
-            number: 5,
-            title: "Set up automatic alerts for critical issues",
-            description:
-                "Stitchflow's automated insights help uncover gaps, prevent risks and identify vulnerabilities.",
-            image: "/product-page/step-5.png",
-            imageWidth: 546,
-            imageHeight: 247,
+          number: 5,
+          title: "Set up automatic alerts for critical issues",
+          description:
+            "Stitchflow's automated insights help uncover gaps, prevent risks and identify vulnerabilities.",
+          image: "/product-page/step-5.png",
+          imageWidth: 546,
+          imageHeight: 247
         },
         {
             number: 6,

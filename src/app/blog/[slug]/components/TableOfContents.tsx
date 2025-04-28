@@ -75,9 +75,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({sections}) => {
                     duration={300}
                     offset={-100} // Adjust based on your navbar height
                     spy={true}
-                    className={`transition-all text-sm duration-300  ease-in ${
-                        activeSection === section.id ? "font-medium text-[#F25C30]" : "text-gray-500"
-                    }`}
+                    className={`transition-all text-sm duration-300  ease-in ${activeSection === section.id ? "font-medium text-[#F25C30]" : "text-gray-600"}`}
                     onClick={() => {
                         handleClick(section.id);
                         //updateUrl(section.id);

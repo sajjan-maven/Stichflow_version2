@@ -55,10 +55,14 @@ const TestimonialCarousel = () => {
             <Slider {...{
                 dots: false,
                 infinite: true,
-                centerMode: true,
-                speed: 500,
                 slidesToShow: 2,
                 slidesToScroll: 1,
+                autoplay: true,
+                speed: 1000,
+                autoplaySpeed: 3000,
+                centerMode: true,
+                cssEase: "linear",
+                arrows: false,
                 responsive: [
                     {
                       breakpoint: 900,
@@ -79,8 +83,13 @@ const TestimonialCarousel = () => {
 
                             <div className="flex flex-col items-start justify-between mt-auto">
                                 <div className="flex items-center mb-4 md:mb-6">
-                                    <div className="w-8 md:w-10 h-8 md:h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 md:mr-4">
-                                        <span className="text-sm font-bold">{testimonial.author.charAt(0)}</span>
+                                    <div className="rounded-full flex items-center justify-center mr-3 md:mr-4">
+                                        <Image 
+                                            src="/home-page/Avatar.png"
+                                            alt="avatar"
+                                            width={48}
+                                            height={48}
+                                        />
                                     </div>
                                     <div>
                                         <p className="font-semibold text-sm md:text-base">{testimonial.author}</p>

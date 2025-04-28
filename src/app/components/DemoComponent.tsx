@@ -8,7 +8,7 @@ import Button from "./Button";
 const DemoComponent = () => {
     const router = useRouter();
     return (
-        <section className="w-full bg-[#363338] rounded-t-4xl px-4 py-6 md:py-20 relative z-[1]">
+        <section className="w-full bg-[#363338] rounded-t-4xl px-4 py-6 md:py-20 relative -mt-5 z-50">
             <div className="w-full bg-[#565258] rounded-[26px] md:rounded-4xl max-w-[1256px] mx-auto overflow-hidden relative flex flex-col lg:flex-row items-start md:items-center justify-between  gap-8">
                 {/* Text Section */}
                 <div className="w-full md:w-1/2 pt-5 lg:pt-0 flex flex-col gap-6 z-10 px-5 md:px-10">

@@ -16,7 +16,7 @@ const PopularArticlesSection: React.FC<BlogTabProps> = ({blogData}) => {
                 <div className="text-4xl font-semibold mb-8">
                     <h3>Editor&rsquo;s picks</h3>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 p-6 gap-5 rounded-3xl border border-[#545058] bg-[#f8f5f3]">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 p-6 gap-5 rounded-3xl border border-[#545058] bg-transparent">
                     {popularData.length > 0 ? (
                         popularData.map((article) => (
                             <Link
@@ -39,7 +39,7 @@ const PopularArticlesSection: React.FC<BlogTabProps> = ({blogData}) => {
                                         </div>
                                     </div>
                                     <div className="flex-1">
-                                        <h4 className="mt-2 md:mb-2.5 text-lg text-gray-500 font-medium">
+                                        <h4 className="mt-2 md:mb-2.5 text-lg text-[#f25c30] font-medium">
                                             {article?.heroSection?.category}
                                         </h4>
                                         <h4 className="text-xl font-medium">{article?.blogTitle}</h4>

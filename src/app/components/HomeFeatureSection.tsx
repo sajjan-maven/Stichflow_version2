@@ -7,7 +7,7 @@ const HomeFeatureSection = () => {
         author: {
             name: "Edwin Katabaro",
             position: "CIO and CISO, Turing",
-            avatar: "/images/Avatar.svg",
+            avatar: "/home-page/Avatar.png",
         },
     };
 
@@ -15,7 +15,7 @@ const HomeFeatureSection = () => {
         <section className="w-full pb-10 md:pb-20 z-[5] px-6 bg-gradient-to-b from-[#f8f5f3] to-white bg-[#f8f5f3]">
             <div className="max-w-[800px] mx-auto">
                 <div className="flex flex-col items-start gap-6 md:gap-12">
-                    <Image className="w-[41px] h-10" alt="Quote icon" src="/images/“.svg" width={41} height={10} />
+                    <Image className="w-[41px] h-10" alt="Quote icon" src="/home-page/quotes.png" width={41} height={10} />
 
                     <div className="flex flex-col items-start gap-6">
                         <p className="text-lg text-[#363338] font-normal leading-[26px] max-w-[800px]">
@@ -23,7 +23,7 @@ const HomeFeatureSection = () => {
                         </p>
 
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full overflow-hidden border border-[#54505833]">
+                            <div className="rounded-full overflow-hidden border border-[#54505833]">
                                 <Image
                                     width={48}
                                     height={48}
