@@ -1,22 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../../components/Button";
 export default function ITtoolsCard() {
     const itTools = [
         {
+            label: "License Renewal",
             icon: "/it-tools/log-out.png",
-            title: "OffboardIT",
+            title: "Renewal tracker",
             url: "/tools/offboard-it",
             description:
-                "Free IT Offboarding Checklist: Streamline your org&lsquo;s offboarding process. Never miss a critical step in your IT offboarding process. Create a customized list of tasks based on the departing employee&lsquo;s role and department.",
+                "Free IT Offboarding Checklist: Streamline your org&apos;s offboarding process. Never miss a critical step in your IT offboarding process. Create a customized list of tasks based on the departing employee&apos;s role and department.",
         },
         {
+            label: "Employee Offboarding",
             icon: "/it-tools/file-check.png",
-            title: "Renewal tracker",
+            title: "OffboardIT",
             url: "/tools/renewal-tracker",
             description:
                 "Free SaaS Contract Renewal Tracker. Never miss a SaaS renewal. Organize contracts in one view, track upcoming renewal dates, and stay ahead with automated reminders.",
         },
         {
+            label: "Access Management",
             icon: "/it-tools/log-out.png",
             title: "App Access Matrix",
             url: "/tools/access-matrix",
@@ -24,16 +28,17 @@ export default function ITtoolsCard() {
                 "Free SaaS App Access Policy Matrix for IT Teams. A structured way to define, review, and share the SaaS app access policies that your organization uses per app and per user role, team, department or location.",
         },
         {
+            label: "Cost Savings",
             icon: "/it-tools/briefcase.png",
-            title: "Fwd IT Job Board",
-            url: "/fwd-it/job-board",
+            title: "ROI Calculator",
+            url: "/tools/roi-calculator",
             description:
                 "Meet your modern IT job board. Every role here is handpicked, vetted, and curated for modern IT pros. Filter by organization size, growth stage, tech stack, and culture fit—we bring you the most relevant jobs at companies that truly value IT.",
         },
     ];
 
     return (
-        <section className="flex flex-col items-center gap-6 py-6 md:py-40 relative w-full z-[2] px-6">
+        <section className="flex flex-col items-center gap-6 pt-14 pb-0 md:py-20 relative w-full z-[2] px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1256px] ">
                 {itTools
                 .filter((tool) => tool.url)
@@ -41,21 +46,21 @@ export default function ITtoolsCard() {
                     <Link
                         href={tool.url}
                         key={index}
-                        className="flex flex-col items-start gap-8 p-6 md:p-8 bg-white rounded-[32px] border border-solid border-[#545058]"
+                        className="flex flex-col items-start p-6 md:p-8 bg-white rounded-[32px] border border-solid border-[#545058]"
                     >
-                        <Image width={32} height={32} alt={`icon-${index}`} src={tool.icon} />
-
-                        <div className="flex flex-col items-start gap-4 p-0 w-full">
-                            <div className="font-semibold text-[#363338]">{tool.title}</div>
+                        <div className="bg-[#f1acc0] text-gray-500 px-4 py-1 font-medium rounded-full mb-6">{tool.label}</div>
+                        <div className="flex flex-col items-start gap-4 w-full pb-8">
+                            <div className="flex items-center gap-4">
+                                <Image width={32} height={32} alt={`icon-${index}`} src={tool.icon} />
+                                <div className="font-medium text-[#363338] text-3xl">{tool.title}</div>
+                            </div>
                             <p className="text-[#7b7481]">{tool.description}</p>
                         </div>
 
-                        <div className="p-0 mt-auto">
-                            <button className="inline-flex items-center justify-end gap-2 px-4 py-3 rounded-xl border border-solid border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(249,248,250,1)_100%)]">
-                                <span className="font-label-medium text-[#363338]">Go to tool</span>
-                                <Image width={14} height={14} alt="button-icon" src="/it-tools/external.png" />
-                            </button>
-                        </div>
+                        <Button variant = "primary" >
+                            <span className="font-label-medium text-[#363338]">Try for Free</span>
+                            <Image width={14} height={14} className="ml-2" alt="button-icon" src="/it-tools/external.png" />
+                        </Button>
                     </Link>
                 ))}
             </div>

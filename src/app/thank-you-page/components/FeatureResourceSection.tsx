@@ -44,9 +44,9 @@ const FeatureResourceSection = () => {
                             key={index}
                             href={card.url}
                             passHref
-                            className="flex flex-col w-[358px] items-start gap-8 p-8 bg-white rounded-[32px] border border-[#545058]"
+                            className="flex flex-col w-[90%] md:w-[40%] lg:w-[30%]  items-start h-[400px] gap-8 p-8 bg-white rounded-[32px] border border-[#545058]"
                         >
-                            <Image className="w-8 h-8" alt={card.altText} src={card.icon} />
+                            <Image className="w-8 h-8" alt={card.altText} src={card.icon} width={8} height={8} />
 
                             <div className="flex flex-col items-start gap-4 w-full">
                                 <h3 className="font-medium text-[#363338] text-[32px] leading-[40px]">{card.title}</h3>

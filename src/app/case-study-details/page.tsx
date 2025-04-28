@@ -9,7 +9,7 @@ export default function CaseStudiesDetails() {
         },
         {
             value: "100%",
-            description: "compliance with Turing&lsquo;s security policies",
+            description: "compliance with Turing&apos;s security policies",
         },
         {
             value: "220",
@@ -58,7 +58,7 @@ export default function CaseStudiesDetails() {
                                 </div>
                             </Link>
                             <h1 className="md:text-[34px] text-3xl font-medium text-[#363338] text-center">
-                                How Stitchflow enabled Turing&lsquo;s IT and security team to adapt to business scale
+                                How Stitchflow enabled Turing&apos;s IT and security team to adapt to business scale
                             </h1>
 
                             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 w-full">
@@ -114,9 +114,9 @@ export default function CaseStudiesDetails() {
 
                             {/* Challenge Section */}
                             <section className="flex flex-col items-start gap-6 w-full">
-                                <h2 className="text-2xl font-medium text-[#363338]">Turing&lsquo;s challenge</h2>
+                                <h2 className="text-2xl font-medium text-[#363338]">Turing&apos;s challenge</h2>
                                 <p className=" font-normal text-[#363338] text-base leading-6">
-                                    To support Turing&lsquo;s rapid company growth, the nuances that&nbsp;&nbsp;their IT
+                                    To support Turing&apos;s rapid company growth, the nuances that&nbsp;&nbsp;their IT
                                     and security teams needed to deal with included:
                                     <br />
                                     <br />
@@ -135,16 +135,16 @@ export default function CaseStudiesDetails() {
 
                             {/* Response Section */}
                             <section className="flex flex-col items-start gap-6 w-full">
-                                <h2 className="text-2xl font-medium text-[#363338]">Turing&lsquo;s Response</h2>
+                                <h2 className="text-2xl font-medium text-[#363338]">Turing&apos;s Response</h2>
                                 <p className=" font-normal text-[#363338] text-base leading-6">
-                                    Stitchflow&lsquo;s customized SaaS management solution met Turing&lsquo;s needs and:
+                                    Stitchflow&apos;s customized SaaS management solution met Turing&apos;s needs and:
                                     <br />
                                     <br />
                                     Completed initial setup in 30 minutes
                                     <br />
-                                    Stitched together all of Turing&lsquo;s tools, including different IDPs
+                                    Stitched together all of Turing&apos;s tools, including different IDPs
                                     <br />
-                                    Mapped Turing&lsquo;s IT and security processes
+                                    Mapped Turing&apos;s IT and security processes
                                     <br />
                                     Automated security policy enforcement
                                     <br />

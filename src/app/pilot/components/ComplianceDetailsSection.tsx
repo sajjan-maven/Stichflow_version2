@@ -128,7 +128,7 @@ export const ComplianceDetailsSection = () => {
       <section className="py-10 md:py-20 px-6 flex flex-col gap-20 w-full">
         <div className="flex flex-col w-full items-start gap-10 max-w-[1256px] mx-auto">
           <h2 className="text-3xl md:text-[40px] md:leading-[48px] font-semibold text-[#363338]">
-            See how Stitchflow&lsquo;s reconciliation identifies and prioritizes
+            See how Stitchflow&apos;s reconciliation identifies and prioritizes
             opportunities in your environment
           </h2>
 

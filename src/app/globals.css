@@ -5808,14 +5808,6 @@ div:has(> figure.table) {
 }
 
 @media screen and (max-width: 991px) {
-    h1 {
-        font-size: 3.5rem;
-        line-height: 4rem;
-    }
-
-    h3 {
-        font-size: 1.75rem;
-    }
 
     .nav-link {
         margin-right: 0;
@@ -5848,15 +5840,6 @@ div:has(> figure.table) {
         max-width: none;
     }
 
-    .h1 {
-        font-size: 3.5rem;
-        line-height: 3rem;
-    }
-
-    .h2 {
-        font-size: 1.5rem;
-        line-height: 2rem;
-    }
 
     .hide-tab {
         display: none;
