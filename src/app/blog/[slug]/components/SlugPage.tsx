@@ -232,7 +232,10 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                 <main className="flex justify-between w-full max-w-[1256px] mx-auto">
                     <div className="lg:grid lg:grid-cols-[3fr_1fr] lg:gap-4 w-full">
                         <article className="px-4 pt-12">
-                            <div className="inline-block bg-[#F1ACC0] text-gray-600 rounded-4xl mb-4 px-4 py-1">
+                            <div
+                                // className="inline-block bg-[#F1ACC0] text-gray-600 rounded-4xl mb-4 px-4 py-1"
+                                className="inline-block bg-[#f7f1fe] text-gray-600 rounded-4xl mb-4 px-4 py-1 text-[#7b7481]"
+                            >
                                 {blogPost?.heroSection.category}
                             </div>
                             <h1 className="text-xl md:text-2xl font-medium mb-2 md:mb-4">
