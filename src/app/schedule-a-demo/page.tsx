@@ -42,7 +42,7 @@ export default function DemoDesktop() {
 
             const timer = setTimeout(() => {
                 window.location.href = "/thank-you-page"; // Redirect after 30 seconds or change to your preferred delay
-            }, 100);
+            }, 30000);
             return () => clearTimeout(timer);
         }
     }, [step, formData]);
