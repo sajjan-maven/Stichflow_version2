@@ -158,7 +158,7 @@ const HeaderComponent = () => {
                                             <>
                                                 <button
                                                     onClick={() => toggleDropdown(index)}
-                                                    className="flex items-center gap-1 font-medium text-[#363338] hover:text-gray-600 focus:outline-none py-2"
+                                                    className="flex items-center gap-1 cursor-pointer font-medium text-[#363338] hover:text-gray-600 focus:outline-none py-2"
                                                 >
                                                     {item.name}
                                                     <svg
