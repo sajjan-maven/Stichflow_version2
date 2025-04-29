@@ -7,7 +7,7 @@ import Script from "next/script";
 export default function DemoDesktop() {
     const [step, setStep] = useState(1);
     const [loading, setLoading] = useState(false);
-
+    const [hubspotMeetingUrl, setHubspotMeetingUrl] = useState("");
     const [formData, setFormData] = useState({
         email: "",
         firstname: "",
@@ -18,23 +18,43 @@ export default function DemoDesktop() {
     const [error, setError] = useState("");
     const companySizeOptions = ["1 - 50", "51 - 200", "201 - 500", "501 - 1000", "1001 - 5000", "5000+"];
 
+    // useEffect(() => {
+    //     if (step === 3) {
+    //         window.addEventListener("message", handleMessage);
+    //         return () => window.removeEventListener("message", handleMessage);
+    //     }
+    // }, [step]);
     useEffect(() => {
         if (step === 3) {
+            // Construct the HubSpot meeting URL with all parameters
+            const baseUrl = "https://meetings.hubspot.com/gayathri-venkatakrishnan";
+            const params = new URLSearchParams({
+                // email: encodeURIComponent(formData.email),
+                email: formData.email,
+                firstname: encodeURIComponent(formData.firstname),
+                lastname: encodeURIComponent(formData.lastname),
+                company: encodeURIComponent(formData.company),
+                company_size: encodeURIComponent(formData.company_size),
+                embed: "true",
+            });
+
+            setHubspotMeetingUrl(`${baseUrl}?${params.toString()}`);
+
+            // Add message listener for HubSpot thank you event
             window.addEventListener("message", handleMessage);
             return () => window.removeEventListener("message", handleMessage);
         }
-    }, [step]);
-
+    }, [step, formData]);
     const handleMessage = (event: MessageEvent) => {
         if (event.data.type === "hs-meeting-thank-you") {
             window.location.href = "/thank-you-page";
         }
     };
-    const hubspotMeetingUrl = `https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true&email=${encodeURIComponent(
-        formData.email
-    )}&firstname=${encodeURIComponent(formData.firstname)}&lastname=${encodeURIComponent(
-        formData.lastname
-    )}&company=${encodeURIComponent(formData.company)}&company_size=${encodeURIComponent(formData.company_size)}`;
+    // const hubspotMeetingUrl = `https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true&email=${encodeURIComponent(
+    //     formData.email
+    // )}&firstname=${encodeURIComponent(formData.firstname)}&lastname=${encodeURIComponent(
+    //     formData.lastname
+    // )}&company=${encodeURIComponent(formData.company)}&company_size=${encodeURIComponent(formData.company_size)}`;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const {name, value} = e.target;
@@ -415,9 +435,9 @@ export default function DemoDesktop() {
                                         <div
                                             className="meetings-iframe-container w-full min-h-[600px]"
                                             data-src={hubspotMeetingUrl}
-                                            // data-src="https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true"
                                         />
                                         <Script
+                                            strategy="afterInteractive"
                                             type="text/javascript"
                                             src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
                                         ></Script>
