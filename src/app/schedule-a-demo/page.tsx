@@ -18,16 +18,10 @@ export default function DemoDesktop() {
     const [error, setError] = useState("");
     const companySizeOptions = ["1 - 50", "51 - 200", "201 - 500", "501 - 1000", "1001 - 5000", "5000+"];
 
-    // useEffect(() => {
-    //     if (step === 3) {
-    //         window.addEventListener("message", handleMessage);
-    //         return () => window.removeEventListener("message", handleMessage);
-    //     }
-    // }, [step]);
     useEffect(() => {
         if (step === 3) {
             // Construct the HubSpot meeting URL with all parameters
-            const baseUrl = "https://meetings.hubspot.com/gayathri-venkatakrishnan";
+            const baseUrl = "https://meetings.hubspot.com/jvenkatesh/testing";
             const params = new URLSearchParams({
                 // email: encodeURIComponent(formData.email),
                 email: formData.email,
@@ -41,21 +35,11 @@ export default function DemoDesktop() {
             setHubspotMeetingUrl(`${baseUrl}?${params.toString()}`);
 
             const timer = setTimeout(() => {
-                window.location.href = "/thank-you-page"; // Redirect after 30 seconds or change to your preferred delay
+                window.location.href = "/thank-you-page";
             }, 30000);
             return () => clearTimeout(timer);
         }
     }, [step, formData]);
-    // const handleMessage = (event: MessageEvent) => {
-    //     if (event.data.type === "hs-meeting-thank-you") {
-    //         window.location.href = "/thank-you-page";
-    //     }
-    // };
-    // const hubspotMeetingUrl = `https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true&email=${encodeURIComponent(
-    //     formData.email
-    // )}&firstname=${encodeURIComponent(formData.firstname)}&lastname=${encodeURIComponent(
-    //     formData.lastname
-    // )}&company=${encodeURIComponent(formData.company)}&company_size=${encodeURIComponent(formData.company_size)}`;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const {name, value} = e.target;
