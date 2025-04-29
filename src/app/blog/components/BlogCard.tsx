@@ -34,7 +34,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             </div>
             )}
             <div className="pt-4 flex flex-col justify-between">
-                <div className="font-semibold text-gray-500">{category}</div>
+                <div className="font-semibold text-[#f25c30]">{category}</div>
                 {useHeading ? <h3 className="text-lg">{title}</h3> : <div className="card-title">{title}</div>}
                 {/* <div className="card-title">{title}</div> */}
                 <p className="text-gray-500">{summary}</p>

@@ -56,7 +56,7 @@ export default function FAQSection() {
             <h3>
               <button
                 type="button"
-                className={`flex text-start items-center justify-between w-full px-0 py-2 md:p-5 md:text-lg md:font-medium border-b ${index === 0 ? 'rounded-t-xl' : ''} ${index === faqs.length - 1 && openAccordion !== index ? 'rounded-b-xl' : ''} border-gray-200 ${openAccordion ? 'border-b-0' : ''} hover:bg-[#f8f0eb]`}
+                className={`flex text-start items-center justify-between w-full px-0 py-2 md:p-5 md:text-lg md:font-medium border-b border-gray-200 ${openAccordion ? 'border-b-0' : ''} cursor-pointer`}
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={openAccordion === index}
               >

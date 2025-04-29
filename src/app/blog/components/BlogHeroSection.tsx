@@ -9,8 +9,7 @@ interface BlogTabProps {
 }
 
 const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
-    const bannerBlogs = blogData.data
-    .filter((post) => post.heroSection?.isBanner)
+    const bannerBlogs = blogData.data?.filter((post) => post.heroSection?.isBanner)
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
     const latestBannerBlog = bannerBlogs.length > 0 ? bannerBlogs[0] : null;
@@ -34,19 +33,19 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
                         >
                             <div className="w-full max-w-[500px] md:max-w-full mx-auto flex flex-col md:flex-row items-center md:items-start justify-between md:justify-start gap-6">
                                 {latestBannerBlog?.heroSection?.bannerImage?.url && (
-                                    <div className="lg:min-w-[479px]">
+                                    <div className="w-full lg:max-w-1/2">
                                         <Image
                                             src={latestBannerBlog.heroSection.bannerImage.url}
                                             alt={latestBannerBlog.blogTitle || "Banner"}
-                                            height={371}
-                                            width={479}
+                                            height={457}
+                                            width={590}
                                             className="rounded-4xl"
                                             loading="lazy"
                                         />
                                     </div>
                                 )}
-                                <div className="lg:mt-4 lg:ml-1.5">
-                                    <p className="font-semibold text-gray-500">{latestBannerBlog?.heroSection?.category}</p>
+                                <div className="w-full lg:max-w-1/2 lg:mt-4 lg:ml-1.5">
+                                    <p className="font-semibold text-[#f25c30]">{latestBannerBlog?.heroSection?.category}</p>
                                     <h3 className="text-2xl lg:text-4xl lg:leading-12 font-medium mb-2 mt-1">{latestBannerBlog?.blogTitle}</h3>
                                     <p className="text-xl text-gray-500">{latestBannerBlog?.heroSection?.postedSummary}</p>
                                 </div>

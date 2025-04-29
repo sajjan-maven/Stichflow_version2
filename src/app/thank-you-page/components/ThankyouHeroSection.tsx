@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const ThankyouHeroSection = () => {
@@ -21,14 +20,6 @@ const ThankyouHeroSection = () => {
                     those&#34;unautomatable&#34; parts of your IT environment.
                 </p>
             </div>
-
-            <Image
-                className="absolute w-[108.84px] h-[24px] top-9 left-0  object-cover"
-                alt="Animation"
-                src="/images/logo (1).svg"
-                width={108.84}
-                height={24}
-            />
         </div>
     );
 };

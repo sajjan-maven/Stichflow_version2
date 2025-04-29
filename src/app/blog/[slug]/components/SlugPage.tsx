@@ -234,7 +234,7 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                         <article className="px-4 pt-12">
                             <div
                                 // className="inline-block bg-[#F1ACC0] text-gray-600 rounded-4xl mb-4 px-4 py-1"
-                                className="inline-block bg-[#f7f1fe] text-gray-600 rounded-4xl mb-4 px-4 py-1 text-[#7b7481]"
+                                className="inline-block bg-[#f7f1fe] rounded-4xl mb-4 px-4 py-1 text-[#7b7481]"
                             >
                                 {blogPost?.heroSection.category}
                             </div>
@@ -258,7 +258,7 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                                 Modified on {formatDate(blogPost.heroSection?.modifiedDate)}
                             </time>
 
-                            <div className="mt-4 mb-6">
+                            <div className="mt-4 mb-6 w-full max-w-xl">
                                 <Image
                                     height={250}
                                     width={600}
@@ -293,43 +293,40 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                                 )}
                             </div>
                             <SocialMediaComponent blogUrl={blogUrl} title={title} />
+                            {blogPost?.author && (
+                                <div className="rounded-3xl bg-[#F8F5F3] shadow-sm p-6 hidden mt-4 lg:block mb-4">
+                                    <div className="flex gap-2 items-center">
+                                        <Link href={`/blog/author/${authorSlug}`}>
+                                            <Image
+                                                height={36}
+                                                width={36}
+                                                src={
+                                                    blogPost?.author?.avatar?.url ||
+                                                    "/images/default-avatar.png"
+                                                }
+                                                alt="Profile"
+                                                className={styles.profileImage}
+                                                loading="lazy"
+                                            />
+                                        </Link>
+                                        <div>
+                                            <div className={styles.profileName}>{blogPost.author.name}</div>
+                                            <p className={styles.role}>{blogPost.author.role}</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p className="font-normal text-[14px] leading-[20px] text-[#363338] tracking-[0%] font-[Geist] mt-2" >
+                                            {blogPost.author.aboutAuthor}
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
                         </article>
 
                         <div className={styles.rightColumn}>
-                            <div className="sticky top-32">
+                            <div className="sticky top-[120px]">
                                 <div className="min-h-screen overflow-y-auto pr-2 custom-scrollbar">
-                                    {blogPost?.author && (
-                                        <div className="rounded-4xl bg-[#F8F5F3] shadow-sm p-6 hidden lg:block mb-4">
-                                            <div className="flex gap-2 items-center">
-                                                <Link href={`/blog/author/${authorSlug}`}>
-                                                    <Image
-                                                        height={36}
-                                                        width={36}
-                                                        src={
-                                                            blogPost?.author?.avatar?.url ||
-                                                            "/images/default-avatar.png"
-                                                        }
-                                                        alt="Profile"
-                                                        className={styles.profileImage}
-                                                        loading="lazy"
-                                                    />
-                                                </Link>
-                                                <div>
-                                                    <div className={styles.profileName}>{blogPost.author.name}</div>
-                                                    <p className={styles.role}>{blogPost.author.role}</p>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <p
-                                                    // className='text-gray-500 text-xs mt-2'
-                                                    className="font-normal text-[14px] leading-[20px] text-[#363338] tracking-[0%] font-[Geist] mt-2"
-                                                >
-                                                    {blogPost.author.aboutAuthor}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    )}
                                     <div className="hidden lg:block mb-4">
                                         <div className="rounded-4xl bg-[#F8F5F3] shadow-sm p-6">
                                             <h6

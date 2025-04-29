@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import React from 'react'
 
 export default function ProductDifference() {
   const cardData = [
     {
-      icon: "/document-scanner.svg",
+      icon: "/it-tools/visible.png",
       iconAlt: "Document scanner",
       title: "Visibility to every\nsingle unique variable",
       description: [
@@ -13,7 +14,7 @@ export default function ProductDifference() {
       ],
     },
     {
-      icon: "/person-alert.svg",
+      icon: "/it-tools/catches.png",
       iconAlt: "Person alert",
       title: "Catches all\naccess misses",
       description: [
@@ -23,7 +24,7 @@ export default function ProductDifference() {
       ],
     },
     {
-      icon: "/license.svg",
+      icon: "/it-tools/noHidden.png",
       iconAlt: "License",
       title: "No hidden\nlicense waste",
       description: [
@@ -38,7 +39,7 @@ export default function ProductDifference() {
     <section className="gap-2 px-6 py-16 w-full">
       <div>
           <h1 className=" font-semibold text-[#363338] max-w-[645px] mx-auto mb-4 text-2xl md:text-[40px] text-center">
-            How&apos;s Stitchflow differentfrom the free tools?
+            How&apos;s Stitchflow different from the free tools?
           </h1>
           <p className='text-gray-500 max-w-[970px] md:text-lg mx-auto text-center'>Stitchflow provides an always up-to-date view of every app across your entire IT environmentfor any need—application audits, license renewals and security or compliance reviews.</p>
       </div>
@@ -50,7 +51,12 @@ export default function ProductDifference() {
               className="w-full lg:max-w-80 border border-solid border-[#e2e2e2] rounded-lg bg-white"
             >
               <div className="flex flex-col items-start gap-5 px-[30px] py-10">
-                <span className="w-12 h-12 bg-[#F8F5F3] rounded-xl" />
+                <Image
+                  src={card.icon}
+                  width={48}
+                  height={48}
+                  alt={card.iconAlt}
+                />
 
                 <h2 className="self-stretch font-semibold text-black text-2xl tracking-[0] leading-[32.4px] whitespace-pre-line">
                   {card.title}

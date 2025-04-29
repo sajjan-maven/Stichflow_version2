@@ -33,7 +33,7 @@ export default function RootLayout({
                 cz-shortcut-listen="true"
             >
                 <HeaderComponent />
-                <main className="pt-14 lg:pt-20">
+                <main className="pt-12 lg:pt-[69px]">
                     <Suspense fallback={<div className="h-screen text-center py-20">Loading...</div>}>
                         {children}
                     </Suspense>

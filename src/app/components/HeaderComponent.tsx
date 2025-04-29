@@ -49,21 +49,21 @@ const HeaderComponent = () => {
                             onClick={() => handleDropdownItemClick("/platform")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-semibold text-sm text-gray-800">Product</h5>
+                            <p className="font-semibold text-sm text-gray-800">Product</p>
                             <p className="text-sm text-gray-500">Learn how to tame business sprawl with Stitchflow.</p>
                         </div>
                         <div
                             onClick={() => handleDropdownItemClick("/use-cases")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-semibold text-sm text-gray-800">Use Cases</h5>
+                            <p className="font-semibold text-sm text-gray-800">Use Cases</p>
                             <p className="text-sm text-gray-500">How teams put Stitchflow into action.</p>
                         </div>
                         <div
                             onClick={() => handleDropdownItemClick("/pilot")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-semibold text-sm text-gray-800">Free Pilot</h5>
+                            <p className="font-semibold text-sm text-gray-800">Free Pilot</p>
                             <p className="text-sm text-gray-500">Experience Stitchflow at no cost.</p>
                         </div>
                     </div>
@@ -81,21 +81,21 @@ const HeaderComponent = () => {
                             onClick={() => handleDropdownItemClick("/blog")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-medium text-sm text-gray-800">Blog</h5>
+                            <p className="font-medium text-sm text-gray-800">Blog</p>
                             <p className="text-sm text-gray-500">Insights, trends, and best practices in IT.</p>
                         </div>
                         <div
                             onClick={() => handleDropdownItemClick("/case-studies")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-medium text-sm text-gray-800">Case Studies</h5>
+                            <p className="font-medium text-sm text-gray-800">Case Studies</p>
                             <p className="text-sm text-gray-500">Real-world success stories with Stitchflow.</p>
                         </div>
                         <div
                             onClick={() => handleDropdownItemClick("/tools")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-medium text-sm text-gray-800">Free IT Tools</h5>
+                            <p className="font-medium text-sm text-gray-800">Free IT Tools</p>
                             <p className="text-sm text-gray-500">
                                 Useful microapps built by us, free for anyone to use.
                             </p>
@@ -114,14 +114,14 @@ const HeaderComponent = () => {
                             onClick={() => handleDropdownItemClick("/about")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-semibold text-sm text-gray-800">About Us</h5>
+                            <p className="font-semibold text-sm text-gray-800">About Us</p>
                             <p className="text-sm text-gray-500">Meet the team behind Stitchflow.</p>
                         </div>
                         <div
                             onClick={() => handleDropdownItemClick("/security")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
                         >
-                            <h5 className="font-semibold text-sm text-gray-800">Security</h5>
+                            <p className="font-semibold text-sm text-gray-800">Security</p>
                             <p className="text-sm text-gray-500">How Stitchflow keeps your data safe and compliant.</p>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ const HeaderComponent = () => {
             ref={headerRef}
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-in-out 
             ${isScrolled ? "bg-white lg:bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
-            flex justify-center items-center py-4 h-20 px-6`}
+            flex justify-center items-center py-3 px-6`}
         >
             <div className="w-full max-w-[1220px] mx-auto">
                 <div className="flex items-center justify-between">
@@ -158,7 +158,7 @@ const HeaderComponent = () => {
                                             <>
                                                 <button
                                                     onClick={() => toggleDropdown(index)}
-                                                    className="flex items-center gap-1 font-medium text-[#363338] hover:text-gray-600 focus:outline-none py-2"
+                                                    className="flex items-center gap-1 cursor-pointer font-medium text-[#363338] hover:text-gray-600 focus:outline-none py-2"
                                                 >
                                                     {item.name}
                                                     <svg

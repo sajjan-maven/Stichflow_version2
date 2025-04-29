@@ -67,7 +67,7 @@ const HomeWorkSection = () => {
                     {/* Scrollable tabs for mobile */}
                     <div className="flex items-center md:gap-2 justify-center flex-wrap bg-gray-100 p-2 rounded-4xl md:rounded-full w-fit mx-auto">
                         <button
-                            className={`whitespace-nowrap px-4 py-2 ${
+                            className={`whitespace-nowrap cursor-pointer px-4 py-2 ${
                                 activeTab === "licenseManagement" ? "text-white bg-gray-800" : "text-gray-500"
                             } rounded-full transition-colors ${
                                 activeTab === "licenseManagement" ? "shadow-md" : ""
@@ -77,7 +77,7 @@ const HomeWorkSection = () => {
                             License Management
                         </button>
                         <button
-                            className={`whitespace-nowrap px-4 py-2 ${
+                            className={`whitespace-nowrap cursor-pointer px-4 py-2 ${
                                 activeTab === "secureOffboarding" ? "text-white bg-gray-800" : "text-gray-500"
                             } rounded-full transition-colors ${
                                 activeTab === "secureOffboarding" ? "shadow-md" : ""
@@ -87,7 +87,7 @@ const HomeWorkSection = () => {
                             Secure Offboarding
                         </button>
                         <button
-                            className={`whitespace-nowrap px-4 py-2 ${
+                            className={`whitespace-nowrap cursor-pointer px-4 py-2 ${
                                 activeTab === "complianceAudits" ? "text-white bg-gray-800" : "text-gray-500"
                             } rounded-full transition-colors ${
                                 activeTab === "complianceAudits" ? "shadow-md" : ""
