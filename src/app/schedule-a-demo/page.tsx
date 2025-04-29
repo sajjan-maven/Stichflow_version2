@@ -40,16 +40,17 @@ export default function DemoDesktop() {
 
             setHubspotMeetingUrl(`${baseUrl}?${params.toString()}`);
 
-            // Add message listener for HubSpot thank you event
-            window.addEventListener("message", handleMessage);
-            return () => window.removeEventListener("message", handleMessage);
+            const timer = setTimeout(() => {
+                window.location.href = "/thank-you-page"; // Redirect after 30 seconds or change to your preferred delay
+            }, 100);
+            return () => clearTimeout(timer);
         }
     }, [step, formData]);
-    const handleMessage = (event: MessageEvent) => {
-        if (event.data.type === "hs-meeting-thank-you") {
-            window.location.href = "/thank-you-page";
-        }
-    };
+    // const handleMessage = (event: MessageEvent) => {
+    //     if (event.data.type === "hs-meeting-thank-you") {
+    //         window.location.href = "/thank-you-page";
+    //     }
+    // };
     // const hubspotMeetingUrl = `https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true&email=${encodeURIComponent(
     //     formData.email
     // )}&firstname=${encodeURIComponent(formData.firstname)}&lastname=${encodeURIComponent(
@@ -284,7 +285,7 @@ export default function DemoDesktop() {
                                             </div>
                                             <input
                                                 name="email"
-                                                className={`h-[54px] bg-white w-full rounded-xl border border-solid ${
+                                                className={`h-[54px] bg-white w-full rounded-xl border border-solid cursor-pointer ${
                                                     error ? "border-red-500" : "border-[#c6c4cc]"
                                                 } shadow-shadow-sm px-4`}
                                                 value={formData.email}
@@ -295,7 +296,7 @@ export default function DemoDesktop() {
                                         </div>
 
                                         <button
-                                            className="flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] [background:linear-gradient(180deg,rgba(84,80,88,1)_0%,rgba(54,51,56,1)_100%)]"
+                                            className="flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] [background:linear-gradient(180deg,rgba(84,80,88,1)_0%,rgba(54,51,56,1)_100%)] cursor-pointer"
                                             onClick={handleEmailSubmit}
                                             disabled={loading}
                                         >
@@ -320,7 +321,7 @@ export default function DemoDesktop() {
                                                 </label>
                                             </div>
                                             <input
-                                                className="h-[54px] bg-white w-full rounded-xl border border-solid border-[#c6c4cc] shadow-shadow-sm px-4"
+                                                className="h-[54px] bg-white w-full rounded-xl border border-solid border-[#c6c4cc] shadow-shadow-sm px-4 cursor-pointer"
                                                 value={formData.email}
                                                 disabled
                                             />
@@ -339,7 +340,7 @@ export default function DemoDesktop() {
                                                 </div>
                                                 <input
                                                     name="firstname"
-                                                    className={`h-[54px] bg-white w-full rounded-xl border border-solid ${
+                                                    className={`h-[54px] bg-white w-full rounded-xl border border-solid  cursor-pointer${
                                                         error.includes("First name")
                                                             ? "border-red-500"
                                                             : "border-[#c6c4cc]"
@@ -360,7 +361,7 @@ export default function DemoDesktop() {
                                                 </div>
                                                 <input
                                                     name="lastname"
-                                                    className={`h-[54px] bg-white w-full rounded-xl border border-solid ${
+                                                    className={`h-[54px] bg-white w-full rounded-xl border border-solid cursor-pointer ${
                                                         error.includes("Last name")
                                                             ? "border-red-500"
                                                             : "border-[#c6c4cc]"
@@ -382,7 +383,7 @@ export default function DemoDesktop() {
                                             </div>
                                             <input
                                                 name="company"
-                                                className={`h-[54px] bg-white rounded-xl border w-full border-solid ${
+                                                className={`h-[54px] bg-white rounded-xl border w-full border-solid cursor-pointer ${
                                                     error.includes("Company") ? "border-red-500" : "border-[#c6c4cc]"
                                                 } shadow-shadow-sm px-4`}
                                                 value={formData.company}
@@ -401,7 +402,7 @@ export default function DemoDesktop() {
                                             </div>
                                             <select
                                                 name="company_size"
-                                                className="h-[54px] bg-white rounded-xl border border-solid border-[#c6c4cc] shadow-shadow-sm px-4 w-full appearance-none"
+                                                className="h-[54px] bg-white rounded-xl border border-solid border-[#c6c4cc] shadow-shadow-sm px-4 w-full appearance-none cursor-pointer"
                                                 value={formData.company_size}
                                                 onChange={handleChange}
                                             >
@@ -418,7 +419,7 @@ export default function DemoDesktop() {
                                         {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
                                         {/* Submit button */}
                                         <button
-                                            className="flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] [background:linear-gradient(180deg,rgba(84,80,88,1)_0%,rgba(54,51,56,1)_100%)]"
+                                            className="flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] [background:linear-gradient(180deg,rgba(84,80,88,1)_0%,rgba(54,51,56,1)_100%)] cursor-pointer"
                                             onClick={handleFinalSubmit}
                                             disabled={loading}
                                         >
