@@ -7,6 +7,7 @@ import Script from "next/script";
 export default function DemoDesktop() {
     const [step, setStep] = useState(1);
     const [loading, setLoading] = useState(false);
+
     const [formData, setFormData] = useState({
         email: "",
         firstname: "",
@@ -14,28 +15,31 @@ export default function DemoDesktop() {
         company: "",
         company_size: "",
     });
-    const [emailError, setEmailError] = useState("");
+    const [error, setError] = useState("");
     const companySizeOptions = ["1 - 50", "51 - 200", "201 - 500", "501 - 1000", "1001 - 5000", "5000+"];
 
     useEffect(() => {
         if (step === 3) {
-            const script = document.createElement("script");
-            script.src = "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
-            script.async = true;
-            document.body.appendChild(script);
-
-            return () => {
-                document.body.removeChild(script);
-            };
+            window.addEventListener("message", handleMessage);
+            return () => window.removeEventListener("message", handleMessage);
         }
     }, [step]);
+
+    const handleMessage = (event: MessageEvent) => {
+        if (event.data.type === "hs-meeting-thank-you") {
+            window.location.href = "/thank-you-page";
+        }
+    };
+    const hubspotMeetingUrl = `https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true&email=${encodeURIComponent(
+        formData.email
+    )}&firstname=${encodeURIComponent(formData.firstname)}&lastname=${encodeURIComponent(
+        formData.lastname
+    )}&company=${encodeURIComponent(formData.company)}&company_size=${encodeURIComponent(formData.company_size)}`;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const {name, value} = e.target;
         setFormData({...formData, [name]: value});
-        if (name === "email") {
-            setEmailError("");
-        }
+        if (error) setError("");
     };
 
     const validateEmail = (email: string): boolean => {
@@ -44,11 +48,11 @@ export default function DemoDesktop() {
     };
     const handleEmailSubmit = async () => {
         if (!formData.email) {
-            setEmailError("Please enter your business email");
+            setError("Please enter your business email");
             return;
         }
         if (!validateEmail(formData.email)) {
-            setEmailError("Please enter a valid email address");
+            setError("Please enter a valid email address");
             return;
         }
 
@@ -65,16 +69,26 @@ export default function DemoDesktop() {
             if (res.ok) {
                 setStep(2);
             } else {
-                setEmailError(data.message || "There was an error saving your email. Please try again.");
+                setError(data.message || "There was an error saving your email. Please try again.");
             }
         } catch (error) {
-            setEmailError(String(error) || "Connection error. Please try again later.");
+            setError(String(error) || "Connection error. Please try again later.");
         } finally {
             setLoading(false);
         }
     };
-
+    const validateForm = () => {
+        if (!formData.firstname.trim()) return "First name is required";
+        if (!formData.lastname.trim()) return "Last name is required";
+        if (!formData.company.trim()) return "Company is required";
+        return "";
+    };
     const handleFinalSubmit = async () => {
+        const validationError = validateForm();
+        if (validationError) {
+            setError(validationError);
+            return;
+        }
         setLoading(true);
         try {
             const res = await fetch("/api/hubspot/form-submit", {
@@ -84,6 +98,8 @@ export default function DemoDesktop() {
             });
 
             if (res.ok) {
+                // Get meeting URL after form submission
+
                 setStep(3);
             }
         } catch (error) {
@@ -249,13 +265,13 @@ export default function DemoDesktop() {
                                             <input
                                                 name="email"
                                                 className={`h-[54px] bg-white w-full rounded-xl border border-solid ${
-                                                    emailError ? "border-red-500" : "border-[#c6c4cc]"
+                                                    error ? "border-red-500" : "border-[#c6c4cc]"
                                                 } shadow-shadow-sm px-4`}
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 type="email"
                                             />
-                                            {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                                            {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
                                         </div>
 
                                         <button
@@ -303,7 +319,11 @@ export default function DemoDesktop() {
                                                 </div>
                                                 <input
                                                     name="firstname"
-                                                    className="h-[54px] bg-white w-full rounded-xl border border-solid border-[#c6c4cc] shadow-shadow-sm px-4"
+                                                    className={`h-[54px] bg-white w-full rounded-xl border border-solid ${
+                                                        error.includes("First name")
+                                                            ? "border-red-500"
+                                                            : "border-[#c6c4cc]"
+                                                    } shadow-shadow-sm px-4`}
                                                     value={formData.firstname}
                                                     onChange={handleChange}
                                                 />
@@ -320,7 +340,11 @@ export default function DemoDesktop() {
                                                 </div>
                                                 <input
                                                     name="lastname"
-                                                    className="h-[54px] bg-white w-full rounded-xl border border-solid border-[#c6c4cc] shadow-shadow-sm px-4"
+                                                    className={`h-[54px] bg-white w-full rounded-xl border border-solid ${
+                                                        error.includes("Last name")
+                                                            ? "border-red-500"
+                                                            : "border-[#c6c4cc]"
+                                                    } shadow-shadow-sm px-4`}
                                                     value={formData.lastname}
                                                     onChange={handleChange}
                                                 />
@@ -338,7 +362,9 @@ export default function DemoDesktop() {
                                             </div>
                                             <input
                                                 name="company"
-                                                className="h-[54px] bg-white rounded-xl border w-full border-solid border-[#c6c4cc] shadow-shadow-sm px-4"
+                                                className={`h-[54px] bg-white rounded-xl border w-full border-solid ${
+                                                    error.includes("Company") ? "border-red-500" : "border-[#c6c4cc]"
+                                                } shadow-shadow-sm px-4`}
                                                 value={formData.company}
                                                 onChange={handleChange}
                                             />
@@ -369,7 +395,7 @@ export default function DemoDesktop() {
                                                 ))}
                                             </select>
                                         </div>
-
+                                        {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
                                         {/* Submit button */}
                                         <button
                                             className="flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] [background:linear-gradient(180deg,rgba(84,80,88,1)_0%,rgba(54,51,56,1)_100%)]"
@@ -384,26 +410,17 @@ export default function DemoDesktop() {
                                     </div>
                                 )}
 
-                                {/* STEP 3: HubSpot Calendar */}
                                 {step === 3 && (
                                     <div className="flex flex-col items-center justify-center w-full h-full animate-fadeIn transition-all duration-300 ease-in-out">
                                         <div
                                             className="meetings-iframe-container w-full min-h-[600px]"
-                                            data-src="https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true"
-                                        ></div>
+                                            data-src={hubspotMeetingUrl}
+                                            // data-src="https://meetings.hubspot.com/gayathri-venkatakrishnan?embed=true"
+                                        />
                                         <Script
                                             type="text/javascript"
                                             src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
                                         ></Script>
-
-                                        {/* <div className="relative w-[564px] h-[500.03px]">
-                                           
-                                            <Button className="absolute top-[451px] left-[212px] w-[142px] h-auto rounded-xl border border-solid border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] [background:linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(249,248,250,1)_100%)]">
-                                                <span className="font-label-medium font-[number:var(--label-medium-font-weight)] text-[#363338] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)]">
-                                                    Submit
-                                                </span>
-                                            </Button>
-                                        </div> */}
                                     </div>
                                 )}
                             </div>
