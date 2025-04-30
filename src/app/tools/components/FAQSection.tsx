@@ -45,7 +45,7 @@ export default function FAQSection() {
                 <p>
                     Yes! We welcome feedback and feature requests from our community. If you have ideas for new tools or
                     improvements to the current ones, drop us a note at{" "}
-                    <a href="mailto:contact@stitchflow.com" style={{color: "blue", textDecoration: "underline"}}>
+                    <a href="mailto:contact@stitchflow.com" style={{color: "#f25c30", textDecoration: "underline"}}>
                         contact@stitchflow.com
                     </a>
                     —we read every request!.
