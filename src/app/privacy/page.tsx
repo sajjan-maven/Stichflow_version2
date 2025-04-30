@@ -43,3 +43,25 @@ export default async function Privacy() {
 
     return <PrivacyPage privacyData={privacyPolicyData} />;
 }
+
+export const metadata = {
+    title: "Privacy Policy | Stitchflow",
+    description:
+        "Stitchflow's data protection and privacy standards for SaaS management. Complete information on our security practices.",
+    openGraph: {
+        title: "Privacy Policy | Stitchflow",
+        description:
+            "Stitchflow's data protection and privacy standards for SaaS management. Complete information on our security practices.",
+        url: "https://www.stitchflow.com/privacy",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Privacy Policy | Stitchflow",
+        description:
+            "Stitchflow's data protection and privacy standards for SaaS management. Complete information on our security practices.",
+    },
+    alternates: {
+        canonical: "https://www.stitchflow.com/privacy",
+    },
+};

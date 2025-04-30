@@ -1,18 +1,32 @@
 import React from "react";
-import { ComplianceDetailsSection } from "./components/ComplianceDetailsSection";
-import { ComplianceSection } from "./components/ComplianceSection";
-import { HeroSection } from "./components/HeroSection";
-import { InsightsSection } from "./components/InsightsSection";
-import { InsightsWrapperSection } from "./components/InsightsWrapperSection";
+
+import PilotMainComponent from "./components/PilotMainComponent";
 
 export default function FreePilot() {
-  return (
-    <div className="flex flex-col w-full bg-[#f8f5f3]">
-      <HeroSection />
-      <InsightsSection />
-      <ComplianceSection />
-      <InsightsWrapperSection />
-      <ComplianceDetailsSection />
-    </div>
-  );
+    return (
+        <div>
+            <PilotMainComponent />
+        </div>
+    );
+}
+export const metadata = {
+    title: "Stitchflow Free Pilot | 30-Min Setup, ROI in 4 Weeks",
+    description:
+        "Connect your IDP and apps in a 30-minute call, then see reclaimed licenses, closed access gaps and IT hours saved within four weeks—no cost, no risk.",
+    openGraph: {
+        title: "Stitchflow Free Pilot | 30-Min Setup, ROI in 4 Weeks",
+        description:
+            "Connect your IDP and apps in a 30-minute call, then see reclaimed licenses, closed access gaps and IT hours saved within four weeks—no cost, no risk.",
+        url: "https://www.stitchflow.com/pilot",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Stitchflow Free Pilot | 30-Min Setup, ROI in 4 Weeks",
+        description:
+            "Connect your IDP and apps in a 30-minute call, then see reclaimed licenses, closed access gaps and IT hours saved within four weeks—no cost, no risk.",
+    },
+    alternates: {
+        canonical: "https://www.stitchflow.com/pilot",
+    },
 };
