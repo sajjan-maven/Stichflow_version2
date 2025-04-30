@@ -1,20 +1,23 @@
 import type {Metadata} from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import HeaderComponent from "./components/HeaderComponent";
 import DemoComponent from "./components/DemoComponent";
 import FooterComponent from "./components/FooterComponent";
-import { Suspense } from "react";
+import {Suspense} from "react";
+import NoScript from "./components/NoScript";
+
+import GoogleTagManager from "./components/GoogleTagManager";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
-  });
-  
-  const geistMono = Geist_Mono({
+});
+
+const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
-  });
+});
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -28,10 +31,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-                cz-shortcut-listen="true"
-            >
+            <head>
+                <GoogleTagManager />
+            </head>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} cz-shortcut-listen="true">
+                <NoScript />
                 <HeaderComponent />
                 <main className="pt-12 lg:pt-[69px]">
                     <Suspense fallback={<div className="h-screen text-center py-20">Loading...</div>}>
