@@ -40,7 +40,7 @@ const HomeHeroSection = () => {
 
             setEmail("");
             setTimeout(() => {
-                router.push("/schedule-a-demo");
+                router.push("/demo");
             }, 500);
         } catch (error) {
             console.error("Error submitting email:", error);
@@ -89,13 +89,8 @@ const HomeHeroSection = () => {
                             disabled={isSubmitting}
                         >
                             <div className="relative flex items-center gap-2">
-                                <div className="relative rounded-full border border-solid border-[#54505833]" >
-                                    <Image 
-                                        src="/home-page/Avatar.png"
-                                        alt="avatar"
-                                        width={32}
-                                        height={32}
-                                    />
+                                <div className="relative rounded-full border border-solid border-[#54505833]">
+                                    <Image src="/home-page/Avatar.png" alt="avatar" width={32} height={32} />
                                 </div>
                                 <div className="absolute w-2.5 h-2.5 -top-px left-[23px] bg-[#30ba70] rounded-[5px] border border-solid border-white" />
                             </div>
