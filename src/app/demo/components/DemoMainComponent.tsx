@@ -30,10 +30,10 @@ export default function DemoMainComponent() {
 
             setHubspotMeetingUrl(`${baseUrl}?${params.toString()}`);
 
-            const timer = setTimeout(() => {
-                window.location.href = "/thank-you-page";
-            }, 30000);
-            return () => clearTimeout(timer);
+            // const timer = setTimeout(() => {
+            //     window.location.href = "/thank-you-page";
+            // }, 30000);
+            // return () => clearTimeout(timer);
         }
     }, [step, formData]);
 
