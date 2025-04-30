@@ -1,22 +1,31 @@
-import EmailSubscribe from "./components/EmailSubscribe";
-import FAQSection from "./components/FAQSection";
-import HeroSection from "./components/HeroSection";
-import ITtoolsCard from "./components/ITtoolsCard";
-import ProductDifference from "./components/ProductDifference";
-import ScheduleDemo from "./components/ScheduleDemo";
-import WhatItForksShare from "./components/WhatItForksShare";
- 
-  export default function ItTools() {
+import ToolsMainComponent from "./components/ToolsMainComponent";
+
+export default function ItTools() {
     return (
-      <div className="flex flex-col items-start relative bg-[#f8f5f3]">
-        <HeroSection />
-        <ITtoolsCard />
-        <WhatItForksShare />
-        <EmailSubscribe />
-        <FAQSection />
-        <ProductDifference />
-        <ScheduleDemo />
-      </div>
+        <div>
+            <ToolsMainComponent />
+        </div>
     );
-  };
-  
+}
+
+export const metadata = {
+    title: "Free IT Tools by Stitchflow",
+    description:
+        "Automate contract reminders, build offboarding checklists and visualize app access—everything IT teams need for strategic impact, at zero cost.",
+    openGraph: {
+        title: "Free IT Tools by Stitchflow",
+        description:
+            "Automate contract reminders, build offboarding checklists and visualize app access—everything IT teams need for strategic impact, at zero cost.",
+        url: "https://www.stitchflow.com/tools",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Free IT Tools by Stitchflow",
+        description:
+            "Automate contract reminders, build offboarding checklists and visualize app access—everything IT teams need for strategic impact, at zero cost.",
+    },
+    alternates: {
+        canonical: "https://www.stitchflow.com/tools",
+    },
+};
