@@ -1,20 +1,35 @@
 import React from "react";
-import HomeHeroSection from "./components/HomeHeroSection";
-import HomeFeatureSection from "./components/HomeFeatureSection";
-import HomeMagicSection from "./components/HomeMagicSection";
-import HomeWorkSection from "./components/HomeWorkSection";
-import HomeTestimonialSection from "./components/HomeTestimonialSection";
+
+import HomeMainComponent from "./components/HomeMainComponent";
 
 const page = () => {
     return (
-        <div>
-            <HomeHeroSection />
-            <HomeFeatureSection />
-            <HomeMagicSection />
-            <HomeWorkSection />
-            <HomeTestimonialSection />
-        </div>
+        <>
+            <HomeMainComponent />
+        </>
     );
 };
 
 export default page;
+
+export const metadata = {
+    title: "Stitchflow | SaaS Management as Customizable as Spreadsheets",
+    description:
+        "Stitchflow's automated SaaS management maps every access policy and exception across roles and locations in your environment.",
+    openGraph: {
+        title: "Stitchflow | SaaS Management as Customizable as Spreadsheets",
+        description:
+            "Stitchflow's automated SaaS management maps every access policy and exception across roles and locations in your environment.",
+        url: "https://www.stitchflow.com",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Stitchflow | SaaS Management as Customizable as Spreadsheets",
+        description:
+            "Stitchflow's automated SaaS management maps every access policy and exception across roles and locations in your environment.",
+    },
+    alternates: {
+        canonical: "https://www.stitchflow.com",
+    },
+};
