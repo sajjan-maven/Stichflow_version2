@@ -6,7 +6,6 @@
 
 // export default nextConfig;
 
-
 import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
@@ -267,6 +266,11 @@ const nextConfig: NextConfig = {
 
     async redirects() {
         return [
+            {
+                source: "/schedule-a-demo",
+                destination: "/demo",
+                permanent: true,
+            },
             {
                 source: "/support",
                 has: [{type: "host", value: "www.stitchflow.com"}],
