@@ -12,11 +12,8 @@ export default function DemoDesktop() {
         email: "",
         firstname: "",
         lastname: "",
-        company: "",
-        company_size: "",
     });
     const [error, setError] = useState("");
-    const companySizeOptions = ["1 - 50", "51 - 200", "201 - 500", "501 - 1000", "1001 - 5000", "5000+"];
 
     useEffect(() => {
         if (step === 3) {
@@ -27,8 +24,7 @@ export default function DemoDesktop() {
                 email: formData.email,
                 firstname: encodeURIComponent(formData.firstname),
                 lastname: encodeURIComponent(formData.lastname),
-                company: encodeURIComponent(formData.company),
-                company_size: encodeURIComponent(formData.company_size),
+
                 embed: "true",
             });
 
@@ -85,7 +81,7 @@ export default function DemoDesktop() {
     const validateForm = () => {
         if (!formData.firstname.trim()) return "First name is required";
         if (!formData.lastname.trim()) return "Last name is required";
-        if (!formData.company.trim()) return "Company is required";
+
         return "";
     };
     const handleFinalSubmit = async () => {
@@ -356,50 +352,6 @@ export default function DemoDesktop() {
                                             </div>
                                         </div>
 
-                                        {/* Company field */}
-                                        <div className="flex flex-col items-start gap-2 relative w-full">
-                                            <div className="flex flex-col items-start gap-1 relative w-full">
-                                                <label className="flex h-4 items-center gap-2 relative w-full">
-                                                    <span className="flex-1 mt-[-1.00px] font-label-medium font-[number:var(--label-medium-font-weight)] text-[#7b7481] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)] [font-style:var(--label-medium-font-style)]">
-                                                        Company
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <input
-                                                name="company"
-                                                className={`h-[54px] bg-white rounded-xl border w-full border-solid cursor-pointer ${
-                                                    error.includes("Company") ? "border-red-500" : "border-[#c6c4cc]"
-                                                } shadow-shadow-sm px-4`}
-                                                value={formData.company}
-                                                onChange={handleChange}
-                                            />
-                                        </div>
-
-                                        {/* Company size field */}
-                                        <div className="flex flex-col items-start gap-2 relative w-full">
-                                            <div className="flex flex-col items-start gap-1 relative w-full">
-                                                <label className="flex h-4 items-center gap-2 relative w-full">
-                                                    <span className="flex-1 mt-[-1.00px] font-label-medium font-[number:var(--label-medium-font-weight)] text-[#7b7481] text-[length:var(--label-medium-font-size)] tracking-[var(--label-medium-letter-spacing)] leading-[var(--label-medium-line-height)] [font-style:var(--label-medium-font-style)]">
-                                                        Company size
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <select
-                                                name="company_size"
-                                                className="h-[54px] bg-white rounded-xl border border-solid border-[#c6c4cc] shadow-shadow-sm px-4 w-full appearance-none cursor-pointer"
-                                                value={formData.company_size}
-                                                onChange={handleChange}
-                                            >
-                                                <option value="" disabled>
-                                                    Select company size
-                                                </option>
-                                                {companySizeOptions.map((size) => (
-                                                    <option key={size} value={size}>
-                                                        {size}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
                                         {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
                                         {/* Submit button */}
                                         <button
