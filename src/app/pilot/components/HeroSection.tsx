@@ -13,7 +13,7 @@ export const HeroSection = () => {
                         30 minutes to connect all your apps. Quantified value within 4 weeks.
                     </p>
                 </div>
-                <Link href="/schedule-a-demo">
+                <Link href="/demo">
                     <button className="px-6 py-4 rounded-xl border border-solid border-[#54505833] bg-transparent hover:bg-[#54505810] cursor-pointer">
                         <span className="font-medium text-[#363338]">Join the pilot</span>
                     </button>

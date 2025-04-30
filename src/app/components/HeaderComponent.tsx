@@ -206,7 +206,7 @@ const HeaderComponent = () => {
                     <div className="flex justify-end">
                         {/* CTA Buttons */}
                         <div className="relative hidden lg:flex justify-end items-center gap-3">
-                            <Button variant="primary" onClick={() => router.push("/schedule-a-demo")}>
+                            <Button variant="primary" onClick={() => router.push("/demo")}>
                                 Book Demo
                             </Button>
 
@@ -256,7 +256,7 @@ const HeaderComponent = () => {
                                 </div>
                             ))}
                             <div className="flex flex-row gap-4 pt-6 flex-wrap">
-                                <Button variant="primary" onClick={() => router.push("/schedule-a-demo")}>
+                                <Button variant="primary" onClick={() => router.push("/demo")}>
                                     Book Demo
                                 </Button>
 

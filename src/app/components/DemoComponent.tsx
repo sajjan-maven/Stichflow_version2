@@ -22,17 +22,11 @@ const DemoComponent = () => {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Button
-                            variant="primary"
-                            onClick={() => router.push("/schedule-a-demo")}
-                        >
+                        <Button variant="primary" onClick={() => router.push("/demo")}>
                             Book Demo
                         </Button>
 
-                        <Button
-                            variant="secondary"
-                            onClick={() => router.push("/pilot")}
-                        >
+                        <Button variant="secondary" onClick={() => router.push("/pilot")}>
                             Start Trial
                             <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </Button>
