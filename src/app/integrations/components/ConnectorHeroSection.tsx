@@ -23,10 +23,7 @@ const ConnectorHeroSection: React.FC<ConnectorHeroSectionProps> = ({title}) => {
                             <div className="padding-top-bottom">
                                 <div className="max-width-45rem">
                                     <div className="w-layout-grid hp-wrap gap-1-25 mb-align-center">
-                                        <h1
-                                            id="w-node-_3aa2da4f-1d0e-43c2-e2c0-d69d488011ed-ecc25f2b"
-                                            className="text-primary-black integration-title"
-                                        >
+                                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                                             {title.HeroHeading}
                                             <span className="text-int-green" />
                                         </h1>
@@ -38,12 +35,9 @@ const ConnectorHeroSection: React.FC<ConnectorHeroSectionProps> = ({title}) => {
                                                 id="w-node-_3aa2da4f-1d0e-43c2-e2c0-d69d488011f3-ecc25f2b"
                                                 className="max-width-30rem"
                                             >
-                                                <p
-                                                    id="w-node-_3aa2da4f-1d0e-43c2-e2c0-d69d488011f4-ecc25f2b"
-                                                    className="big-para text-darkgrey"
-                                                >
+                                                <div className="text-lg md:text-xl text-gray-600 max-w-lg">
                                                     {title.Description}
-                                                </p>
+                                                </div>
                                             </div>
                                             <div className="content-wrapper h-flex">
                                                 <a href="schedule-a-demo" className="cta-link w-inline-block">
