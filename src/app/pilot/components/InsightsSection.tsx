@@ -7,7 +7,7 @@ export const InsightsSection = () => {
     author: {
       name: "Edwin Katabaro",
       title: "CIO and CISO, Turing",
-      avatarUrl: "/free-pilot/EdwinKatabaro.png",
+      avatarUrl: "/free-pilot/Avatar.png",
     },
   };
 
@@ -15,7 +15,7 @@ export const InsightsSection = () => {
     <section className="flex flex-col items-center py-4 md:py-20 w-full bg-white p-6">
       <div className="max-w-[800px] border-none shadow-none mx-auto">
         <div className="flex flex-col items-start gap-6 md:gap-12">
-          <Image width={41} height={40} alt="Quote icon" src="/free-pilot/quotation.png" />
+          <Image width={41} height={40} alt="Quote icon" src="/free-pilot/quotes.png" />
 
           <div className="flex flex-col items-start gap-6">
             <p className="font-['Geist',Helvetica] font-normal text-[#363338] text-lg leading-[26px]">

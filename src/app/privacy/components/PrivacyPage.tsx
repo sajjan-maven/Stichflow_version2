@@ -15,16 +15,16 @@ const PrivacyPage: React.FC<PrivacyPolicyProps> = ({ privacyData }) => {
     const [activeSection, setActiveSection] = useState<string>("")
     return (
         <>
-            <div className="fixed-header">
+            <div>
                 <PrivacyBanner privacyData={privacyData} />
             </div>
-            <section className="section px-6">
+            <section className="pt-12 pb-24 relative px-6">
                 <div className="w-full max-w-[1256px] mx-auto mb-8">
                     <div className="relative flex justify-between">
-                        <div className="left-div _30cent hide-mobile sticky-left">
+                        <div className="pr-6 top-28 sticky self-start hidden lg:block w-[30%]">
                             <PrivacyLeftContainer privacyData={privacyData} activeSection={activeSection} />
                         </div>
-                        <div className="right-div _70cent right-container">
+                        <div className="self-start w-full lg:w-[70%]">
                             <PrivacyRightContainer privacyData={privacyData} onSectionChange={setActiveSection} />
                         </div>
                     </div>

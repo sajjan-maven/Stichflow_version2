@@ -11,22 +11,22 @@ interface SecurityFeature {
 const ComplianceDetailsSection = () => {
     const productSecurityFeatures: SecurityFeature[] = [
         {
-            iconSrc: "/images/lock-01.svg",
+            iconSrc: "/securities/encryption.svg",
             title: "Encryption",
             description: "Service data is protected during transmission (TLS 1.2+) and at rest (AES-256).",
         },
         {
-            iconSrc: "/images/image-user-check.svg",
+            iconSrc: "/securities/access-control.svg",
             title: "Role-Based Access Controls",
             description: "We offer fine-grained RBAC to manage who can access specific data.",
         },
         {
-            iconSrc: "/images/file-05.svg",
+            iconSrc: "/securities/csv-sync.svg",
             title: "CSV Synchronization",
             description: "We offer CSV syncs as a flexible alternative to API integrations.",
         },
         {
-            iconSrc: "/images/book-open-01.svg",
+            iconSrc: "/securities/read-only.svg",
             title: "Read-Only Access",
             description: "We support read-only access for every integration.",
         },
@@ -35,28 +35,28 @@ const ComplianceDetailsSection = () => {
     // Organizational security features data
     const organizationalSecurityFeatures: SecurityFeature[] = [
         {
-            iconSrc: "/images/shield-tick.svg",
+            iconSrc: "/securities/security-team.svg",
             title: "Dedicated Security Team",
             description: "A security expert oversees data security and compliance.",
         },
         {
-            iconSrc: "/images/file-shield-02.svg",
+            iconSrc: "/securities/regular-test.svg",
             title: "Regular Penetration Testing",
             description: "We perform third-party assessments to address application security flaws.",
         },
         {
-            iconSrc: "/images/scan.svg",
+            iconSrc: "/securities/incident-responce.svg",
             title: "Incident Response",
             description: "We have established procedures for promptly detecting and addressing security issues.",
         },
         {
-            iconSrc: "/images/award-02.svg",
+            iconSrc: "/securities/employee-security.svg",
             title: "Employee Security Training",
             description:
                 "Our employees receive regular training on information security, data protection, and privacy regulations.",
         },
         {
-            iconSrc: "/images/fingerprint-03.svg",
+            iconSrc: "/securities/background-check.svg",
             title: "Background Checks and NDAs",
             description: "All employees go through background checks and sign non-disclosure agreements agreements.",
         },
@@ -95,7 +95,7 @@ const ComplianceDetailsSection = () => {
                 </div>
 
                 {/* Organizational Security Section */}
-                <div className="flex flex-col w-full items-start gap-10 pt-20 pb-25">
+                <div className="flex flex-col w-full items-start gap-10 pt-20 pb-32">
                     <h2 className="font-['Geist',Helvetica] font-semibold text-[#363338] text-4xl leading-[48px]">
                         Organizational Security
                     </h2>

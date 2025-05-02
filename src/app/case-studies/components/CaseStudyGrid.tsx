@@ -7,7 +7,7 @@ export default function CaseStudyGrid() {
             id: 1,
             featured: true,
             company: "Turing",
-            logo: "/case-study/turing-logo.png",
+            logo: "/case-study/turing-logo.svg",
             logoWidth: 247,
             logoHeight: "40px",
             bgColor: "#1a1a1a",
@@ -17,7 +17,7 @@ export default function CaseStudyGrid() {
         {
             id: 2,
             company: "Spoton",
-            logo: "/case-study/spoton-logo.png",
+            logo: "/case-study/spoton-logo.svg",
             logoWidth: 133,
             logoHeight: "40px",
             bgColor: "#1763f5",
@@ -27,7 +27,7 @@ export default function CaseStudyGrid() {
         {
             id: 3,
             company: "Starburst",
-            logo: "/case-study/starbust-logo.png",
+            logo: "/case-study/starbust-logo.svg",
             logoWidth: 177,
             logoHeight: "35px",
             bgColor: "#824cf5",
@@ -37,7 +37,7 @@ export default function CaseStudyGrid() {
         {
             id: 4,
             company: "Spoton",
-            logo: "/case-study/spoton-logo.png",
+            logo: "/case-study/spoton-logo.svg",
             logoWidth: 133,
             logoHeight: "40px",
             bgColor: "#1763f5",
@@ -47,7 +47,7 @@ export default function CaseStudyGrid() {
         {
             id: 5,
             company: "Starburst",
-            logo: "/case-study/starbust-logo.png",
+            logo: "/case-study/starbust-logo.svg",
             logoWidth: 177,
             logoHeight: "35px",
             bgColor: "#824cf5",
@@ -57,7 +57,7 @@ export default function CaseStudyGrid() {
         {
             id: 6,
             company: "Starburst",
-            logo: "/case-study/starbust-logo.png",
+            logo: "/case-study/starbust-logo.svg",
             logoWidth: 177,
             logoHeight: "35px",
             bgColor: "#824cf5",
@@ -72,7 +72,7 @@ export default function CaseStudyGrid() {
                 <div className="w-full">
                     <div className="flex flex-col md:flex-row border border-solid border-[#545058] bg-white rounded-[32px] overflow-hidden">
                         <div className="flex-1 flex justify-center items-center h-[400px] py-20 bg-[#1a1a1a] rounded-3xl">
-                            <Image width={248} height={40} alt="Turing logo" src="/case-study/turing-logo.png" />
+                            <Image width={248} height={40} alt="Turing logo" src="/case-study/turing-logo.svg" />
                         </div>
                         <div className="flex-1 flex flex-col justify-between p-6">
                             <div className="flex flex-col gap-4">

@@ -75,7 +75,7 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                     <div id="int-search" className="mb-2">
                         <form id="wf-form-Search-form" name="wf-form-Search-form" method="get">
                             <input
-                                className="bg-white text-gray-800 border border-gray-800 rounded-3xl min-h-3 px-4 py-2 text-xl"
+                                className="bg-white text-gray-800 border border-gray-800 rounded-3xl min-h-3 px-6 py-2 text-xl"
                                 maxLength={256}
                                 name="Search-2"
                                 placeholder="Search our blog"

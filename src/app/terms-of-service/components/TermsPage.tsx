@@ -15,23 +15,21 @@ const TermsPage: React.FC<TermsOfServiceProps> = ({termsData}) => {
 
     return (
         <>
-            <div className="fixed-header">
+            <div>
                 <TermsBanner termsData={termsData} />
             </div>
-            <div className="main-content">
-                <section className="section px-6">
-                    <div className="max-w-[1256px] mx-auto mb-8">
-                        <div className="relative flex justify-between">
-                            <div className="left-div _30cent hide-mobile sticky-left">
-                                <TermsLeftContainer termsData={termsData} activeSection={activeSection} />
-                            </div>
-                            <div className="right-div _70cent right-container">
-                                <TermsRightContainer termsData={termsData} onSectionChange={setActiveSection} />
-                            </div>
+            <section className="pt-12 pb-24 relative px-6">
+                <div className="max-w-[1256px] mx-auto mb-8">
+                    <div className="relative flex justify-between">
+                        <div className="pr-6 top-28 sticky self-start hidden lg:block w-[30%]">
+                            <TermsLeftContainer termsData={termsData} activeSection={activeSection} />
+                        </div>
+                        <div className="self-start w-full lg:w-[70%]">
+                            <TermsRightContainer termsData={termsData} onSectionChange={setActiveSection} />
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </>
     );
 };

@@ -5,7 +5,7 @@ export default function ITtoolsCard() {
     const itTools = [
         {
             label: "License Renewal",
-            icon: "/it-tools/license.png",
+            icon: "/it-tools/tracker.png",
             title: "Renewal tracker",
             url: "/tools/offboard-it",
             description:
@@ -57,7 +57,7 @@ export default function ITtoolsCard() {
 
                         <Button variant = "primary" className="absolute left-6 bottom-6 md:right-8 w-fit" >
                             <span className="font-label-medium text-[#363338]">Try for Free</span>
-                            <Image width={14} height={14} className="ml-2" alt="button-icon" src="/it-tools/external.png" />
+                            <Image width={14} height={14} className="ml-2" alt="button-icon" src="/it-tools/external.svg" />
                         </Button>
                     </Link>
                 ))}

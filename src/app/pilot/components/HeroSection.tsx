@@ -21,7 +21,7 @@ export const HeroSection = () => {
             </div>
 
             <div className="flex justify-center w-full mt-8 md:mt-14">
-                <Image width={1053} height={362} alt="Apps oauth grants" src="/free-pilot/free-pilot-header.png" />
+                <Image width={1053} height={362} alt="Apps oauth grants" src="/free-pilot/hero-image.png" />
             </div>
         </section>
     );
