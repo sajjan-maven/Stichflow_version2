@@ -5,7 +5,7 @@ export default function ITtoolsCard() {
     const itTools = [
         {
             label: "License Renewal",
-            icon: "/it-tools/tracker.png",
+            icon: "/it-tools/tracker.svg",
             title: "Renewal tracker",
             url: "/tools/offboard-it",
             description:
@@ -13,7 +13,7 @@ export default function ITtoolsCard() {
         },
         {
             label: "Employee Offboarding",
-            icon: "/it-tools/offboardIT.png",
+            icon: "/it-tools/offboardIT.svg",
             title: "OffboardIT",
             url: "/tools/renewal-tracker",
             description:
@@ -21,14 +21,14 @@ export default function ITtoolsCard() {
         },
         {
             label: "Access Management",
-            icon: "/it-tools/appAccessMatrix.png",
+            icon: "/it-tools/appAccessMatrix.svg",
             title: "App Access Matrix",
             url: "/tools/access-matrix",
             description: "Visualize, track, review, and share app permissions across roles, teams, and locations—without the spreadsheet mess.",
         },
         {
             label: "Cost Savings",
-            icon: "/it-tools/ROIcalculator.png",
+            icon: "/it-tools/ROIcalculator.svg",
             title: "ROI Calculator",
             url: "/tools/roi-calculator",
             description: "Estimate your org’s app and business sprawl levels and see how much you could save in license gaps, cost, and IT hours with Stitchflow’s offering.",

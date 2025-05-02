@@ -36,7 +36,7 @@ const AuthorComponent: React.FC<AuthorComponentProps> = ({authorData, blogs}) =>
     );
 
     return (
-        <div>
+        <div className="px-6">
             <HeroComponent author={author} />
             <div className={styles.authorCards}>
                 <h2 className={styles.moreLatestTitle}>Latest Articles</h2>

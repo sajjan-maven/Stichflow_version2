@@ -63,9 +63,8 @@
 }
 
 .authorCards {
-    max-width: 1043px;
+    max-width: 1256px;
     margin: 0 auto;
-    padding: 16px;
     margin-bottom: 8rem;
 }
 
@@ -73,11 +72,11 @@
     margin-top: 3rem;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .authorCards {
         padding: 16px 20px;
     }
-}
+} */
 
 /* @media (min-width: 1200px) {
     .authorCards {

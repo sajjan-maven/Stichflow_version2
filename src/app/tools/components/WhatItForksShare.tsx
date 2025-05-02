@@ -48,9 +48,9 @@ export default function WhatItForksShare() {
 
   return (
     
-    <section className="gap-2 px-6 py-16 w-full">
+    <section className="gap-2 px-6 py-20 w-full">
         <div className="flex flex-col max-w-[645px] mx-auto items-center gap-4 w-full">
-            <h1 className=" font-semibold text-[#363338] text-2xl md:text-[40px] text-center">
+            <h1 className=" font-semibold text-[#363338] text-2xl md:text-[40px] text-center mb-2">
               What IT folks share about our
               free tools on Reddit
             </h1>

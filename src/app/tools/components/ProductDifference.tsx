@@ -32,7 +32,7 @@ export default function ProductDifference() {
     ];
 
     return (
-        <section className="gap-2 px-6 py-16 w-full">
+        <section className="gap-2 px-6 pb-16 w-full">
             <div>
                 <h1 className=" font-semibold text-[#363338] max-w-[645px] mx-auto mb-4 text-2xl md:text-[40px] text-center">
                     How&apos;s Stitchflow different from the free tools?
