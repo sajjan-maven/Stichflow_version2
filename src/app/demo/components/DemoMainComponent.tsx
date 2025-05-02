@@ -207,7 +207,7 @@ export default function DemoMainComponent() {
                                     <div className="flex flex-col items-start gap-2 relative w-full">
                                         {benefits.map((benefit, index) => (
                                             <div key={index} className="flex items-center justify-center gap-2 w-full">
-                                                <img className="w-4 h-4" alt="Benefit icon" src={benefit.icon} />
+                                                <Image width={16} height={16} alt="Benefit icon" src={benefit.icon} />
                                                 <p className="flex-1 font-normal text-[#363338] text-base leading-[25.6px]">
                                                     {benefit.text}
                                                 </p>
@@ -247,9 +247,8 @@ export default function DemoMainComponent() {
                                         className="w-full max-w-[578px] mx-auto"
                                         >
                                             {slider.map((image, index) => (
-                                            <div className="w-fit h-20 align-bottom px-2">
-                                                <Image 
-                                                    key={index}
+                                            <div key={index} className="w-fit h-20 align-bottom px-2">
+                                                <Image
                                                     alt={image.alt}
                                                     src={image.src}
                                                     width={image.width}
