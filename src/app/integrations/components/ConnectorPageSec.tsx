@@ -1,6 +1,6 @@
 import React from "react";
-// import ConnectorGridSection from "./ConnectorGridSection";
-// import ConnectorFilterSection from "./ConnectorFilterSection";
+import ConnectorGridSection from "./ConnectorGridSection";
+import ConnectorFilterSection from "./ConnectorFilterSection";
 import ConnectorHeroSection from "./ConnectorHeroSection";
 
 interface BannerImage {
@@ -69,11 +69,11 @@ const ConnectorPageSec: React.FC<ConnectorPageSecProps> = (props) => {
         <div className="page-wrapper">
             <ConnectorHeroSection title={props.data.HeroSection} />
             <div className="bg-[#f8f5f3]">
-                {/* <ConnectorFilterSection
+                <ConnectorFilterSection
                     catogeoryList={props.content.CategorySec}
                     imageList={props.image.ConnectorImageSec}
                 />
-                <ConnectorGridSection /> */}
+                <ConnectorGridSection />
             </div>
         </div>
     );
