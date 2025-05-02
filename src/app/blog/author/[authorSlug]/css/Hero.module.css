@@ -5,7 +5,7 @@
     background: white;
     /* padding: 32px; */
     margin-top: 120px;
-    max-width: 1043px;
+    max-width: 1256px;
     margin: 0 auto;
 
     position: relative;
@@ -101,6 +101,7 @@
     color: #747474;
     margin-top: 8px;
     line-height: 18.9px;
+    max-width: 800px;
     /* padding-right: 80px; */
 }
 
@@ -116,7 +117,6 @@
     /* margin-right: auto; */
     display: flex;
     /* align-items: center; */
-    padding: 16px;
 }
 
 /* .hr {
@@ -135,7 +135,6 @@
 @media screen and (max-width: 1024px) {
     .heroContainer {
         max-width: 95%;
-        padding: 24px;
         margin-top: 80px;
         /* Reduce margin */
     }
