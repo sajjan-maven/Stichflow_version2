@@ -1,7 +1,6 @@
-'use client'
+'use client';
 
 import { useEffect, useRef } from 'react';
-import lottie, { AnimationItem } from 'lottie-web';
 
 const ThankyouHeroSection = () => {
   const animationContainer = useRef<HTMLDivElement>(null);
@@ -9,15 +8,18 @@ const ThankyouHeroSection = () => {
   useEffect(() => {
     if (!animationContainer.current) return;
 
-    const anim: AnimationItem = lottie.loadAnimation({
-      container: animationContainer.current,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/thank-you-page/Animation.json'
-    });
+    // Dynamically import lottie-web only on client side
+    import('lottie-web').then((Lottie) => {
+      const anim = Lottie.default.loadAnimation({
+        container: animationContainer.current as Element,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/thank-you-page/Animation.json'
+      });
 
-    return () => anim.destroy();
+      return () => anim.destroy();
+    });
   }, []);
 
   return (
