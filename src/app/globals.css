@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 
 html {
@@ -88,7 +87,7 @@ html {
 }
 
 .fs-toc_link.active {
-    color: #F25C30 !important;
+    color: #f25c30 !important;
     font-weight: 600;
 }
 
@@ -347,14 +346,14 @@ html {
 
 /* @media (max-width: 480px) {
     /* Small mobile devices */
-    /* table {
+/* table {
         min-width: 350px !important;
     } */
 /* } */
 
 /* @media (max-width: 320px) { */
-    /* Extra small mobile screens */
-    /* table {
+/* Extra small mobile screens */
+/* table {
         min-width: 300px !important;
     } */
 /* } */
@@ -521,7 +520,7 @@ html {
 
 /* First row (header) styling */
 .ck-table-resized tbody tr:first-child {
-    background: #E4DBD0; /* Header background */
+    background: #e4dbd0; /* Header background */
 }
 
 /* Add border to header row */
@@ -574,7 +573,10 @@ html {
     overflow-x: auto;
     max-width: 100%;
 }
-
+.ck-table-resized tbody tr {
+    max-width: 100%;
+    /* table-layout: fixed;  */
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .ck-table-resized td,
@@ -823,7 +825,6 @@ div:has(> figure.table) {
     }
 }
 
-
 ._w-inline-block {
     grid-column-gap: 1.06rem;
     margin-left: 0;
@@ -1049,8 +1050,6 @@ div:has(> figure.table) {
     transform: translate(0, -0.125rem);
 }
 
-
-
 .social-share-btn.fb:hover {
     transform: translate(0, -0.125rem);
 }
@@ -1131,8 +1130,8 @@ div:has(> figure.table) {
 }
 
 .section.hero.integration-page {
-    background-color: var(--white-smoke);
-    /* background-image: url("../images/Group-427320677.png"); */
+    background-color: #e4dbd0;
+    background-image: url("/integrations/Group-427320677.png");
     background-position: 100% 0;
     background-repeat: repeat-y;
     background-size: contain;
@@ -1683,7 +1682,7 @@ div:has(> figure.table) {
 }
 
 .text-primary-black {
-    color: var(--black-2);
+    color: var(--black-2) !important;
 }
 
 .text-center {
@@ -2161,15 +2160,10 @@ div:has(> figure.table) {
     display: flex;
 }
 
-
-
-
 .mid-para {
     font-size: 1.25rem;
     line-height: 1.875rem;
 }
-
-
 
 .mid-para.text-dark-grey {
     color: var(--dark-grey);
@@ -5808,7 +5802,6 @@ div:has(> figure.table) {
 }
 
 @media screen and (max-width: 991px) {
-
     .nav-link {
         margin-right: 0;
     }
@@ -5839,7 +5832,6 @@ div:has(> figure.table) {
     .popup-card {
         max-width: none;
     }
-
 
     .hide-tab {
         display: none;
@@ -7181,7 +7173,7 @@ table th {
 }
 
 table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f7f1fe;
 }
 
 table tr:first-child td {
@@ -7250,7 +7242,7 @@ table tr:first-child td {
     padding: 6px;
     border: 1px solid rgba(238, 238, 238, 0.813);
     border-radius: 100%;
-    background-color: #F8F5F3;
+    background-color: #f8f5f3;
     background-color: white;
     color: gray;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
@@ -7264,7 +7256,7 @@ table tr:first-child td {
     left: calc(50% + 525px) !important;
     transform: translateX(-50%) !important;
     -webkit-transform: translateX(-50%) !important;
-    background-image: url('/common-components/arrow-left.svg');
+    background-image: url("/common-components/arrow-left.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
@@ -7276,7 +7268,7 @@ table tr:first-child td {
     right: calc(50% - 600px) !important;
     transform: translateX(50%) !important;
     -webkit-transform: translateX(50%) !important;
-    background-image: url('/common-components/arrow-right.svg');
+    background-image: url("/common-components/arrow-right.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30px;
@@ -7286,7 +7278,7 @@ table tr:first-child td {
 .homePageCarousel > div > .slick-arrow:hover {
     background-color: #f0f0f0;
 }
- 
+
 .homePageCarousel > div > .slick-arrow:active {
     transform: scale(0.98);
     box-shadow: none;
