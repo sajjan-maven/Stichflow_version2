@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-
+import Button from "@/app/components/Button";
+import {ArrowRightIcon} from "lucide-react";
+import {useRouter} from "next/navigation";
 interface ConnectorHeroSectionProps {
     title: {
         HeroHeading: string;
@@ -10,6 +13,7 @@ interface ConnectorHeroSectionProps {
     };
 }
 const ConnectorHeroSection: React.FC<ConnectorHeroSectionProps> = ({title}) => {
+    const router = useRouter();
     return (
         <div>
             <section className="section hero integration-page">
@@ -43,44 +47,14 @@ const ConnectorHeroSection: React.FC<ConnectorHeroSectionProps> = ({title}) => {
                                             </div>
                                             <div className="content-wrapper h-flex">
                                                 <a href="schedule-a-demo" className="cta-link w-inline-block">
-                                                    <button
-                                                        data-w-id="b81fca47-d859-83a6-b851-4798757bf0cc"
-                                                        className="cta-button cc-black"
+                                                    <Button
+                                                        variant="secondary"
+                                                        onClick={() => router.push("/demo")}
+                                                        className="group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8"
                                                     >
-                                                        <div className="cta-button-wrap">
-                                                            <div className="c-b-icon-wrap is-left cc-white">
-                                                                <div className="c-b-text-icon w-embed">
-                                                                    <svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        height="1em"
-                                                                        viewBox="0 0 448 512"
-                                                                    >
-                                                                        <path
-                                                                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
-                                                                            fill="currentColor"
-                                                                        />
-                                                                    </svg>
-                                                                </div>
-                                                                <div className="button-icon-bg-27" />
-                                                            </div>
-                                                            <div className="c-b-text">Schedule a demo</div>
-                                                            <div className="c-b-icon-wrap is-right cc-black">
-                                                                <div className="c-b-text-icon w-embed">
-                                                                    <svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        height="1em"
-                                                                        viewBox="0 0 448 512"
-                                                                    >
-                                                                        <path
-                                                                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
-                                                                            fill="currentColor"
-                                                                        />
-                                                                    </svg>
-                                                                </div>
-                                                                <div className="button-icon-bg-27" />
-                                                            </div>
-                                                        </div>
-                                                    </button>
+                                                        Book Demo
+                                                        <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
+                                                    </Button>
                                                 </a>
                                                 <div className="form-wrapper platform-hero-form mb-align-center cc-z-2 hide w-form">
                                                     <form

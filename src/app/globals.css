@@ -1130,8 +1130,8 @@ div:has(> figure.table) {
 }
 
 .section.hero.integration-page {
-    background-color: var(--white-smoke);
-    /* background-image: url("../images/Group-427320677.png"); */
+    background-color: #e4dbd0;
+    background-image: url("/integrations/Group-427320677.png");
     background-position: 100% 0;
     background-repeat: repeat-y;
     background-size: contain;
