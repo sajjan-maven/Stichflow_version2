@@ -226,36 +226,38 @@ export default function DemoMainComponent() {
                                     <div className="absolute left-0 bottom-0 h-20 w-[86px] bg-gradient-to-r z-30 from-[#faf9f8] to-[#faf9f800]"></div>
                                     <div className="absolute right-0 bottom-0 h-20 w-[86px] bg-gradient-to-l z-30 from-[#faf9f8] to-[#faf9f800]"></div>
                                     <div className="slider-container">
-                                        <Slider {...{
-                                            infinite: true,
-                                            slidesToShow: 3,
-                                            slidesToScroll: 1,
-                                            arrows: false,
-                                            autoplay: true,
-                                            speed: 2000,
-                                            autoplaySpeed: 2000,
-                                            cssEase: "linear",
-                                            responsive: [
-                                                {
-                                                    breakpoint: 1450,
-                                                    settings: {
-                                                        slidesToShow: 3,
-                                                    }
-                                                },
-                                            ]
-                                        }}
-                                        className="w-full max-w-[578px] mx-auto"
+                                        <Slider
+                                            {...{
+                                                infinite: true,
+                                                slidesToShow: 3,
+                                                slidesToScroll: 1,
+                                                arrows: false,
+                                                autoplay: true,
+                                                speed: 2000,
+                                                autoplaySpeed: 2000,
+                                                cssEase: "linear",
+                                                responsive: [
+                                                    {
+                                                        breakpoint: 1450,
+                                                        settings: {
+                                                            slidesToShow: 3,
+                                                        },
+                                                    },
+                                                ],
+                                            }}
+                                            className="w-full max-w-[578px] mx-auto"
                                         >
                                             {slider.map((image, index) => (
-                                            <div key={index} className="w-fit h-20 align-bottom px-2">
-                                                <Image
-                                                    alt={image.alt}
-                                                    src={image.src}
-                                                    width={image.width}
-                                                    height={image.height}
-                                                    className="max-w-full h-full flex justify-center items-end"
-                                                />
-                                            </div>))}
+                                                <div key={index} className="w-fit h-20 align-bottom px-2">
+                                                    <Image
+                                                        alt={image.alt}
+                                                        src={image.src}
+                                                        width={image.width}
+                                                        height={image.height}
+                                                        className="max-w-full h-full flex justify-center items-end"
+                                                    />
+                                                </div>
+                                            ))}
                                         </Slider>
                                     </div>
                                 </div>
@@ -265,7 +267,13 @@ export default function DemoMainComponent() {
                         {/* Testimonial card */}
                         <div className="flex flex-col items-start gap-6 p-8 bg-white rounded-[32px] border border-solid border-[#545058] mb-24 mt-12">
                             <div className="p-0 w-full">
-                                <Image className="mb-6" alt="Quote icon" src="/schedule-demo/quotes.svg" width={30} height={31} />
+                                <Image
+                                    className="mb-6"
+                                    alt="Quote icon"
+                                    src="/schedule-demo/quotes.svg"
+                                    width={30}
+                                    height={31}
+                                />
                                 <div className="flex flex-col items-start gap-4 w-full">
                                     <p className="w-full font-semibold text-[#363338] text-lg leading-[26px]">
                                         Before Stitchflow, our quarterly user access reviews were a three-week grind—now
@@ -309,7 +317,7 @@ export default function DemoMainComponent() {
                                             </div>
                                             <input
                                                 name="email"
-                                                className={`h-[54px] bg-white w-full rounded-xl border border-solid cursor-pointer ${
+                                                className={`h-[54px] bg-white w-full rounded-xl border border-solid ${
                                                     error ? "border-red-500" : "border-[#c6c4cc]"
                                                 } shadow-shadow-sm px-4`}
                                                 value={formData.email}
@@ -325,18 +333,20 @@ export default function DemoMainComponent() {
                                             onClick={handleEmailSubmit}
                                             disabled={loading}
                                         >
-                                            {loading ? 
-                                            <>
-                                                <span className="font-h6-medium font-[number:var(--h6-medium-font-weight)] text-white text-[length:var(--h6-medium-font-size)] tracking-[var(--h6-medium-letter-spacing)] leading-[var(--h6-medium-line-height)] whitespace-nowrap [font-style:var(--h6-medium-font-style)]">
-                                                    Processing...
-                                                </span>
-                                            </> :
-                                            <>
-                                                <span className="font-h6-medium font-[number:var(--h6-medium-font-weight)] text-white text-[length:var(--h6-medium-font-size)] tracking-[var(--h6-medium-letter-spacing)] leading-[var(--h6-medium-line-height)] whitespace-nowrap [font-style:var(--h6-medium-font-style)]">
-                                                    Get Started
-                                                </span>
-                                                <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
-                                            </>}
+                                            {loading ? (
+                                                <>
+                                                    <span className="font-h6-medium font-[number:var(--h6-medium-font-weight)] text-white text-[length:var(--h6-medium-font-size)] tracking-[var(--h6-medium-letter-spacing)] leading-[var(--h6-medium-line-height)] whitespace-nowrap [font-style:var(--h6-medium-font-style)]">
+                                                        Processing...
+                                                    </span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <span className="font-h6-medium font-[number:var(--h6-medium-font-weight)] text-white text-[length:var(--h6-medium-font-size)] tracking-[var(--h6-medium-letter-spacing)] leading-[var(--h6-medium-line-height)] whitespace-nowrap [font-style:var(--h6-medium-font-style)]">
+                                                        Get Started
+                                                    </span>
+                                                    <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
+                                                </>
+                                            )}
                                         </Button>
                                     </div>
                                 )}
@@ -439,12 +449,7 @@ export default function DemoMainComponent() {
                         {/* Privacy notice */}
                         <p className="w-full max-w-[392px] font-['Geist',Helvetica] font-normal text-[#363338] text-xs tracking-[0] leading-[16.2px] text-center">
                             We respect your privacy. By submitting, you agree to our{" "}
-                            <a
-                                href="/privacy"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                className="underline"
-                            >
+                            <a href="/privacy" rel="noopener noreferrer" target="_blank" className="underline">
                                 privacy policy
                             </a>
                             .
@@ -497,7 +502,12 @@ export default function DemoMainComponent() {
                                             {testimonial.text}
                                         </p>
                                         <div className="flex items-center gap-4 w-full">
-                                            <Image width={40} height={40} alt="G2 Logo" src="/schedule-demo/g2_logo.svg" />
+                                            <Image
+                                                width={40}
+                                                height={40}
+                                                alt="G2 Logo"
+                                                src="/schedule-demo/g2_logo.svg"
+                                            />
                                             <div className="flex flex-col items-start gap-1 flex-1">
                                                 <p className="font-['Geist',Helvetica] font-medium text-[#7b7481] text-base tracking-[0] leading-6">
                                                     {testimonial.author}
