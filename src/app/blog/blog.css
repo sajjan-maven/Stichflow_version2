@@ -10,7 +10,7 @@
 .blog-int-search-input {
     background-color: var(--white);
     color: var(--dark-grey);
-    background-image: url("../../images/Material-1.svg");
+    /* background-image: url("../../images/Material-1.svg"); */
     background-position: right 12px center;
     background-repeat: no-repeat;
     background-size: 24px;

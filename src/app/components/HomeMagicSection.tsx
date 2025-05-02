@@ -32,7 +32,7 @@ const featureCards: FeatureCard[] = [
         id: 1,
         title: "Connect",
         description: "Connects any app with any system of record—seamlessly and without the complexity.",
-        imageSrc: "/home-page/magic1.png",
+        imageSrc: "/home-page/connect.png",
         type: "connect",
     },
     {
@@ -40,14 +40,14 @@ const featureCards: FeatureCard[] = [
         title: "Reconcile",
         description:
             "Provides an instantly reconciled view of SaaS user data—so you always have a single source of truth.",
-        imageSrc: "/home-page/magic2.png",
+        imageSrc: "/home-page/reconcile.png",
         type: "reconcile",
     },
     {
         id: 3,
         title: "Customize",
         description: "Accounts for all your organization's custom configurations, policies, and exceptions.",
-        imageSrc: "/home-page/magic3.png",
+        imageSrc: "/home-page/customize.png",
         type: "customize",
     },
 ];

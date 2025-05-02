@@ -4,9 +4,9 @@ import React from "react";
 export default function ProductDifference() {
     const cardData = [
         {
-            icon: "/it-tools/visible.png",
+            icon: "/it-tools/visibility.png",
             iconAlt: "Document scanner",
-            title: "Visibility to every\nsingle unique variable",
+            title: "Visibility to every single unique variable",
             description: [
                 "Filter data as per organizational nuances",
                 "Reconcile data across systems",
@@ -14,9 +14,9 @@ export default function ProductDifference() {
             ],
         },
         {
-            icon: "/it-tools/catches.png",
+            icon: "/it-tools/catch-access.png",
             iconAlt: "Person alert",
-            title: "Catches all\naccess misses",
+            title: "Catches all access misses",
             description: [
                 "Ex-employees with access to tools",
                 "Users in systems who are not in your IDP",
@@ -24,9 +24,9 @@ export default function ProductDifference() {
             ],
         },
         {
-            icon: "/it-tools/noHidden.png",
+            icon: "/it-tools/no-hidden-cost.png",
             iconAlt: "License",
-            title: "No hidden\nlicense waste",
+            title: "No hidden license waste",
             description: ["Ex-employees and contractors with active licenses", "Underutilized licenses", ""],
         },
     ];
@@ -55,21 +55,6 @@ export default function ProductDifference() {
                                 <h2 className="self-stretch font-semibold text-black text-2xl tracking-[0] leading-[32.4px] whitespace-pre-line">
                                     {card.title}
                                 </h2>
-
-                                {/* <div className="self-stretch font-['Inter',Helvetica] font-normal text-[#313036] text-lg tracking-[0]">
-                  {card.description.map((line, i) => (
-                    <div key={i}>
-                      <span
-                        className={
-                          i % 2 === 0 ? "leading-[24.3px]" : "leading-[27px]"
-                        }
-                      >
-                        {line}
-                        {line && i < card.description.length - 1 && <br />}
-                      </span>
-                    </div>
-                  ))}
-                </div> */}
                                 <ul className="list-disc pl-5 text-[#313036] text-lg font-normal leading-relaxed">
                                     {card.description.filter(Boolean).map((item, i) => (
                                         <li key={i}>{item}</li>

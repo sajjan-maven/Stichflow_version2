@@ -30,14 +30,14 @@ export default function CaseStudiesDetails() {
         {
             name: "Spoton",
             color: "#1763f5",
-            logoSrc: "/case-study-details/spoton-logo.png",
+            logoSrc: "/case-study-details/spoton-logo.svg",
             description:
                 "Global Payment Technology Company Transforms License Management and Offboarding Process, Saving $160,000+ with Stitchflow in 6 months.",
         },
         {
             name: "Starburst",
             color: "#824cf5",
-            logoSrc: "/case-study-details/starburst-logo.png",
+            logoSrc: "/case-study-details/starbust-logo.svg",
             description:
                 "How Starburst fixed 350 user access gaps and saved $57,000 on underused licenses in 2 months.",
         },
@@ -52,8 +52,8 @@ export default function CaseStudiesDetails() {
                         {/* Case Study Header */}
                         <header className="flex flex-col w-full items-start gap-6 bg-transparent">
                             <Link href="/case-studies" passHref>
-                                <div className="flex px-4 py-3 text-black items-center gap-2 rounded-xl border border-[#54505833]">
-                                    <Image width={12} height={10} alt="Icon" src="/case-study-details/icon.png" />
+                                <div className="flex px-4 py-3 text-[#363338] items-center font-medium gap-2 rounded-xl border border-[#54505833]">
+                                    <Image width={16} height={16} alt="Icon" src="/case-study-details/arrow-left.svg" />
                                     Case studies
                                 </div>
                             </Link>
@@ -83,7 +83,7 @@ export default function CaseStudiesDetails() {
                             {/* Quote Card */}
                             <div className="w-full bg-white rounded-[32px] border border-solid border-[#545058]">
                                 <div className="flex flex-col items-start gap-12 pt-6 p-8 md:pt-10 md:p-14">
-                                    <Image width={41} height={40} alt="Quote" src="/case-study-details/quotation.png" />
+                                    <Image width={41} height={40} alt="Quote" src="/case-study-details/quotes.png" />
                                     <div className="flex flex-col items-start gap-6 w-full">
                                         <p className=" font-normal text-[#363338] text-lg leading-[26px]">
                                             Our biggest challenge wasn&apos;t just managing access gaps and maintaining
@@ -138,25 +138,16 @@ export default function CaseStudiesDetails() {
                                 <h2 className="text-2xl font-medium text-[#363338]">Turing&apos;s Response</h2>
                                 <p className=" font-normal text-[#363338] text-base leading-6">
                                     Stitchflow&apos;s customized SaaS management solution met Turing&apos;s needs and:
-                                    <br />
-                                    <br />
-                                    Completed initial setup in 30 minutes
-                                    <br />
-                                    Stitched together all of Turing&apos;s tools, including different IDPs
-                                    <br />
-                                    Mapped Turing&apos;s IT and security processes
-                                    <br />
-                                    Automated security policy enforcement
-                                    <br />
-                                    Streamlined offboarding by automating deprovisioning and revoking roles and
-                                    permissions
-                                    <br />
-                                    Identified orphaned and underutilized accounts that were leading to waste in SaaS
-                                    spending
-                                    <br />
-                                    Provided real-time alerts and remediation (as opposed to waiting for quarterly
-                                    audits)
                                 </p>
+                                <ul className="decoration-dotted list-disc block pl-4">
+                                    <li>Completed initial setup in 30 minutes</li>
+                                    <li>Stitched together all of Turing&apos;s tools, including different IDPs</li>
+                                    <li>Mapped Turing&apos;s IT and security processes</li>
+                                    <li>Automated security policy enforcement</li>
+                                    <li>Streamlined offboarding by automating deprovisioning and revoking roles and permissions</li>
+                                    <li>Identified orphaned and underutilized accounts that were leading to waste in SaaS spending</li>
+                                    <li>Provided real-time alerts and remediation (as opposed to waiting for quarterly audits)</li>
+                                </ul>    
                             </section>
 
                             {/* Stats Card */}
@@ -203,7 +194,7 @@ export default function CaseStudiesDetails() {
                                             >
                                                 <Image
                                                     height={40}
-                                                    width={40}
+                                                    width={133}
                                                     alt={`${story.name} logo`}
                                                     src={story.logoSrc}
                                                 />

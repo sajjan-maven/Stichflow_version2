@@ -1,8 +1,12 @@
 "use client";
-import {ChevronRightIcon} from "lucide-react";
+import {ArrowRightIcon, ChevronRightIcon} from "lucide-react";
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import Script from "next/script";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import Button from "@/app/components/Button";
 
 export default function DemoMainComponent() {
     const [step, setStep] = useState(1);
@@ -112,16 +116,55 @@ export default function DemoMainComponent() {
     // Benefits data
     const benefits = [
         {
-            icon: "/gridfour.svg",
+            icon: "/schedule-demo/gridfour.svg",
             text: "Eliminate spreadsheets and manual work involved in SaaS management",
         },
         {
-            icon: "/eye.svg",
+            icon: "/schedule-demo/eye.svg",
             text: "Gain 100% visibility into your entire SaaS ecosystem in a single place",
         },
         {
-            icon: "/lightning.svg",
+            icon: "/schedule-demo/lightning.svg",
             text: "Reclaim 2 days per week for strategic IT initiatives",
+        },
+    ];
+
+    const slider = [
+        {
+            src: "/schedule-demo/slide-1.svg",
+            alt: "Group",
+            width: 148.07,
+            height: 21.28,
+        },
+        {
+            src: "/schedule-demo/slide-2.svg",
+            alt: "Ventures stack rgb",
+            width: 93.3,
+            height: 27.33,
+        },
+        {
+            src: "/schedule-demo/slide-3.svg",
+            alt: "Felicis",
+            width: 124.73,
+            height: 32.01,
+        },
+        {
+            src: "/schedule-demo/slide-4.svg",
+            alt: "Group",
+            width: 134.83,
+            height: 40,
+        },
+        {
+            src: "/schedule-demo/slide-5.svg",
+            alt: "Group",
+            width: 144.78,
+            height: 34.03,
+        },
+        {
+            src: "/schedule-demo/slide-6.svg",
+            alt: "Group",
+            width: 135,
+            height: 34.01,
         },
     ];
 
@@ -145,42 +188,27 @@ export default function DemoMainComponent() {
     ];
 
     return (
-        <div className="flex flex-col items-center relative bg-[#faf9f8]">
-            <div className="relative w-full max-w-[1360px] h-full min-h-[1024px]">
-                {/* Header/Logo */}
-                <header className="absolute w-[108.84px] h-24 top-9 left-0">
-                    <Image
-                        width={108.84}
-                        height={24}
-                        className="absolute top-1.5 left-[34px]"
-                        alt="Wordmark"
-                        src="/images/logo (1).svg"
-                    />
-                    <img className="absolute w-6 h-6 top-0 left-0" alt="Logo icon" src="/logo-icon.svg" />
-                </header>
-
+        <div className="flex flex-col items-center justify-items-stretch relative bg-[#faf9f8]">
+            <div className="relative w-full max-w-[1360px] flex flex-col-reverse lg:flex-row h-full">
                 {/* Left side content section */}
-                <section className="absolute w-[628px] h-[758px] top-[158px] left-[41px]">
-                    <div className="flex flex-col w-full items-start gap-[88px] relative -top-2">
+                <section className="lg:max-w-[50%] mt-20 w-full px-6">
+                    <div className="flex flex-col w-full items-start relative max-w-[578px] mx-auto">
                         {/* Main content */}
                         <div className="flex flex-col items-start gap-10 relative w-full">
                             <div className="flex flex-col items-start gap-8 relative w-full">
-                                <div className="flex flex-col items-start gap-4 relative w-full">
-                                    {/* Headline */}
-                                    <h1 className="w-full font-['Geist',Helvetica] font-bold text-[#222222] text-[40px] tracking-[0] leading-[54px]">
+                                <div className="flex flex-col items-start relative w-full">
+                                    <h1 className="w-full font-bold text-[#222222] text-[40px] leading-[54px] mb-4">
                                         SaaS user management
                                         <br />
                                         for IT environments that
                                         <br />
                                         can&apos;t be automated
                                     </h1>
-
-                                    {/* Benefits list */}
                                     <div className="flex flex-col items-start gap-2 relative w-full">
                                         {benefits.map((benefit, index) => (
                                             <div key={index} className="flex items-center justify-center gap-2 w-full">
-                                                <img className="w-4 h-4" alt="Benefit icon" src={benefit.icon} />
-                                                <p className="flex-1 mt-[-1.00px] font-['Geist',Helvetica] font-normal text-[#363338] text-base tracking-[0] leading-[25.6px]">
+                                                <Image width={16} height={16} alt="Benefit icon" src={benefit.icon} />
+                                                <p className="flex-1 font-normal text-[#363338] text-base leading-[25.6px]">
                                                     {benefit.text}
                                                 </p>
                                             </div>
@@ -190,40 +218,56 @@ export default function DemoMainComponent() {
                             </div>
 
                             {/* Trusted by section */}
-                            <div className="flex flex-col h-[87.01px] items-start gap-4 relative">
-                                <p className="w-full font-['Geist',Helvetica] font-normal text-[#363338] text-sm tracking-[0] leading-8">
+                            <div className="flex flex-col items-start relative">
+                                <p className="w-full font-normal text-[#363338] text-sm tracking-[0] leading-8">
                                     Trusted by IT teams at orgs managing complex SaaS environments just like yours.
                                 </p>
-
-                                <div className="flex w-[588px] items-center gap-10 relative overflow-hidden">
-                                    <div className="relative w-[148.07px] h-[21.28px] bg-[url(/group.png)] bg-[100%_100%]" />
-                                    <div className="relative w-[93.3px] h-[27.33px]">
-                                        <img
-                                            className="absolute w-[93px] h-[26px] top-px left-0"
-                                            alt="Group"
-                                            src="/group-1.png"
-                                        />
+                                <div className="relative">
+                                    <div className="absolute left-0 bottom-0 h-20 w-[86px] bg-gradient-to-r z-30 from-[#faf9f8] to-[#faf9f800]"></div>
+                                    <div className="absolute right-0 bottom-0 h-20 w-[86px] bg-gradient-to-l z-30 from-[#faf9f8] to-[#faf9f800]"></div>
+                                    <div className="slider-container">
+                                        <Slider {...{
+                                            infinite: true,
+                                            slidesToShow: 3,
+                                            slidesToScroll: 1,
+                                            arrows: false,
+                                            autoplay: true,
+                                            speed: 2000,
+                                            autoplaySpeed: 2000,
+                                            cssEase: "linear",
+                                            responsive: [
+                                                {
+                                                    breakpoint: 1450,
+                                                    settings: {
+                                                        slidesToShow: 3,
+                                                    }
+                                                },
+                                            ]
+                                        }}
+                                        className="w-full max-w-[578px] mx-auto"
+                                        >
+                                            {slider.map((image, index) => (
+                                            <div key={index} className="w-fit h-20 align-bottom px-2">
+                                                <Image
+                                                    alt={image.alt}
+                                                    src={image.src}
+                                                    width={image.width}
+                                                    height={image.height}
+                                                    className="max-w-full h-full flex justify-center items-end"
+                                                />
+                                            </div>))}
+                                        </Slider>
                                     </div>
-                                    <div className="relative w-[124.73px] h-[32.01px] bg-[url(/starburst-logo.png)] bg-[100%_100%]" />
-                                    <div className="relative w-[134.83px] h-10">
-                                        <img
-                                            className="absolute w-[102px] h-10 top-0 left-0"
-                                            alt="Group"
-                                            src="/group-2.png"
-                                        />
-                                    </div>
-                                    <div className="absolute w-[86px] h-10 top-0 right-0 [background:linear-gradient(90deg,rgba(250,249,248,0)_0%,rgba(250,249,248,1)_100%)]" />
-                                    <div className="absolute w-[86px] h-10 top-0 left-0 rotate-180 [background:linear-gradient(90deg,rgba(250,249,248,0)_0%,rgba(250,249,248,1)_100%)]" />
                                 </div>
                             </div>
                         </div>
 
                         {/* Testimonial card */}
-                        <div className="flex flex-col w-[578px] items-start gap-6 p-8 bg-white rounded-[32px] border border-solid border-[#545058]">
+                        <div className="flex flex-col items-start gap-6 p-8 bg-white rounded-[32px] border border-solid border-[#545058] mb-24 mt-12">
                             <div className="p-0 w-full">
-                                <img className="w-[31px] h-[30px] mb-6" alt="Quote" src="/-.svg" />
+                                <Image className="mb-6" alt="Quote icon" src="/schedule-demo/quotes.svg" width={30} height={31} />
                                 <div className="flex flex-col items-start gap-4 w-full">
-                                    <p className="w-full font-['Geist',Helvetica] font-semibold text-[#363338] text-lg tracking-[0] leading-[26px]">
+                                    <p className="w-full font-semibold text-[#363338] text-lg leading-[26px]">
                                         Before Stitchflow, our quarterly user access reviews were a three-week grind—now
                                         they&apos;re finished in a single day. We identified 170 security gaps and
                                         removed 50 duplicate accounts across our eight domains.
@@ -244,8 +288,8 @@ export default function DemoMainComponent() {
                 </section>
 
                 {/* Right side form section */}
-                <section className="flex w-full max-w-[623px] h-full min-h-[1024px] items-center justify-center gap-2.5 p-2.5 absolute top-0 right-0 bg-[#E9E2D9]">
-                    <div className="flex flex-col items-center gap-4 relative rounded-[32px] w-full max-w-[455px]">
+                <section className="lg:max-w-[50%] w-full bg-[#E9E2D9] px-6">
+                    <div className="flex flex-col items-center justify-center gap-4 relative rounded-[32px] w-full h-full py-20 max-w-[455px] mx-auto">
                         <div className="flex flex-col items-center gap-6 relative w-full">
                             <h2 className="w-full max-w-[455px] mt-[-1.00px] font-['Geist',Helvetica] font-medium text-[#222222] text-[35px] tracking-[0] leading-[47.2px]">
                                 See Stitchflow in action.
@@ -275,16 +319,25 @@ export default function DemoMainComponent() {
                                             {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
                                         </div>
 
-                                        <button
-                                            className="flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] [background:linear-gradient(180deg,rgba(84,80,88,1)_0%,rgba(54,51,56,1)_100%)] cursor-pointer"
+                                        <Button
+                                            variant="secondary"
+                                            className="w-full py-4 group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8"
                                             onClick={handleEmailSubmit}
                                             disabled={loading}
                                         >
-                                            <span className="font-h6-medium font-[number:var(--h6-medium-font-weight)] text-white text-[length:var(--h6-medium-font-size)] tracking-[var(--h6-medium-letter-spacing)] leading-[var(--h6-medium-line-height)] whitespace-nowrap [font-style:var(--h6-medium-font-style)]">
-                                                {loading ? "Processing..." : "Get Started"}
-                                            </span>
-                                            <ChevronRightIcon className="w-4 h-4 text-white" />
-                                        </button>
+                                            {loading ? 
+                                            <>
+                                                <span className="font-h6-medium font-[number:var(--h6-medium-font-weight)] text-white text-[length:var(--h6-medium-font-size)] tracking-[var(--h6-medium-letter-spacing)] leading-[var(--h6-medium-line-height)] whitespace-nowrap [font-style:var(--h6-medium-font-style)]">
+                                                    Processing...
+                                                </span>
+                                            </> :
+                                            <>
+                                                <span className="font-h6-medium font-[number:var(--h6-medium-font-weight)] text-white text-[length:var(--h6-medium-font-size)] tracking-[var(--h6-medium-letter-spacing)] leading-[var(--h6-medium-line-height)] whitespace-nowrap [font-style:var(--h6-medium-font-style)]">
+                                                    Get Started
+                                                </span>
+                                                <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
+                                            </>}
+                                        </Button>
                                     </div>
                                 )}
 
@@ -352,7 +405,7 @@ export default function DemoMainComponent() {
                                             </div>
                                         </div>
 
-                                        {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+                                        {error && <p className="text-red-500 text-sm mt-0.5">{error}</p>}
                                         {/* Submit button */}
                                         <button
                                             className="flex items-center justify-center gap-2 px-6 py-4 w-full rounded-xl shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] [background:linear-gradient(180deg,rgba(84,80,88,1)_0%,rgba(54,51,56,1)_100%)] cursor-pointer"
@@ -387,7 +440,7 @@ export default function DemoMainComponent() {
                         <p className="w-full max-w-[392px] font-['Geist',Helvetica] font-normal text-[#363338] text-xs tracking-[0] leading-[16.2px] text-center">
                             We respect your privacy. By submitting, you agree to our{" "}
                             <a
-                                href="https://www.stitchflow.com/privacy"
+                                href="/privacy"
                                 rel="noopener noreferrer"
                                 target="_blank"
                                 className="underline"
@@ -401,23 +454,23 @@ export default function DemoMainComponent() {
             </div>
 
             {/* Testimonials section */}
-            <section className="flex flex-col h-[866px] items-center justify-center gap-[70px] px-0 py-[100px] w-full [background:linear-gradient(0deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.02)_100%),linear-gradient(0deg,rgba(250,249,248,1)_0%,rgba(250,249,248,1)_100%)]">
-                <div className="flex flex-col w-[887px] items-start gap-6">
+            <section className="flex flex-col items-center justify-center gap-[70px] px-6 py-[100px] w-full [background:linear-gradient(0deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.02)_100%),linear-gradient(0deg,rgba(250,249,248,1)_0%,rgba(250,249,248,1)_100%)]">
+                <div className="flex lg:flex-col items-start gap-6">
                     <h2 className="w-full font-['Geist',Helvetica] font-semibold text-[#222222] text-[40px] text-center tracking-[0] leading-[54px]">
                         What IT teams are saying about Stitchflow
                     </h2>
                 </div>
 
-                <div className="relative w-full max-w-[1063.62px] h-[490px]">
+                <div className="relative flex flex-col lg:flex-row gap-[18px] w-full max-w-[1064px] mni-h-[490px]">
                     {/* First testimonial card */}
-                    <div className="flex flex-col w-[265px] h-[490px] items-start justify-center gap-6 p-8 absolute top-0 left-0 bg-white rounded-[32px] border border-solid border-[#545058]">
+                    <div className="flex flex-col w-full lg:w-[265px] lg:min-h-[490px] items-start justify-center gap-6 p-8 bg-white rounded-[32px] border border-solid border-[#545058]">
                         <div className="p-0 w-full">
                             <div className="flex flex-col items-start gap-4 w-full">
                                 <p className="font-['Geist',Helvetica] font-medium text-[#363338] text-lg tracking-[0] leading-[26px]">
                                     {testimonials[0].text}
                                 </p>
                                 <div className="flex items-center gap-4 w-full">
-                                    <img className="w-10 h-10" alt="G2 Logo" src="/g2-logo-svg.svg" />
+                                    <Image width={40} height={40} alt="G2 Logo" src="/schedule-demo/g2_logo.svg" />
                                     <div className="flex flex-col items-start gap-0.5 flex-1">
                                         <p className="font-['Geist',Helvetica] font-medium text-[#7b7481] text-base tracking-[0] leading-6">
                                             {testimonials[0].author}
@@ -432,7 +485,7 @@ export default function DemoMainComponent() {
                     </div>
 
                     {/* Right side testimonials */}
-                    <div className="flex flex-col w-[780px] items-start gap-[18px] absolute top-0 left-[283px]">
+                    <div className="flex flex-col w-full lg:w-[780px] items-start gap-[18px]">
                         {testimonials.slice(1).map((testimonial, index) => (
                             <div
                                 key={index}
@@ -444,7 +497,7 @@ export default function DemoMainComponent() {
                                             {testimonial.text}
                                         </p>
                                         <div className="flex items-center gap-4 w-full">
-                                            <img className="w-10 h-10" alt="G2 Logo" src="/g2-logo-svg.svg" />
+                                            <Image width={40} height={40} alt="G2 Logo" src="/schedule-demo/g2_logo.svg" />
                                             <div className="flex flex-col items-start gap-1 flex-1">
                                                 <p className="font-['Geist',Helvetica] font-medium text-[#7b7481] text-base tracking-[0] leading-6">
                                                     {testimonial.author}

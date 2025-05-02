@@ -81,8 +81,8 @@ const HomeHeroSection = () => {
 
                         <Button
                             variant="primary"
-                            className="cursor-pointer px-4 lg:px-6 h-10 lg:h-[48px] gap-2 rounded-xl font-medium hover:opacity-90 transition-opacity flex items-center justify-center whitespace-nowrap border border-[#54505833] shadow-[0px_1px_1px_#5450581a,0px_4px_8px_#54505805,inset_0px_-2px_4px_#0000001f] bg-[#f9f8fa] bg-gradient-to-b from-white to-[#f9f8fa] hover:to-[#e9e9e9] text-[#363338] "
                             type="button"
+                            className="py-[7px]"
                             onClick={handleSubmit}
                             // onClick={(e) => handleSubmit(e as unknown as React.FormEvent)}
 
@@ -94,7 +94,7 @@ const HomeHeroSection = () => {
                                 </div>
                                 <div className="absolute w-2.5 h-2.5 -top-px left-[23px] bg-[#30ba70] rounded-[5px] border border-solid border-white" />
                             </div>
-                            <span className="font-medium text-[#363338] text-base leading-4 whitespace-nowrap">
+                            <span className="font-medium text-[#363338] text-base leading-4 whitespace-nowrap pl-2">
                                 {isSubmitting ? "Processing..." : "Book a 15 min demo"}
                             </span>
                         </Button>

@@ -8,16 +8,12 @@ export default function StepsSection() {
             description:
                 "Stitchflow infers your unique business sprawl, users and roles and policies from your specific IDPs and HR systems.",
             image: "/product-page/step-1.png",
-            imageWidth: 484,
-            imageHeight: 300,
         },
         {
             number: 2,
             title: "Connect to every SaaS tool in your IT environment",
             description: "Stitchflow connects to even the most siloed non SAML/non SCIM apps in your IT environment.",
             image: "/product-page/step-2.png",
-            imageWidth: 600,
-            imageHeight: 400,
         },
         {
             number: 3,
@@ -25,8 +21,6 @@ export default function StepsSection() {
             description:
                 "Stitchflow visualizes and instantly reconciles SaaS user data against your user sources of truth and helps you filter the data to represent your unique policies and exceptions.",
             image: "/product-page/step-3.png",
-            imageWidth: 600,
-            imageHeight: 400,
         },
         {
           number: 4,
@@ -34,8 +28,8 @@ export default function StepsSection() {
           description:
             "Stitchflow helps you filter reconciled data to represent your company's unique policies and exceptions.",
           image: "/product-page/step-4.png",
-          imageWidth: 578,
-          imageHeight: 313,
+          imageWidth: 600,
+          imageHeight: 400,
         },
         {
           number: 5,
@@ -43,16 +37,14 @@ export default function StepsSection() {
           description:
             "Stitchflow's automated insights help uncover gaps, prevent risks and identify vulnerabilities.",
           image: "/product-page/step-5.png",
-          imageWidth: 546,
-          imageHeight: 247
+          imageWidth: 600,
+          imageHeight: 400
         },
         {
             number: 6,
             title: "Remediate gaps from where you are",
             description: "Stitchflow helps you get on top through bulk remediation or tickets created in your ITSM.",
             image: "/product-page/step-6.png",
-            imageWidth: 482,
-            imageHeight: 372,
         },
     ];
 
@@ -86,16 +78,13 @@ export default function StepsSection() {
                             </div>
 
                             <div
-                                className={`flex-1 flex justify-center items-center grow h-[400px] ${
-                                    step.number == 2 || step.number == 3
-                                        ? ""
-                                        : "bg-white rounded-[32px] overflow-hidden border border-solid border-[#545058]"
+                                className={`flex-1 flex justify-center items-center grow h-[400px] bg-white rounded-[32px] overflow-hidden"
                                 }`}
                             >
                                 {step.image && (
                                     <Image
-                                        width={step.imageWidth}
-                                        height={step.imageHeight}
+                                        width={600}
+                                        height={400}
                                         alt={`Step ${step.number} illustration`}
                                         src={step.image}
                                     />

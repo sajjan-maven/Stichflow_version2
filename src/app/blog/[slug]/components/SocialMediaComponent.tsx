@@ -77,17 +77,17 @@ const SocialMediaComponent: React.FC<SocialMediaComponentProps> = ({blogUrl, tit
         <div className={styles.socialIconsBlog}>
             <div>
                 <button onClick={handleCopy} className={styles.copyButton}>
-                    <Image src="/images/link.svg" alt="Copy Link" width={24} height={24} />
+                    <Image src="/blog-details/link.svg" alt="Copy Link" width={24} height={24} />
                 </button>
             </div>
             <div>
                 <Link href={socialLinks.twitter} target="_blank">
-                    <Image src="/images/Frame 1618872853.svg" alt="Share on Twitter" width={24} height={24} />
+                    <Image src="/blog-details/X.svg" alt="Share on Twitter" width={24} height={24} />
                 </Link>
             </div>
             <div>
                 <Link href={socialLinks.reddit} target="_blank">
-                    <Image src="/images/Reddit.svg" alt="Share on Reddit" width={24} height={24} />
+                    <Image src="/blog-details/Reddit.svg" alt="Share on Reddit" width={24} height={24} />
                 </Link>
             </div>
             <ToastContainer />

@@ -23,7 +23,7 @@ export const InsightsWrapperSection = () => {
       id: 3,
       image: {
             alt:"logo-slack",
-            src:"/free-pilot/logo-slack.png"
+            src:"/free-pilot/slack.png"
       },
       text: "75 admin accounts found for Slack; review accounts for downgrading roles.",
     },
@@ -31,7 +31,7 @@ export const InsightsWrapperSection = () => {
       id: 4,
       image: {
             alt:"logo-google",
-            src:"/free-pilot/logo-google.png"
+            src:"/free-pilot/google.png"
       },
       text: "Archive / Delete 57 suspended Google accounts with suspended status > 6 mo and not in HR-Legal hold Org unit.",
     },
@@ -39,7 +39,7 @@ export const InsightsWrapperSection = () => {
       id: 5,
       image: {
             alt:"logo-miro",
-            src:"/free-pilot/logo-miro.png"
+            src:"/free-pilot/miro.png"
       },
       text: "19 Miro users were directly assigned app; recommend assigning app via Okta push groups for all SCIM apps.",
     },
@@ -47,7 +47,7 @@ export const InsightsWrapperSection = () => {
       id: 6,
       image: {
             alt:"logo-clickup",
-            src:"/free-pilot/logo-clickup.png"
+            src:"/free-pilot/clickup.png"
       },
       text: "Review accounts for 8 users outside of application assignment policy by department.",
     },
@@ -60,11 +60,11 @@ export const InsightsWrapperSection = () => {
           Sample insights and recommendations from the pilot
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 w-full">
           {insightCards.map((card) => (
             <div
               key={card.id}
-              className="flex items-center justify-center gap-4 p-6 rounded-[32px] border border-[#545058] overflow-hidden bg-white"
+              className="flex items-center justify-start gap-4 p-6 rounded-[32px] border border-[#545058] overflow-hidden bg-white"
             >
               <Image
                 width={40}
@@ -72,7 +72,7 @@ export const InsightsWrapperSection = () => {
                 alt={card.image.alt}
                 src={card.image.src}
               />
-              <p className="font-body-regular text-[#363338] text-[length:var(--body-regular-font-size)] leading-[var(--body-regular-line-height)]">
+              <p className="font-regular text-[#363338] text-start">
                 {card.text}
               </p>
             </div>
