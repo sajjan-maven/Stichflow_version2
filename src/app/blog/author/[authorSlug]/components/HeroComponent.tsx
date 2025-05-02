@@ -43,7 +43,7 @@ const HeroComponent: React.FC<HeroComponentProps> = ({author}) => {
                                             }
                                             target="_blank"
                                         >
-                                            <Image src="/images/li.svg" alt="LinkedIn" width={24} height={24} />
+                                            <Image src="/author-page/li.svg" alt="LinkedIn" width={24} height={24} />
                                         </Link>
                                     )}
                                     {twitterMedia && (
@@ -55,7 +55,7 @@ const HeroComponent: React.FC<HeroComponentProps> = ({author}) => {
                                             }
                                             target="_blank"
                                         >
-                                            <Image src="/images/tw.svg" alt="Twitter" width={24} height={24} />
+                                            <Image src="/author-page/x.svg" alt="Twitter" width={24} height={24} />
                                         </Link>
                                     )}
                                     {/* {author.socialMediaList?.map((social, index) => (

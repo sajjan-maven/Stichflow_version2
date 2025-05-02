@@ -20,13 +20,6 @@ const AboutHeroSection = () => {
                         </div>
                     </div>
                 </div>
-                {/* <Image
-                    className="hidden lg:block absolute w-[117px] h-28 top-[66px] right-[236px]"
-                    alt="Misc"
-                    src="/misc-13.svg"
-                    width={117}
-                    height={28}
-                /> */}
             </section>
         </>
     );

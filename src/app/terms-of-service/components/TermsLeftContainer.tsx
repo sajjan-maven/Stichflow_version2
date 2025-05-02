@@ -174,9 +174,7 @@ const TermsLeftContainer: React.FC<TermsOfServiceProps> = ({termsData, activeSec
                         duration={500}
                         //href={`${pathname}#${section.id}`}
                         onClick={() => handleScroll(section.id)}
-                        className={`fs-toc_link w-inline-block terms-space ${
-                            activeSection === section.id ? "active" : ""
-                        }`}
+                        className={`block w-inline-block terms-space ${activeSection === section.id ? "text-[#F25C30] font-semibold hover:text-[#ff3c00]" : "text-gray-800 hover:text-gray-950"}`}
                     >
                         <div fs-toc-element="link">{section.title}</div>
                     </Link>

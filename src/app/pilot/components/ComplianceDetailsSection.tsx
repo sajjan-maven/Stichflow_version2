@@ -3,33 +3,33 @@ import React from "react";
 
 const businessValueFeatures = [
   {
-    icon: "/free-pilot/free-plot-icon_1.png",
+    icon: "/free-pilot/icon_1.svg",
     title: "Reclaimed licenses and quantified cost reductions",
     description:
       "Enim exercitation id ipsum dolor occaecat Lorem duis. Culpa sit est dolore ut nulla ipsum occaecat aute nostrud esse.",
   },
   {
-    icon: "/free-pilot/free-plot-icon_2.png",
+    icon: "/free-pilot/icon_2.svg",
     title: "Closed access and security gaps",
     description:
       "Enim exercitation id ipsum dolor occaecat Lorem duis. Culpa sit est dolore ut nulla ipsum occaecat aute nostrud esse.",
   },
   {
-    icon: "/free-pilot/free-plot-icon_3.png",
+    icon: "/free-pilot/icon_3.svg",
     title:
       "Granular breakdown by application, department, and other key attributes",
     description:
       "Enim exercitation id ipsum dolor occaecat Lorem duis. Culpa sit est dolore ut nulla ipsum occaecat aute nostrud esse.",
   },
   {
-    icon: "/free-pilot/free-plot-icon_4.png",
+    icon: "/free-pilot/icon_4.svg",
     title:
       "Strategic insights and recommendations tailored to your complex environment",
     description:
       "Enim exercitation id ipsum dolor occaecat Lorem duis. Culpa sit est dolore ut nulla ipsum occaecat aute nostrud esse.",
   },
   {
-    icon: "/free-pilot/free-plot-icon_5.png",
+    icon: "/free-pilot/icon_5.svg",
     title: "IT hours saved through automation",
     description:
       "Enim exercitation id ipsum dolor occaecat Lorem duis. Culpa sit est dolore ut nulla ipsum occaecat aute nostrud esse.",
@@ -39,25 +39,25 @@ const businessValueFeatures = [
 // Feature data for the second section
 const reconciliationFeatures = [
   {
-    icon: "/free-pilot/free-plot-icon_6.png",
+    icon: "/free-pilot/icon_6.svg",
     title: "Immediate cross-portfolio visibility",
     description:
       "from identity providers to department-specific apps, including those without APIs.",
   },
   {
-    icon: "/free-pilot/free-plot-icon_7.png",
+    icon: "/free-pilot/icon_7.svg",
     title: "Environment-specific analysis",
     description:
       "review prioritized access gaps and license optimization opportunities that other tools miss, highlighting where you have exceptions.",
   },
   {
-    icon: "/free-pilot/free-plot-icon_8.png",
+    icon: "/free-pilot/icon_8.svg",
     title: "Remediation that fits your workflow",
     description:
       "Push to your ticketing system, Bulk remediate directly in Stitchflow, Automate reminders via Slack or Teams.",
   },
   {
-    icon: "/free-pilot/free-plot-icon_9.png",
+    icon: "/free-pilot/icon_9.svg",
     title: "Continuous compliance",
     description:
       "structured and prioritized access reviews for upcoming audits, ensuring continuous correctness.",
@@ -125,7 +125,7 @@ export const ComplianceDetailsSection = () => {
           </div>
         </div>
       </section>
-      <section className="py-10 md:py-20 px-6 flex flex-col gap-20 w-full">
+      <section className="pb-10 md:pb-40 px-6 flex flex-col gap-20 w-full">
         <div className="flex flex-col w-full items-start gap-10 max-w-[1256px] mx-auto">
           <h2 className="text-3xl md:text-[40px] md:leading-[48px] font-semibold text-[#363338]">
             See how Stitchflow&apos;s reconciliation identifies and prioritizes

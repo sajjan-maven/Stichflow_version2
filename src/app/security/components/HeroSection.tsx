@@ -23,7 +23,7 @@ const HeroSection = () => {
                             rel="noopener noreferrer"
                             className="px-6 py-4 rounded-xl border border-solid border-[#54505833] bg-transparent no-underline"
                         >
-                            <span className="font-h6-medium text-[#363338]">Learn more in our whitepaper</span>
+                            <span className="font-medium text-[#363338]">Learn more in our whitepaper</span>
                         </a>
                     </div>
                 </div>

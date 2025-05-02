@@ -11,7 +11,7 @@ const DemoComponent = () => {
         <section className="w-full bg-[#363338] rounded-t-4xl px-4 py-6 md:py-20 relative -mt-5 z-50">
             <div className="w-full bg-[#565258] rounded-[26px] md:rounded-4xl max-w-[1256px] mx-auto overflow-hidden relative flex flex-col lg:flex-row items-start md:items-center justify-between  gap-8">
                 {/* Text Section */}
-                <div className="w-full md:w-1/2 pt-5 lg:pt-0 flex flex-col gap-6 z-10 px-5 md:px-10">
+                <div className="w-full lg:w-1/2 pt-5 lg:pt-0 flex flex-col gap-6 z-10 px-5 md:px-10">
                     <div className="flex flex-col items-start gap-2 w-full">
                         <h2 className="font-semibold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug">
                             Join Our Free Pilot
@@ -22,13 +22,13 @@ const DemoComponent = () => {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Button variant="primary" onClick={() => router.push("/demo")}>
+                        <Button 
+                            variant="secondary" 
+                            onClick={() => router.push("/demo")}
+                            className="group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8"
+                            >
                             Book Demo
-                        </Button>
-
-                        <Button variant="secondary" onClick={() => router.push("/pilot")}>
-                            Start Trial
-                            <ArrowRightIcon className="ml-2 h-4 w-4" />
+                            <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
                         </Button>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ const DemoComponent = () => {
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2 xl:w-1/2 2xl:w-1/2 flex justify-end relative z-0">
                     <Image
-                        src="/images/Frame 2 2.svg"
+                        src="/common-components/footer-demo.png"
                         alt="Dashboard preview"
                         width={725}
                         height={400}

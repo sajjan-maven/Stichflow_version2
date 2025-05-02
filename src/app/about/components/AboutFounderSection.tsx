@@ -4,38 +4,26 @@ const founders = [
     {
         name: "Jay Srinivasan",
         title: "Co-founder & CEO",
-        titleColor: "text-[#ff5020]",
-        avatar: "/images/Avatar.svg",
+        avatar: "/about-page/Avatar1.png",
         bio: "Serial entrepreneur with exits to Okta (atSpoke) and Google (Appurify); Former product lead at Okta IGA and Google; PhD in CS from the University of Illinois.",
-        linkedInOpacity: "opacity-100",
-        linkedInIcon: "/images/LI-Icon.svg",
     },
     {
         name: "Pierre Rappolt",
         title: "Co-founder",
-        titleColor: "text-[#004834]",
-        avatar: "/images/Avatar2.svg",
+        avatar: "/about-page/Avatar2.png",
         bio: "Machine Learning leader specializing in IT automation; Former Head of ML at atSpoke (acquired by Okta), Snorkel, and Woebot; UC Santa Barbara alum.",
-        linkedInOpacity: "opacity-60",
-        linkedInIcon: "/images/LI-Icon.svg",
     },
     {
         name: "Tanya Butani",
         title: "Co-founder",
-        titleColor: "text-[#5d4214]",
-        avatar: "/images/Avatar3.svg",
+        avatar: "/about-page/Avatar3.png",
         bio: "IT product leader; Former Head of Product at atSpoke (acquired by Okta), product at Okta IGA, Workday, and Lever; UC Berkeley-Haas alum.",
-        linkedInOpacity: "opacity-60",
-        linkedInIcon: "/images/LI-Icon.svg",
     },
     {
         name: "Shankar Radhakrishnan",
         title: "Co-founder",
-        titleColor: "text-[#155ec7]",
-        avatar: "/images/Avatar4.svg",
+        avatar: "/about-page/Avatar4.png",
         bio: "Operations and Customer Success leader; Former Head of Operations at NovaSignal and Agiltron; Cornell PhD in Electrical and Computer Engineering.",
-        linkedInOpacity: "opacity-60",
-        linkedInIcon: "/images/LI-Icon.svg",
     },
 ];
 const AboutFounderSection = () => {
@@ -63,7 +51,7 @@ const AboutFounderSection = () => {
                                         {founder.name}
                                     </h3>
                                     <span
-                                        className={`${founder.titleColor} font-normal text-xs leading-4`}
+                                        className={`text-[#ff5020] font-normal text-xs leading-4`}
                                     >
                                         {founder.title}
                                     </span>
@@ -72,8 +60,8 @@ const AboutFounderSection = () => {
                             <div className="flex flex-col items-start gap-4 pt-0 pb-8 px-8">
                                 <p className="text-[#363338] text-sm leading-6">{founder.bio}</p>
                                 <div
-                                    className={`w-5 h-5 bg-[100%_100%] ${founder.linkedInOpacity}`}
-                                    style={{backgroundImage: `url(${founder.linkedInIcon})`}}
+                                    className={`w-5 h-5 bg-[100%_100%]`}
+                                    style={{backgroundImage: `url(/about-page/LI-Icon.svg)`}}
                                 />
                             </div>
                         </div>

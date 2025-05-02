@@ -229,39 +229,61 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                 )}
             </Head>
             <div className="flex flex-col items-center w-full px-6">
-                <main className="flex justify-between w-full max-w-[1256px] mx-auto">
-                    <div className="lg:grid lg:grid-cols-[3fr_1fr] lg:gap-4 w-full">
-                        <article className="px-4 pt-12">
-                            <div
-                                // className="inline-block bg-[#F1ACC0] text-gray-600 rounded-4xl mb-4 px-4 py-1"
-                                className="inline-block bg-[#f7f1fe] rounded-4xl mb-4 px-4 py-1 text-[#7b7481]"
-                            >
-                                {blogPost?.heroSection.category}
-                            </div>
-                            <h1 className="text-xl md:text-2xl font-medium mb-2 md:mb-4">
-                                {blogPost?.blogTitle || "Untitled"}
-                            </h1>
-                            <p className="text-gray-600 text-lg">{blogPost.heroSection.postedSummary}</p>
-                            <p className="text-gray-500 text-sm mt-4 mb-2">
-                                {blogPost.heroSection?.modifiedDate ? (
-                                    <>Modified on {formatDate(blogPost.heroSection.modifiedDate)}</>
-                                ) : (
-                                    <>Published on {formatDate(blogPost.heroSection.postedDate)}</>
-                                )}
-                                {blogPost.heroSection?.readTime && ` | ${blogPost.heroSection.readTime} minutes`}
-                            </p>
-
-                            <time dateTime={blogPost.heroSection?.postedDate} hidden>
-                                Published on {formatDate(blogPost.heroSection?.postedDate)}
-                            </time>
-                            <time dateTime={blogPost.heroSection?.modifiedDate} hidden>
-                                Modified on {formatDate(blogPost.heroSection?.modifiedDate)}
-                            </time>
-
-                            <div className="mt-4 mb-6 w-full max-w-xl">
+                <main className="w-full max-w-[1256px] mx-auto">
+                    <div className="px-4 pt-12">
+                        <div
+                            // className="inline-block bg-[#F1ACC0] text-gray-600 rounded-4xl mb-4 px-4 py-1"
+                            className="inline-block bg-[#f7f1fe] rounded-4xl mb-4 px-4 py-1 text-[#7b7481]"
+                        >
+                            {blogPost?.heroSection.category}
+                        </div>
+                        <h1 className="text-xl md:text-4xl font-medium mb-2 md:mb-4 max-w-4xl">
+                            {blogPost?.blogTitle || "Untitled"}
+                        </h1>
+                        <p className="text-gray-600 text-lg max-w-3xl">{blogPost.heroSection.postedSummary}</p>
+                        <div className="py-2 border-y border-gray-400 my-2">
+                            <Link 
+                                className="flex gap-2 items-center"
+                                href={`/blog/author/${authorSlug}`}>
                                 <Image
-                                    height={250}
-                                    width={600}
+                                    height={42}
+                                    width={42}
+                                    src={
+                                        blogPost?.author?.avatar?.url ||
+                                        "/images/default-avatar.png"
+                                    }
+                                    alt="Profile"
+                                    className={styles.profileImage}
+                                    loading="lazy"
+                                />
+                                <div>
+                                    <div className={styles.profileName}>{blogPost.author.name}</div>
+                                    <p className={styles.role}>{blogPost.author.role}</p>
+                                </div>
+                            </Link>
+                        </div>
+                        <p className="text-gray-500 text-sm mt-2 mb-1">
+                            {blogPost.heroSection?.modifiedDate ? (
+                                <>Modified on {formatDate(blogPost.heroSection.modifiedDate)}</>
+                            ) : (
+                                <>Published on {formatDate(blogPost.heroSection.postedDate)}</>
+                            )}
+                            {blogPost.heroSection?.readTime && ` | ${blogPost.heroSection.readTime} minutes`}
+                        </p>
+
+                        <time dateTime={blogPost.heroSection?.postedDate} hidden>
+                            Published on {formatDate(blogPost.heroSection?.postedDate)}
+                        </time>
+                        <time dateTime={blogPost.heroSection?.modifiedDate} hidden>
+                            Modified on {formatDate(blogPost.heroSection?.modifiedDate)}
+                        </time>
+                    </div>
+                    <div className="lg:grid lg:grid-cols-[3fr_1fr] w-full">
+                        <article className="px-4 w-full lg:max-w-[680px]">
+                            <div className="mt-4 mb-6 w-full">
+                                <Image
+                                    height={330}
+                                    width={680}
                                     className={styles.heroImage}
                                     src={blogPost.heroSection?.bannerImage?.url || "/images/default-banner.jpg"}
                                     alt={blogPost?.heroSection?.bannerImage?.alternativeText || "Default Alt Text"}
@@ -298,8 +320,8 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                                     <div className="flex gap-2 items-center">
                                         <Link href={`/blog/author/${authorSlug}`}>
                                             <Image
-                                                height={36}
-                                                width={36}
+                                                height={42}
+                                                width={42}
                                                 src={
                                                     blogPost?.author?.avatar?.url ||
                                                     "/images/default-avatar.png"
@@ -310,7 +332,7 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                                             />
                                         </Link>
                                         <div>
-                                            <div className={styles.profileName}>{blogPost.author.name}</div>
+                                            <div className={styles.articalProfileName}>{blogPost.author.name}</div>
                                             <p className={styles.role}>{blogPost.author.role}</p>
                                         </div>
                                     </div>
@@ -325,8 +347,8 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                         </article>
 
                         <div className={styles.rightColumn}>
-                            <div className="sticky top-[120px]">
-                                <div className="min-h-screen overflow-y-auto pr-2 custom-scrollbar">
+                            <div className="sticky top-[120px] mt-[12px]">
+                                <div className="overflow-y-auto pr-2 custom-scrollbar">
                                     <div className="hidden lg:block mb-4">
                                         <div className="rounded-4xl bg-[#F8F5F3] shadow-sm p-6">
                                             <h6
@@ -397,16 +419,16 @@ const SlugPage: React.FC<BlogTabProps> = ({blogData, blogUrl, title, relatedBlog
                     </div>
                 </main>
 
-                <div>
+                {blogPost.faqSection.length > 0 &&<div>
                     <FAQComponent faqData={blogPost.faqSection} />
-                </div>
+                </div>}
                 <div className="w-full px-6 py-20">
                     {Array.isArray(relatedBlogs) && relatedBlogs.length > 0 && (
                         <div className="w-full max-w-[1256px] mx-auto">
                             <div className="mb-8 text-4xl text-gray-500 text-center md:text-start">
                                 Related Articles
                             </div>
-                            <div className="w-full flex flex-col md:flex-row max-w-[360px] md:max-w-full mx-auto gap-6">
+                            <div className="w-full flex flex-col md:flex-row max-w-[360px] md:max-w-full mx-auto gap-10 md:gap-6">
                                 {relatedBlogs.map((post: BlogData) => (
                                     <Link
                                         href={`/blog/${post.heroSection?.urlSlug}`}

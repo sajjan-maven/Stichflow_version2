@@ -44,7 +44,7 @@ const HeaderComponent = () => {
             hasDropdown: true,
             content: (
                 <div className="w-[280px] md:w-[500px] pt-1 md:pt-3">
-                    <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
+                    <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4 relative z-[60]">
                         <div
                             onClick={() => handleDropdownItemClick("/platform")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
@@ -76,7 +76,7 @@ const HeaderComponent = () => {
             hasDropdown: true,
             content: (
                 <div className="w-[280px] md:w-[500px] pt-1 md:pt-3">
-                    <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
+                    <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4 relative z-[60]">
                         <div
                             onClick={() => handleDropdownItemClick("/blog")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
@@ -109,7 +109,7 @@ const HeaderComponent = () => {
             hasDropdown: true,
             content: (
                 <div className="w-[280px] md:w-[500px] pt-1 md:pt-3">
-                    <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4">
+                    <div className="rounded-2xl border border-gray-200 shadow-[0_2px_6px_rgba(0,0,0,0.05),0_8px_24px_rgba(0,0,0,0.08)] p-5 bg-white space-y-4 relative z-[60]">
                         <div
                             onClick={() => handleDropdownItemClick("/about")}
                             className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg"
@@ -137,7 +137,7 @@ const HeaderComponent = () => {
     return (
         <header
             ref={headerRef}
-            className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-in-out 
+            className={`fixed top-0 inset-x-0 z-[80] transition-all duration-500 ease-in-out 
             ${isScrolled ? "bg-white lg:bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
             flex justify-center items-center py-3 px-6`}
         >
@@ -146,7 +146,7 @@ const HeaderComponent = () => {
                     <div className="flex items-center gap-4 md:gap-12">
                         {/* Logo */}
                         <div className="cursor-pointer" onClick={() => router.push("/")}>
-                            <Image alt="Wordmark" src="/images/logo (1).svg" width={109} height={24} priority />
+                            <Image alt="Stichflow" src="/common-components/nav-logo.png" width={109} height={24} priority />
                         </div>
 
                         {/* Desktop Navigation */}
@@ -206,13 +206,13 @@ const HeaderComponent = () => {
                     <div className="flex justify-end">
                         {/* CTA Buttons */}
                         <div className="relative hidden lg:flex justify-end items-center gap-3">
-                            <Button variant="primary" onClick={() => router.push("/demo")}>
+                            <Button 
+                                variant="secondary" 
+                                onClick={() => router.push("/demo")}
+                                className="group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8"
+                                >
                                 Book Demo
-                            </Button>
-
-                            <Button variant="secondary" onClick={() => router.push("/pilot")}>
-                                Start Trial
-                                <ArrowRightIcon className="ml-2 h-4 w-4" />
+                                <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
                             </Button>
                         </div>
                     </div>
@@ -256,13 +256,13 @@ const HeaderComponent = () => {
                                 </div>
                             ))}
                             <div className="flex flex-row gap-4 pt-6 flex-wrap">
-                                <Button variant="primary" onClick={() => router.push("/demo")}>
+                                <Button 
+                                    variant="secondary" 
+                                    onClick={() => router.push("/demo")}
+                                    className="group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8"
+                                >
                                     Book Demo
-                                </Button>
-
-                                <Button variant="secondary" onClick={() => router.push("/pilot")}>
-                                    Start Trial
-                                    <ArrowRightIcon className="ml-2 h-4 w-4" />
+                                    <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
                                 </Button>
                             </div>
                         </div>

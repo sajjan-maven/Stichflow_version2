@@ -104,7 +104,7 @@ const HomeWorkSection = () => {
                         <div className="border-b md:border-b-0 md:border-r border-[#545058]">
                             <div className="flex items-center justify-center gap-4 px-8 py-4 md:py-6 border-b border-[#545058]">
                                 <Image
-                                    src="/images/close.svg"
+                                    src="/home-page/manual.svg"
                                     alt="Icon"
                                     className="w-6 h-6"
                                     width={6}
@@ -133,7 +133,7 @@ const HomeWorkSection = () => {
                             <div className="flex items-center justify-center gap-4 px-8 py-4 md:py-6 border-b border-[#545058]">
                                 {/* <div className="w-6 h-6 bg-blue-500 rounded-full"></div> */}
                                 <Image
-                                    src="/images/logo icon.svg"
+                                    src="/home-page/with-SF.svg"
                                     alt="Icon"
                                     className="w-6 h-6"
                                     width={6}
