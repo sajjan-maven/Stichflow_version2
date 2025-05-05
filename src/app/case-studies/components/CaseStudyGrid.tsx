@@ -71,8 +71,10 @@ export default function CaseStudyGrid() {
                 {/* Featured Case Study */}
                 <div className="w-full">
                     <div className="flex flex-col md:flex-row border border-solid border-[#545058] bg-white rounded-[32px] overflow-hidden">
-                        <div className="flex-1 flex justify-center items-center h-[400px] py-20 bg-[#1a1a1a] rounded-3xl">
-                            <Image width={248} height={40} alt="Turing logo" src="/case-study/turing-logo.svg" />
+                        <div className="p-4 md:p-6 flex-1">
+                            <div className="flex-1 flex justify-center items-center h-[400px] py-20 bg-[#1a1a1a] rounded-3xl">
+                                <Image width={248} height={40} alt="Turing logo" src="/case-study/turing-logo.svg" />
+                            </div>
                         </div>
                         <div className="flex-1 flex flex-col justify-between p-6">
                             <div className="flex flex-col gap-4">
@@ -85,11 +87,7 @@ export default function CaseStudyGrid() {
                                 </p>
                             </div>
                             <Link href="/case-study-details" passHref>
-                                <Button
-                                    variant="primary"
-                                >
-                                    Read story
-                                </Button>
+                                <Button variant="primary">Read story</Button>
                             </Link>
                         </div>
                     </div>
