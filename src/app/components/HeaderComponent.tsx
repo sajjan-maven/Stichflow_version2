@@ -135,18 +135,30 @@ const HeaderComponent = () => {
     };
 
     return (
+        // <header
+        //     ref={headerRef}
+        //     className={`fixed top-0 inset-x-0 z-[80] transition-all duration-500 ease-in-out
+        //     ${isScrolled ? "bg-white lg:bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
+        //     flex justify-center items-center py-3 px-6`}
+        // >
         <header
             ref={headerRef}
             className={`fixed top-0 inset-x-0 z-[80] transition-all duration-500 ease-in-out 
-            ${isScrolled ? "bg-white lg:bg-white/85 shadow-md backdrop-blur-[8px]" : "bg-[#f8f5f3d9]"}
-            flex justify-center items-center py-3 px-6`}
+    ${isScrolled ? "bg-[rgba(248,245,243,0.85)] backdrop-blur-[5px]" : "bg-[#f8f5f3d9]"}
+    flex justify-center items-center py-3 px-6`}
         >
             <div className="w-full max-w-[1220px] mx-auto">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4 md:gap-12">
                         {/* Logo */}
                         <div className="cursor-pointer" onClick={() => router.push("/")}>
-                            <Image alt="Stichflow" src="/common-components/nav-logo.png" width={109} height={24} priority />
+                            <Image
+                                alt="Stichflow"
+                                src="/common-components/nav-logo.png"
+                                width={109}
+                                height={24}
+                                priority
+                            />
                         </div>
 
                         {/* Desktop Navigation */}
@@ -206,11 +218,11 @@ const HeaderComponent = () => {
                     <div className="flex justify-end">
                         {/* CTA Buttons */}
                         <div className="relative hidden lg:flex justify-end items-center gap-3">
-                            <Button 
-                                variant="secondary" 
+                            <Button
+                                variant="secondary"
                                 onClick={() => router.push("/demo")}
                                 className="group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8"
-                                >
+                            >
                                 Book Demo
                                 <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
                             </Button>
@@ -256,8 +268,8 @@ const HeaderComponent = () => {
                                 </div>
                             ))}
                             <div className="flex flex-row gap-4 pt-6 flex-wrap">
-                                <Button 
-                                    variant="secondary" 
+                                <Button
+                                    variant="secondary"
                                     onClick={() => router.push("/demo")}
                                     className="group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8"
                                 >
