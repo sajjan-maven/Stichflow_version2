@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const TestimonialCarousel = () => {
-
     const testimonials = [
         {
             id: 1,
@@ -38,41 +37,42 @@ const TestimonialCarousel = () => {
         <>
             <div className="flex justify-center items-center flex-wrap relative">
                 <div className="w-full max-w-[1304px] mx-auto px-6">
-                    <h2 className="font-semibold text-[40px] leading-[48px] text-[#222222]">
-                        Learn from the Best
-                    </h2>
+                    <h2 className="font-semibold text-[40px] leading-[48px] text-[#222222]">Learn from the Best</h2>
                     <p className="text-base text-[#363338] leading-6">
                         Hear from IT teams who have tamed business sprawl with Stitchflow.
                     </p>
                 </div>
                 {/* Carousel */}
                 <div className="w-full homePageCarousel">
-                    <Slider {...{
-                        dots: false,
-                        infinite: true,
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        speed: 1000,
-                        autoplaySpeed: 3500,
-                        centerMode: true,
-                        cssEase: "linear",
-                        arrows: true,
-                        responsive: [
-                            {
-                                breakpoint: 1450,
-                                settings: {
-                                    slidesToShow: 1,
-                                    arrows: false
-                                }
-                            },
-                        ]
-                    }}
-                    className="py-20 max-w-[3000px] mx-auto"
+                    <Slider
+                        {...{
+                            dots: false,
+                            infinite: true,
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            speed: 1000,
+                            autoplaySpeed: 3500,
+                            centerMode: true,
+                            cssEase: "linear",
+                            arrows: true,
+                            responsive: [
+                                {
+                                    breakpoint: 1450,
+                                    settings: {
+                                        slidesToShow: 1,
+                                        arrows: false,
+                                    },
+                                },
+                            ],
+                        }}
+                        className="py-20 max-w-[3000px] mx-auto"
                     >
                         {testimonials.map((testimonial) => (
                             <div key={testimonial.id} className="w-full px-2 lg:px-3 h-full">
-                                <div className={`${testimonial.bgColor} min-h-[414px] text-white rounded-4xl overflow-hidden p-6 md:p-8 lg:p-10 shadow-lg flex flex-col`}>
+                                <div
+                                    className={`${testimonial.bgColor} h-[414px] text-white rounded-4xl overflow-hidden p-6 md:p-8 lg:p-10 shadow-lg flex flex-col`}
+                                >
                                     <blockquote className="flex-grow mb-6">
                                         <p className="text-base md:text-lg lg:text-lg leading-relaxed">
                                             &ldquo;{testimonial.text}&rdquo;
@@ -82,7 +82,7 @@ const TestimonialCarousel = () => {
                                     <div className="flex flex-col items-start justify-between mt-auto">
                                         <div className="flex items-center mb-4 md:mb-6">
                                             <div className="rounded-full flex items-center justify-center mr-3 md:mr-4">
-                                                <Image 
+                                                <Image
                                                     src="/home-page/Avatar.png"
                                                     alt="avatar"
                                                     width={48}
@@ -90,8 +90,12 @@ const TestimonialCarousel = () => {
                                                 />
                                             </div>
                                             <div>
-                                                <p className="font-semibold text-sm md:text-base">{testimonial.author}</p>
-                                                <p className="text-xs md:text-sm text-gray-200">{testimonial.position}</p>
+                                                <p className="font-semibold text-sm md:text-base">
+                                                    {testimonial.author}
+                                                </p>
+                                                <p className="text-xs md:text-sm text-gray-200">
+                                                    {testimonial.position}
+                                                </p>
                                             </div>
                                         </div>
 
@@ -112,7 +116,7 @@ const TestimonialCarousel = () => {
                                 </div>
                             </div>
                         ))}
-                    </Slider>                
+                    </Slider>
                 </div>
             </div>
         </>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
-import { ArrowRightIcon } from "lucide-react";
+import {ArrowRightIcon} from "lucide-react";
 
 export default function Custom404() {
     return (
@@ -18,7 +18,10 @@ export default function Custom404() {
                 <p className="text-lg md:text-xl font-medium text-[#94929c] mx-auto mb-8 max-w-[450px]">
                     The link you clicked may be broken or the page may have been removed
                 </p>
-                <Link href="/" className="cursor-pointer px-4 min-h-10 py-[7px] w-fit mx-auto rounded-xl font-medium flex items-center justify-center whitespace-nowrap transition-all duration-180 ease-in-out transform focus:outline-none shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] bg-[#363338] bg-gradient-to-b from-[#545058] to-[#363338] hover:to-[#020202] active:to-[#1f1e1f] text-white  group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8">
+                <Link
+                    href="/blog"
+                    className="cursor-pointer px-4 min-h-10 py-[7px] w-fit mx-auto rounded-xl font-medium flex items-center justify-center whitespace-nowrap transition-all duration-180 ease-in-out transform focus:outline-none shadow-[0px_2px_12px_#54505840,0px_2px_3px_#54505845,inset_0px_-2px_4px_#00000099] bg-[#363338] bg-gradient-to-b from-[#545058] to-[#363338] hover:to-[#020202] active:to-[#1f1e1f] text-white  group active:[&_svg]:translate-x-1.5 hover:[&_svg]:translate-x-0.8"
+                >
                     Back to homepage
                     <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform duration-200" />
                 </Link>
