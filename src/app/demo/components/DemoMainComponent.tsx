@@ -1,5 +1,5 @@
 "use client";
-import {ArrowRightIcon, ChevronRightIcon} from "lucide-react";
+import {ArrowRightIcon} from "lucide-react";
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import Script from "next/script";
