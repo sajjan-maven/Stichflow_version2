@@ -29,7 +29,6 @@ export async function POST(req: NextRequest) {
         const searchData = await searchResponse.json();
         const contactId = searchData.results?.[0]?.id;
 
-        // Update existing contact or create new one
         const url = contactId
             ? `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`
             : "https://api.hubapi.com/crm/v3/objects/contacts";
