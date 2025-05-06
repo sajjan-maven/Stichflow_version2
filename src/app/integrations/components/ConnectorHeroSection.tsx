@@ -87,12 +87,12 @@ const ConnectorHeroSection: React.FC<ConnectorHeroSectionProps> = ({title}) => {
                                                             </div>
                                                         </div>
                                                     </form>
-                                                    <div className="form-message-success cc-text-black w-form-done">
+                                                    {/* <div className="form-message-success cc-text-black w-form-done">
                                                         <div>Thank you! Your submission has been received!</div>
                                                     </div>
                                                     <div className="form-message-error w-form-fail">
                                                         <div>Oops! Something went wrong while submitting the form.</div>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                         </div>

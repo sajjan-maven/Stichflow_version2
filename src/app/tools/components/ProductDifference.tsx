@@ -52,7 +52,7 @@ export default function ProductDifference() {
                             <div className="flex flex-col items-start gap-5 px-[30px] py-10">
                                 <Image src={card.icon} width={48} height={48} alt={card.iconAlt} />
 
-                                <h2 className="self-stretch font-semibold text-black text-2xl tracking-[0] leading-[32.4px] whitespace-pre-line">
+                                <h2 className="self-stretch font-semibold text-black text-2xl leading-[32.4px] whitespace-pre-line">
                                     {card.title}
                                 </h2>
                                 <ul className="list-disc pl-5 text-[#313036] text-lg font-normal leading-relaxed">

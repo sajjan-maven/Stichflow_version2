@@ -3,6 +3,7 @@ import Image from "next/image";
 import {useRouter} from "next/navigation";
 import React, {useState} from "react";
 import Button from "./Button";
+import { ArrowRightIcon } from "lucide-react";
 
 const HomeHeroSection = () => {
     const [email, setEmail] = useState("");
@@ -78,26 +79,31 @@ const HomeHeroSection = () => {
                                 disabled={isSubmitting}
                             />
                         </div>
+                        <div className="w-[250px]">
+                            <Button
+                                variant="primary"
+                                type="button"
+                                className="py-[7px] flex group active:[&_svg]:translate-x-1.5 hover:[&_svg]:w-4"
+                                onClick={handleSubmit}
+                                // onClick={(e) => handleSubmit(e as unknown as React.FormEvent)}
 
-                        <Button
-                            variant="primary"
-                            type="button"
-                            className="py-[7px]"
-                            onClick={handleSubmit}
-                            // onClick={(e) => handleSubmit(e as unknown as React.FormEvent)}
-
-                            disabled={isSubmitting}
-                        >
-                            <div className="relative flex items-center gap-2">
-                                <div className="relative rounded-full border border-solid border-[#54505833]">
-                                    <Image src="/home-page/Avatar.png" alt="avatar" width={32} height={32} />
+                                disabled={isSubmitting}
+                            >
+                                <div className="flex justify-center items-center">
+                                    <div className="relative flex items-center gap-2">
+                                        <div className="relative rounded-full border border-solid border-[#54505833]">
+                                            <Image src="/home-page/Avatar.png" alt="avatar" width={32} height={32} />
+                                        </div>
+                                        <div className="absolute w-2.5 h-2.5 -top-px left-[23px] bg-[#30ba70] rounded-[5px] border border-solid border-white" />
+                                    </div>
+                                    <span className="font-medium text-[#363338] text-base leading-4 whitespace-nowrap pl-2">
+                                        {isSubmitting ? "Processing..." : "Book a 15 min demo"}
+                                    </span>
                                 </div>
-                                <div className="absolute w-2.5 h-2.5 -top-px left-[23px] bg-[#30ba70] rounded-[5px] border border-solid border-white" />
-                            </div>
-                            <span className="font-medium text-[#363338] text-base leading-4 whitespace-nowrap pl-2">
-                                {isSubmitting ? "Processing..." : "Book a 15 min demo"}
-                            </span>
-                        </Button>
+                                <ArrowRightIcon className="ml-2 h-4 w-0 transition-all ease-in duration-200" />
+                            </Button>
+                        </div>
+
                     </div>
                     <Image
                         className="hidden md:block object-cover mx-auto"

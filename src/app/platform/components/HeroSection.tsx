@@ -5,11 +5,11 @@ export default function HeroSection() {
   return (
     <section className="w-full z-[3] bg-[#e4dbd0] pt-12 px-6 md:pt-16">
         <div className="flex flex-col w-full items-center gap-4">
-          <h1 className=" font-semibold text-[#363338] text-[40px] text-center tracking-[0] leading-[48px]">
+          <h1 className=" font-semibold text-[#363338] text-[40px] text-center leading-[48px]">
             How Stitchflow Works
           </h1>
 
-          <p className=" font-normal text-[#363338] text-lg text-center tracking-[0] leading-8">
+          <p className=" font-normal text-[#363338] text-lg text-center leading-8">
             Stitchflow&apos;s expertise lies in its ability to automatically
             connect any app with any system of record for any audit.
           </p>

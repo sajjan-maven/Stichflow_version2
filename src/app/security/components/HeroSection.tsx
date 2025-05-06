@@ -21,7 +21,7 @@ const HeroSection = () => {
                             href="https://cdn.prod.website-files.com/648b3fb5ff20b9eb641b8ea2/65b21d8c27b8bd6a6f90d79f_Stitchflow%20Security%20Whitepaper.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-6 py-4 rounded-xl border border-solid border-[#54505833] bg-transparent no-underline"
+                            className="px-6 py-4 rounded-xl border border-solid border-[#54505833] bg-transparent no-underline hover:bg-[#54505810] shadow active:shadow-none cursor-pointer"
                         >
                             <span className="font-medium text-[#363338]">Learn more in our whitepaper</span>
                         </a>

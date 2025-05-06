@@ -223,7 +223,7 @@ export default function Box() {
                                                     src="/frame-152.svg"
                                                 />
 
-                                                <div className="absolute w-[175px] top-[78px] left-6 font-bold text-[#3c3123] text-xl leading-6 tracking-[0]">
+                                                <div className="absolute w-[175px] top-[78px] left-6 font-bold text-[#3c3123] text-xl leading-6">
                                                     ISO/IEC 27001 Certification
                                                 </div>
                                             </div>

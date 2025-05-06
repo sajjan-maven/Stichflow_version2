@@ -44,35 +44,32 @@ const TestimonialCarousel = () => {
                 </div>
                 {/* Carousel */}
                 <div className="w-full homePageCarousel">
-                    <Slider
-                        {...{
-                            dots: false,
-                            infinite: true,
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            autoplay: true,
-                            speed: 1000,
-                            autoplaySpeed: 3500,
-                            centerMode: true,
-                            cssEase: "linear",
-                            arrows: true,
-                            responsive: [
-                                {
-                                    breakpoint: 1450,
-                                    settings: {
-                                        slidesToShow: 1,
-                                        arrows: false,
-                                    },
-                                },
-                            ],
-                        }}
-                        className="py-20 max-w-[3000px] mx-auto"
+                    <Slider {...{
+                        dots: false,
+                        infinite: true,
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        speed: 4000,
+                        autoplaySpeed:4000,
+                        centerMode: true,
+                        cssEase: "linear",
+                        arrows: false,
+                        responsive: [
+                            {
+                                breakpoint: 1450,
+                                settings: {
+                                    slidesToShow: 1,
+                                    arrows: false
+                                }
+                            },
+                        ]
+                    }}
+                    className="py-20 max-w-[3000px] mx-auto"
                     >
                         {testimonials.map((testimonial) => (
                             <div key={testimonial.id} className="w-full px-2 lg:px-3 h-full">
-                                <div
-                                    className={`${testimonial.bgColor} h-[414px] text-white rounded-4xl overflow-hidden p-6 md:p-8 lg:p-10 flex flex-col`}
-                                >
+                                <div className={`${testimonial.bgColor} min-h-[500px] md:min-h-[414px] text-white rounded-4xl overflow-hidden p-6 md:p-8 lg:p-10 flex flex-col`}>
                                     <blockquote className="flex-grow mb-6">
                                         <p className="text-base md:text-lg lg:text-lg leading-relaxed">
                                             &ldquo;{testimonial.text}&rdquo;

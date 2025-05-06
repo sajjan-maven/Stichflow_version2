@@ -72,13 +72,13 @@ export default function StepsSection() {
 
                                 <h2 className="font-medium text-[#363338] md:text-2xl text-xl">{step.title}</h2>
 
-                                <p className="  font-normal text-[#7b7481] text-base tracking-[0] leading-6">
+                                <p className="  font-normal text-[#7b7481] text-base leading-6">
                                     {step.description}
                                 </p>
                             </div>
 
                             <div
-                                className={`flex-1 flex justify-center items-center grow h-[400px] bg-white rounded-[32px] overflow-hidden"
+                                className={`flex-1 flex justify-center items-center grow rounded-[32px] overflow-hidden"
                                 }`}
                             >
                                 {step.image && (
