@@ -14,7 +14,7 @@ export const HeroSection = () => {
                     </p>
                 </div>
                 <Link href="/demo">
-                    <button className="px-6 py-4 rounded-xl border border-solid border-[#54505833] bg-transparent hover:bg-[#54505810] cursor-pointer">
+                    <button className="px-6 py-4 rounded-xl border border-solid border-[#54505833] bg-transparent hover:bg-[#54505810] shadow active:shadow-none cursor-pointer">
                         <span className="font-medium text-[#363338]">Join the pilot</span>
                     </button>
                 </Link>

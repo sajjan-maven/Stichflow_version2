@@ -32,9 +32,9 @@ const resourceCards = [
 
 const FeatureResourceSection = () => {
     return (
-        <div className="w-full bg-[#e4dbd0] bg-opacity-20 py-[100px]  ">
+        <div className="w-full bg-[#e4dbd0] bg-opacity-20 pt-16 pb-24">
             {/* <section className="flex flex-col w-full items-center justify-center gap-[60px] px-0 py-[100px] absolute top-[551px] left-0 [background:linear-gradient(0deg,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0.2)_100%),linear-gradient(0deg,rgba(228,219,208,1)_0%,rgba(228,219,208,1)_100%)]"> */}
-            <div className="max-w-[1288px] mx-auto flex flex-col items-center gap-[50px]">
+            <div className="max-w-[1288px] mx-auto flex flex-col items-center gap-[35px]">
                 <h2 className="text-[32px] font-medium text-[#222222] text-center leading-[43.2px]">
                     Featured Resources
                 </h2>

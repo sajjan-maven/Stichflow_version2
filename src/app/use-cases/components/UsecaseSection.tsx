@@ -36,10 +36,10 @@ export default function UseCaseSection() {
                 >
                     <div className="max-w-[1256px] mx-auto">
                         <div className="flex flex-col items-center gap-2 max-w-[878px] mx-auto pb-10 md:pb-20">
-                            <h2 className="font-semibold text-[#363338] text-3xl md:text-[40px] text-center tracking-[0] md:leading-[48px]">
+                            <h2 className="font-semibold text-[#363338] text-3xl md:text-[40px] text-center md:leading-[48px]">
                                 {useCase.title}
                             </h2>
-                            <p className=" font-normal text-[#7b7481] text-base text-center tracking-[0] leading-6">
+                            <p className=" font-normal text-[#7b7481] text-base text-center leading-6">
                                 {useCase.description}
                             </p>
                         </div>

@@ -541,7 +541,7 @@ html {
 /* First row (header) text styling */
 .ck-table-resized tbody tr:first-child td p,
 .ck-table-resized tbody tr:first-child td p * {
-    color: white !important;
+    color: rgb(31, 31, 31) !important;
     /* font-weight: 700 !important; */
     line-height: 21.6px !important;
     letter-spacing: 0px !important;
@@ -7181,7 +7181,6 @@ table tr:first-child td {
     padding-bottom: 12px;
     text-align: left;
     background-color: #e9dac7 !important;
-    color: rgb(28, 26, 26) !important;
 }
 
 .ck-table-resized td p {
@@ -7259,7 +7258,7 @@ table tr:first-child td {
     background-image: url("/common-components/arrow-left.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 30px;
+    background-size: 20px;
     text-indent: -9999px; /* Hide default arrow if needed */
 }
 
@@ -7271,7 +7270,7 @@ table tr:first-child td {
     background-image: url("/common-components/arrow-right.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 30px;
+    background-size: 20px;
     text-indent: -9999px; /* Hide default arrow if needed */
 }
 

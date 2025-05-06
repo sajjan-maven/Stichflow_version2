@@ -1,3 +1,4 @@
+import Button from "@/app/components/Button";
 import {BlogResponse, INewsLetterSection} from "@/app/types/blog";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,12 +13,25 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
     const bannerBlogs = blogData.data?.filter((post) => post.heroSection?.isBanner)
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
-    const latestBannerBlog = bannerBlogs.length > 0 ? bannerBlogs[0] : null;
+    const latestBannerBlog = bannerBlogs?.length > 0 ? bannerBlogs[0] : null;
 
     return (
         <>
-            <section className="w-full px-6 py-20 md:py-20 text-4xl font-semibold bg-[#e4dbd0]">
-                <h1 className="text-center">Blogs</h1>
+            <section className="w-full px-6 py-20 md:py-20 bg-[#e4dbd0]">
+                <h1 className="text-center text-4xl font-semibold">Blogs</h1>
+                <div className="flex justify-center gap-3 items-center mt-8 w-full flex-wrap">
+                    <div className="flex w-full max-w-[280px] items-center bg-white rounded-xl border border-solid border-[#e4dbd0] hover:border-gray-600">
+                        <input
+                        type="email"
+                        className="border-0 shadow-none px-3 py-2 h-10 md:h-[45px] outline-none active:outline-none active:border-none font-label-regular text-[#7b7481]"
+                        placeholder="Email Address"
+                        required
+                        />
+                    </div>
+                    <Button variant="primary" className="py-2.5">
+                        Subscribe
+                    </Button>
+                </div>
             </section>
             <section className="w-full bg-[#f8f5f3] px-6 pt-20 pb-14">
                 <div className="max-w-[1256px] mx-auto">
@@ -44,7 +58,7 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
                                         />
                                     </div>
                                 )}
-                                <div className="w-full lg:max-w-1/2 lg:mt-4 lg:ml-1.5">
+                                <div className="w-full lg:max-w-1/2 lg:mt-4">
                                     <p className="font-semibold text-[#f25c30]">{latestBannerBlog?.heroSection?.category}</p>
                                     <h3 className="text-2xl lg:text-4xl lg:leading-12 font-medium mb-2 mt-1">{latestBannerBlog?.blogTitle}</h3>
                                     <p className="text-xl text-gray-500">{latestBannerBlog?.heroSection?.postedSummary}</p>
