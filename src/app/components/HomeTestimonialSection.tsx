@@ -71,7 +71,7 @@ const TestimonialCarousel = () => {
                         {testimonials.map((testimonial) => (
                             <div key={testimonial.id} className="w-full px-2 lg:px-3 h-full">
                                 <div
-                                    className={`${testimonial.bgColor} h-[414px] text-white rounded-4xl overflow-hidden p-6 md:p-8 lg:p-10 shadow-lg flex flex-col`}
+                                    className={`${testimonial.bgColor} h-[414px] text-white rounded-4xl overflow-hidden p-6 md:p-8 lg:p-10 flex flex-col`}
                                 >
                                     <blockquote className="flex-grow mb-6">
                                         <p className="text-base md:text-lg lg:text-lg leading-relaxed">
