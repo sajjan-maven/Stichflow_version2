@@ -161,7 +161,6 @@ const HeaderComponent = () => {
                             />
                         </div>
 
-                        {/* Desktop Navigation */}
                         <nav className="hidden lg:block">
                             <ul className="relative flex items-center lg:right-[35px] xl:right-0 lg:gap-2 xl:gap-6 lg:px-2 xl:px-0 ">
                                 {menuItems.map((item, index) => (
@@ -190,7 +189,6 @@ const HeaderComponent = () => {
                                                     </svg>
                                                 </button>
 
-                                                {/* Dropdown */}
                                                 <div
                                                     className={`absolute top-full left-0 mt-2 transition-all duration-200 ease-in-out z-50 ${
                                                         activeDropdown === index
