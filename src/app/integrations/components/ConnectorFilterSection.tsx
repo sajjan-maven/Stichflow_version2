@@ -84,8 +84,8 @@ const ConnectorFilterSection: React.FC<ConnectorFilterSectionProps> = ({catogeor
     return (
         <section className="w-full bg-[#f8f5f3] px-6 py-16">
             <div className="w-full max-w-6xl mx-auto">
-                <div className="tag-main-grid">
-                    <div id="w-node-_67f7b985-244f-872d-797e-7858cccb8c85-ecc25f2b" className="hp-wrap">
+                <div className="grid gap-4 grid-cols-[0.25fr_1fr] auto-cols-fr content-start items-start">
+                    <div id="w-node-_67f7b985-244f-872d-797e-7858cccb8c85-ecc25f2b" className="grid gap-4 grid-cols-1">
                         <div
                             id="w-node-_5c112243-9f78-26a2-e39c-15eef8525446-ecc25f2b"
                             className="tags-wrapper cc-new-one shadow-sm h-full border border-gray-300"

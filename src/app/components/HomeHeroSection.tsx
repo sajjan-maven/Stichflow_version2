@@ -79,7 +79,7 @@ const HomeHeroSection = () => {
                                 disabled={isSubmitting}
                             />
                         </div>
-                        <div className="w-[250px]">
+                        <div className="lg:w-[250px]">
                             <Button
                                 variant="primary"
                                 type="button"

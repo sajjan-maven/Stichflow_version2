@@ -37,11 +37,9 @@ export default function RootLayout({
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} cz-shortcut-listen="true">
                 <NoScript />
                 <HeaderComponent />
-                <main className="pt-12 lg:pt-[64px]">
-                    <Suspense fallback={<div className="h-screen text-center py-20">Loading...</div>}>
-                        {children}
-                    </Suspense>
-                </main>
+                <Suspense fallback={<div className="h-screen text-center py-20">Loading...</div>}>
+                    {children}
+                </Suspense>
                 <DemoComponent />
                 <FooterComponent />
             </body>

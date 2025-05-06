@@ -1,4 +1,5 @@
 import Button from "@/app/components/Button";
+import { ArrowRightIcon } from "lucide-react";
 import React from "react";
 
 export default function EmailSubscribe() {
@@ -20,8 +21,9 @@ export default function EmailSubscribe() {
               required
             />
           </div>
-          <Button variant="primary" className="py-2.5">
+          <Button variant="primary" className="py-2.5 group active:[&_svg]:translate-x-1.5 hover:[&_svg]:w-4">
             Subscribe
+            <ArrowRightIcon className="ml-2 h-4 w-0 transition-all ease-in duration-200" />
           </Button>
         </div>
       </div>

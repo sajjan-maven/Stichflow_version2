@@ -1,5 +1,6 @@
 import Button from "@/app/components/Button";
 import {BlogResponse, INewsLetterSection} from "@/app/types/blog";
+import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -28,9 +29,12 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
                         required
                         />
                     </div>
-                    <Button variant="primary" className="py-2.5">
-                        Subscribe
-                    </Button>
+                    <div className="lg:w-[110px]">
+                        <Button variant="primary" className="py-2.5 group active:[&_svg]:translate-x-1.5 hover:[&_svg]:w-4">
+                            Subscribe
+                            <ArrowRightIcon className="ml-2 h-4 w-0 transition-all ease-in duration-200" />
+                        </Button>
+                    </div>
                 </div>
             </section>
             <section className="w-full bg-[#f8f5f3] px-6 pt-20 pb-14">
