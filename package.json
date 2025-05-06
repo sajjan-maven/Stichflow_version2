@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-spring/parallax": "^9.7.5",
     "framer-motion": "^12.7.4",
     "html-react-parser": "^5.2.3",
     "lottie-web": "^5.12.2",
