@@ -7282,3 +7282,36 @@ table tr:first-child td {
     transform: scale(0.98);
     box-shadow: none;
 }
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 2rem;
+}
+
+.loading-spinner img {
+    width: 64px;
+    height: 64px;
+    animation: bounce-spin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+/* Enhanced spin with bounce effect */
+@keyframes bounce-spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+    75% {
+        transform: rotate(270deg) scale(0.95);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}

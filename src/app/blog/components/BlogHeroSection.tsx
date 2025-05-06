@@ -7,10 +7,13 @@ import React from "react";
 interface BlogTabProps {
     blogData: BlogResponse;
     newsLetterData: INewsLetterSection;
+    activeCategory: string;
+    setActiveCategory: (category: string) => void;
 }
 
 const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
-    const bannerBlogs = blogData.data?.filter((post) => post.heroSection?.isBanner)
+    const bannerBlogs = blogData.data
+    ?.filter((post) => post.heroSection?.isBanner)
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
     const latestBannerBlog = bannerBlogs?.length > 0 ? bannerBlogs[0] : null;
@@ -22,10 +25,10 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
                 <div className="flex justify-center gap-3 items-center mt-8 w-full flex-wrap">
                     <div className="flex w-full max-w-[280px] items-center bg-white rounded-xl border border-solid border-[#e4dbd0] hover:border-gray-600">
                         <input
-                        type="email"
-                        className="border-0 shadow-none px-3 py-2 h-10 md:h-[45px] outline-none active:outline-none active:border-none font-label-regular text-[#7b7481]"
-                        placeholder="Email Address"
-                        required
+                            type="email"
+                            className="border-0 shadow-none px-3 py-2 h-10 md:h-[45px] outline-none active:outline-none active:border-none font-label-regular text-[#7b7481]"
+                            placeholder="Email Address"
+                            required
                         />
                     </div>
                     <Button variant="primary" className="py-2.5">
@@ -59,9 +62,15 @@ const BlogHeroSection: React.FC<BlogTabProps> = ({blogData}) => {
                                     </div>
                                 )}
                                 <div className="w-full lg:max-w-1/2 lg:mt-4">
-                                    <p className="font-semibold text-[#f25c30]">{latestBannerBlog?.heroSection?.category}</p>
-                                    <h3 className="text-2xl lg:text-4xl lg:leading-12 font-medium mb-2 mt-1">{latestBannerBlog?.blogTitle}</h3>
-                                    <p className="text-xl text-gray-500">{latestBannerBlog?.heroSection?.postedSummary}</p>
+                                    <p className="font-semibold text-[#f25c30]">
+                                        {latestBannerBlog?.heroSection?.category}
+                                    </p>
+                                    <h3 className="text-2xl lg:text-4xl lg:leading-12 font-medium mb-2 mt-1">
+                                        {latestBannerBlog?.blogTitle}
+                                    </h3>
+                                    <p className="text-xl text-gray-500">
+                                        {latestBannerBlog?.heroSection?.postedSummary}
+                                    </p>
                                 </div>
                             </div>
                         </Link>
