@@ -57,10 +57,31 @@ export async function generateMetadata(): Promise<Metadata> {
     return await getMetadata();
 }
 
-export default async function BlogPage() {
+// export default async function BlogPage() {
+//     const [blogPageData, newsLetterData] = await Promise.all([
+//         BlogsService.getAllHomeBlogs(),
+//         BlogsService.getNewsLetter(),
+//     ]);
+//     return <BlogHomePage blogData={blogPageData} newsLetterData={newsLetterData} />;
+// }
+
+export default async function BlogPage({
+    searchParams,
+}: {
+    searchParams: Promise<{[key: string]: string | string[] | undefined}>;
+}) {
+    const resolvedParams = await searchParams;
+    const currentPage =
+        typeof resolvedParams?.page === "string"
+            ? Number(resolvedParams.page)
+            : Array.isArray(resolvedParams?.page)
+            ? Number(resolvedParams.page[0])
+            : 1;
+
     const [blogPageData, newsLetterData] = await Promise.all([
-        BlogsService.getAllHomeBlogs(),
+        BlogsService.getAllBlogs(),
         BlogsService.getNewsLetter(),
     ]);
+    console.log("Fetched Blogs for Page:", currentPage);
     return <BlogHomePage blogData={blogPageData} newsLetterData={newsLetterData} />;
 }

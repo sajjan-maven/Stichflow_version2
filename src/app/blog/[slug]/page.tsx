@@ -14,7 +14,8 @@ export interface PageProps {
 export async function generateMetadata({params}: {params: PageParams}): Promise<Metadata> {
     const {slug} = await params;
 
-    const data = await BlogsService.getAllHomeBlogs();
+    // const data = await BlogsService.getAllHomeBlogs();
+    const data = await BlogsService.getAllBlogs();
     const blogPost = data?.data?.find((post: BlogData) => post.heroSection?.urlSlug === slug);
     const blogMeta = blogPost?.metaData || {};
 
@@ -73,9 +74,8 @@ export default async function BlogPostPage({params}: {params: PageParams}) {
     //     BlogsService.getAllHomeBlogs(),
     //     BlogsService.getNewsLetter(),
     // ]);
-    const [blogPageData] = await Promise.all([
-        BlogsService.getAllHomeBlogs(),
-    ]);
+    const [blogPageData] = await Promise.all([BlogsService.getAllBlogs()]);
+
     const blogPost = blogPageData?.data?.find((post: BlogData) => post.heroSection?.urlSlug === slug);
 
     if (!blogPost) {

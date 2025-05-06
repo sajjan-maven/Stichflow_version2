@@ -1,9 +1,10 @@
 "use client";
 
-import {useState} from "react";
+import {useState, useRef, useCallback, useEffect} from "react";
 import BlogCard from "./BlogCard";
 import {BlogData, BlogResponse} from "@/app/types/blog";
 import Link from "next/link";
+import {BlogsService} from "@/app/services/blogs.service";
 
 interface BlogTabProps {
     blogData: BlogResponse;
@@ -11,10 +12,26 @@ interface BlogTabProps {
 
 const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
     const allData = blogData.data;
+
     const [activeTab, setActiveTab] = useState("all");
     const [searchQuery, setSearchQuery] = useState("");
 
-    const sortedBlogs = allData.slice().sort((a, b) => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const [loading, setLoading] = useState(false);
+    const [hasMore, setHasMore] = useState(true);
+    const [blogs, setBlogs] = useState<BlogData[]>([]);
+    const observer = useRef<IntersectionObserver | null>(null);
+
+    const sortedBlogs = blogs.slice().sort((a, b) => {
+        const getDate = (post: BlogData) =>
+            post.heroSection?.postedDate && post.heroSection.postedDate !== ""
+                ? new Date(post.heroSection.postedDate).getTime()
+                : new Date(post.createdAt).getTime();
+
+        return getDate(b) - getDate(a);
+    });
+
+    const sortedAllBlogs = allData.slice().sort((a, b) => {
         const getDate = (post: BlogData) =>
             post.heroSection?.postedDate && post.heroSection.postedDate !== ""
                 ? new Date(post.heroSection.postedDate).getTime()
@@ -24,7 +41,7 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
     });
 
     const uniqueCategories = Array.from(
-        new Set(sortedBlogs.map((blog) => blog?.heroSection?.category).filter(Boolean))
+        new Set(sortedAllBlogs.map((blog) => blog?.heroSection?.category).filter(Boolean))
     );
 
     const formatCategory = (category: string) => category.toLowerCase().replace(/\s+/g, "-");
@@ -41,11 +58,64 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
         );
     };
 
+    // const handleClick = (formattedCategory: string) => {
+    //     setActiveTab(formattedCategory);
+    // };
+
+    useEffect(() => {
+        setCurrentPage(1);
+        setHasMore(true);
+        if (activeTab.toLowerCase() == "all") {
+            loadBlogs(1, activeTab);
+        } else {
+            loadBlogs(1, activeTab);
+        }
+    }, [activeTab]);
+
+    const loadBlogs = async (page: number, category: string) => {
+        setLoading(true);
+        try {
+            const newBlogsData = await BlogsService.getAllHomeBlogs(page, 20, category);
+            console.log("newBlogsData", newBlogsData.data);
+            if (newBlogsData?.data?.length > 0) {
+                setBlogs((prevBlogs) => (page === 1 ? newBlogsData.data : [...prevBlogs, ...newBlogsData.data]));
+            } else {
+                setHasMore(false);
+            }
+        } catch (error) {
+            console.error("Error loading blogs:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const lastBlogElementRef = useCallback(
+        (node: HTMLDivElement | null) => {
+            if (loading) return;
+            if (observer.current) observer.current.disconnect();
+
+            observer.current = new IntersectionObserver(
+                (entries) => {
+                    if (entries[0].isIntersecting && hasMore) {
+                        const nextPage = currentPage + 1;
+                        setCurrentPage(nextPage);
+                        loadBlogs(nextPage, activeTab);
+                    }
+                },
+                {threshold: 1.0}
+            );
+
+            if (node) observer.current.observe(node);
+        },
+        [loading, hasMore, currentPage, activeTab]
+    );
+
     const filteredBlogs = sortedBlogs
     .filter(matchesSearchQuery)
-    .filter((blog) => activeTab === "all" || formatCategory(blog.heroSection?.category || "") === activeTab);
+    .filter((blog) => activeTab === "all" || (blog.heroSection?.category || "") === activeTab);
+
     return (
-        <section className="w-full px-6 py-10 md:pb-20 ">
+        <div className="w-full px-6 py-10 md:pb-20 ">
             <div className="max-w-[1256px] mx-auto">
                 <div className="flex flex-wrap gap-4 items-center justify-center md:justify-between">
                     <div className="flexflex-wrap gap-2 items-center justify-center ">
@@ -89,6 +159,7 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                         </form>
                     </div>
                 </div>
+
                 <div className="mt-8 mb-4">
                     <div className="border-b border-gray-300 "></div>
                 </div>
@@ -118,11 +189,32 @@ const AllBlogs: React.FC<BlogTabProps> = ({blogData}) => {
                             ))}
                         </div>
                     ) : (
-                        <p className="pt-7 text-center font-medium">No blogs available in this category.</p>
+                        // <p className="no-information">No blogs available in this category.</p>
+                        <></>
                     )}
                 </div>
+
+                {loading && (
+                    <div className="loading-spinner">
+                        <img
+                            src="https://23630480.fs1.hubspotusercontent-na1.net/hub/23630480/hubfs/Stitchflow.png"
+                            alt="Stitchflow Logo"
+                        />
+                    </div>
+                )}
+                {!hasMore && !loading && (
+                    <>
+                        {filteredBlogs.length == 0 ? (
+                            <p className="no-information">No blogs available in this category.</p>
+                        ) : (
+                            <p className="text-center text-gray-500 mt-6">No more blogs to load</p>
+                        )}
+                    </>
+                )}
+
+                <div ref={lastBlogElementRef} style={{height: "1px"}} />
             </div>
-        </section>
+        </div>
     );
 };
 
