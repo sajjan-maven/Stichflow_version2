@@ -54,7 +54,7 @@ const TestimonialCarousel = () => {
                         autoplaySpeed:4000,
                         centerMode: true,
                         cssEase: "linear",
-                        arrows: true,
+                        arrows: false,
                         responsive: [
                             {
                                 breakpoint: 1450,
