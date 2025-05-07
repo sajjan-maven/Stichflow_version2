@@ -48,7 +48,7 @@ export default function WhatItForksShare() {
 
   return (
     
-    <section className="gap-2 px-6 py-20 w-full">
+    <section className="gap-2 px-6 py-20 w-full bg-gradient-to-b from-[#f8f5f3] to-white bg-[#f8f5f3]">
         <div className="flex flex-col max-w-[645px] mx-auto items-center gap-4 w-full">
             <h1 className=" font-semibold text-[#363338] text-2xl md:text-[40px] text-center mb-2">
               What IT folks share about our
@@ -59,7 +59,7 @@ export default function WhatItForksShare() {
           <div className='flex flex-row flex-wrap items-stretch'>
             {redditComments.map((comment) => (
               <ul key={comment.id} className={`py-2 md:px-2 w-full ${comment.width}`}>
-                <li className='p-4 bg-white shadow-sm rounded-xl h-full flex flex-col items-stretch'>
+                <li className='p-4 bg-[#E4DBD0] shadow-sm rounded-xl h-full flex flex-col items-stretch'>
                   <div className='flex gap-2 mb-1'>
                     <Image 
                       src='/it-tools/reddit.png'

@@ -66,7 +66,7 @@ interface ConnectorPageSecProps {
 
 const ConnectorPageSec: React.FC<ConnectorPageSecProps> = (props) => {
     return (
-        <div className="page-wrapper">
+        <div className="overflow-hidden">
             <ConnectorHeroSection title={props.data.HeroSection} />
             <div className="bg-[#f8f5f3]">
                 <ConnectorFilterSection

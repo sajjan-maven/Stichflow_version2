@@ -17,7 +17,7 @@ const ConnectorHeroSection: React.FC<ConnectorHeroSectionProps> = ({title}) => {
     return (
         <div>
             <section className="section hero integration-page">
-                <div className="my-contain contain-82">
+                <div className="w-full max-w-[1256px] mx-auto">
                     <div className="content-wrapper h-flex align-center">
                         <div className="left-div _60cent">
                             <div className="padding-top-bottom">

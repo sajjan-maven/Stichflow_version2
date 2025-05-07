@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, {useState} from "react";
 
 export default function FAQSection() {
@@ -65,32 +66,30 @@ export default function FAQSection() {
 
     return (
         <section className="px-6 py-20 w-full">
-            <div className="text-4xl mb-3 text-center font-medium">Frequently Asked Questions</div>
+            <div className="text-4xl mb-10 text-center font-medium">Frequently Asked Questions</div>
             <div className="w-full max-w-[1256px] mx-auto">
                 {faqs.map((faq, index) => (
-                    <div key={index}>
-                        <h3>
-                            <button
-                                type="button"
-                                className={`flex text-start items-center justify-between w-full px-0 py-2 md:p-5 md:text-lg md:font-medium border-b border-gray-200 ${
-                                    openAccordion ? "border-b-0" : ""
-                                } cursor-pointer`}
-                                onClick={() => toggleAccordion(index)}
-                                aria-expanded={openAccordion === index}
-                            >
-                                <p>{faq.question}</p>
-                                <div className="text-3xl font-[400]">
-                                    {openAccordion === index ? <span>-</span> : <span>+</span>}
-                                </div>
-                            </button>
-                        </h3>
+                    <button
+                        key={index}
+                        type="button"
+                        className={`bg-[#F8F5F3] mb-2 rounded-2xl lg:rounded-4xl p-4 lg:p-9 w-full md:text-xl md:font-medium cursor-pointer text-[#363338]`}
+                        onClick={() => toggleAccordion(index)}
+                        aria-expanded={openAccordion === index}
+                    >
+                        <div className="flex text-start items-center justify-between">
+                            <h3>{faq.question}</h3>
+                            {openAccordion === index ?
+                                <Image src="/it-tools/Tertiary-.svg" alt="accordian-icon" width={32} height={32} /> :
+                                <Image src="/it-tools/Tertiary+.svg" alt="accordian-icon" width={32} height={32} />
+                            }
+                        </div>
                         <div
-                            className={`${openAccordion === index ? "block" : "hidden"}`}
+                            className={`${openAccordion === index ? "block" : "hidden"} text-start`}
                             aria-labelledby={`accordion-collapse-heading-${index}`}
                         >
-                            <div className="p-5 text-gray-600 mb-2 border-b border-gray-300">{faq.answer}</div>
+                            <div className="text-[#7B7481] mt-4 text-base leading-6">{faq.answer}</div>
                         </div>
-                    </div>
+                    </button>
                 ))}
             </div>
         </section>

@@ -5,18 +5,17 @@ import WhatItForksShare from "./WhatItForksShare";
 import EmailSubscribe from "./EmailSubscribe";
 import FAQSection from "./FAQSection";
 import ProductDifference from "./ProductDifference";
-import ScheduleDemo from "./ScheduleDemo";
 
 const ToolsMainComponent = () => {
     return (
-        <div className="flex flex-col items-start relative bg-[#f8f5f3]">
+        <div className="flex flex-col items-start relative">
             <HeroSection />
             <ITtoolsCard />
             <WhatItForksShare />
-            <EmailSubscribe />
-            <FAQSection />
             <ProductDifference />
-            <ScheduleDemo />
+            <FAQSection />
+            <EmailSubscribe />
+            {/* <ScheduleDemo /> */}
         </div>
     );
 };

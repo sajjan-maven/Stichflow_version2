@@ -144,7 +144,7 @@ const HeaderComponent = () => {
         // >
         <>
             {showNotification && 
-            <div className="sticky z-50 top-0 inset-x-0 w-full bg-[#f25c30] text-center h-8">
+            <div className="sticky z-[80] top-0 inset-x-0 w-full bg-[#f25c30] text-center h-8">
                 <p className="text-center p-1">Lorem ipsum dolor sit amet.</p>
                 <span onClick={() => setShowNotification(false)} className="absolute right-8 top-2">
                     <X className="text-black w-4 h-4" />

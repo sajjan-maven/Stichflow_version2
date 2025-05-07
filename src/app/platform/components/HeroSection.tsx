@@ -17,7 +17,7 @@ export default function HeroSection() {
         <Image
             width={1053}
             height={406}
-            className='mx-auto mt-6 md:mt-[88px]'
+            className='mx-auto mt-4 md:mt-[88px]'
             alt="User detail page"
             src="/product-page/hero-image.png"
         />

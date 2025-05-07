@@ -2829,14 +2829,12 @@ div:has(> figure.table) {
 .cta-wrapper.secoundary-cta.int-page {
     background-color: var(--white);
     background-image: none;
-    border: 1px solid #f5f3f6;
     padding-top: 4.85rem;
     padding-bottom: 4.85rem;
 }
 
 .cta-wrapper.secoundary-cta.int-page.no-border {
     background-color: var(--white-smoke);
-    border-color: #0000;
 }
 
 .cta-wrapper.secoundary-cta.int-page.no-border.bg-whitesmoke {
@@ -2845,8 +2843,6 @@ div:has(> figure.table) {
 
 .cta-wrapper.secoundary-cta.int-page.cc-smaller {
     background-color: var(--white-smoke);
-    border-style: none;
-    border-width: 0;
     padding: 1rem 0.8rem;
 }
 
@@ -7288,12 +7284,14 @@ table tr:first-child td {
     justify-content: center;
     align-items: center;
     background: #fff;
+    height: 100px;
+    width: 100px;
     padding: 2rem;
 }
 
 .loading-spinner img {
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
     animation: bounce-spin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
 }
 

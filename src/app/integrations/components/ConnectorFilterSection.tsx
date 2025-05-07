@@ -199,7 +199,7 @@ const ConnectorFilterSection: React.FC<ConnectorFilterSectionProps> = ({catogeor
                                     data-wf-element-id="b25ab81d-c219-bc8e-d124-c595830210ba"
                                 >
                                     <input
-                                        className="int-search-input jetboost-list-search-input-w81q w-input w-full mb-4"
+                                        className="int-search-input jetboost-list-search-input-w81q w-input w-full mb-4 shadow"
                                         maxLength={256}
                                         name="Search"
                                         data-name="Search"
